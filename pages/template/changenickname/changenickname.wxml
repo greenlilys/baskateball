@@ -1,0 +1,10 @@
+<!-- top -->
+<view class="nickbox">
+        <view class="sonbox">
+                <input class="nickInput" placeholder='{{userInfo.nickName}}' bindinput="nickInput" focus="{{focus}}"/>
+        </view>
+</view>
+
+<view class="confirm" catchtap="confirm">
+       确认修改
+</view>

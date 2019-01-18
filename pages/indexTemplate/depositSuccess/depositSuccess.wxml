@@ -1,0 +1,30 @@
+<!-- box -->
+<view class="box">
+      <view class="boxSon">
+           <view class="son1">
+                  <image class="duihao" src="../../image/duihao.jpg"></image>
+                  <view>押金缴纳成功</view>
+           </view>
+           <view class="son2">
+                 <image src="../../image/deposit2.jpg" class="deposit2"></image>
+                 <view class="proBox">
+                       <view class="proSon">
+                              <view>Step.1</view>
+                              <view>缴纳押金</view>
+                       </view>
+
+                        <view class="proSon">
+                              <view>Step.2</view>
+                              <view>缴纳报名费</view>
+                       </view>
+
+                        <view class="proSon">
+                              <view>Step.3</view>
+                              <view>报名成功</view>
+                       </view>
+                 </view>
+           </view>
+           <view class="son3" catchtap='pay'>缴纳报名费</view>
+      </view>
+</view>
+

@@ -1,0 +1,57 @@
+.cellbox{
+  width:670rpx;
+  height:282rpx;
+  background:#fff;
+  margin:40rpx auto 40rpx auto;
+  border-radius:10rpx;
+  overflow:hidden;
+    box-shadow:0rpx 0rpx 40rpx #dddddd;
+}
+
+.sonbox{
+  width:594rpx;
+  height:91rpx;
+  border-bottom:2rpx solid #eee;
+  margin:34rpx auto 0 auto;
+}
+
+.cellInput{
+  
+  height:91rpx;
+  line-height:91rpx;
+  font-size:30rpx;
+}
+
+.sonbox2{
+  width:594rpx;
+  height:91rpx;
+  border-bottom:2rpx solid #eee;
+  margin:0 auto;
+ display:flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.code{
+  width:162rpx;
+  height:60rpx;
+ border:2rpx solid #006cff;
+ border-radius:10px;
+  font-size:22rpx;
+  color:#006cff;
+  text-align:center;
+  line-height:60rpx;
+}
+
+.confirm{
+  width:670rpx;
+  height:101rpx;
+  background:#006cff;
+  margin:0 auto;
+  border-radius:10px;
+  text-align:center;
+  line-height:101rpx;
+  font-size:32rpx;
+  color:#fff;
+  box-shadow:0rpx 10rpx 40rpx #8fbeff;
+}

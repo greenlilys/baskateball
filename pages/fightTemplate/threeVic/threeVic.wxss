@@ -1,0 +1,47 @@
+page{
+  background:#006cff;
+}
+
+.content{
+  width:670rpx;
+  height:1073rpx;
+  margin:70rpx auto 20rpx auto;
+  background:#fff;
+  border-radius:10rpx;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contentSon{
+  width:366rpx;
+  height:537rpx;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.threeVic{
+  width:366rpx;
+  height:347rpx;
+}
+
+.t1{
+  font-size:36rpx;
+}
+.t2{
+  font-size:26rpx;
+  color:#999;
+}
+.showBox{
+  width:590rpx;
+  height:100rpx;
+  background:#006cff;
+  border-radius:10rpx;
+  font-size:30rpx;
+  color:#fff;
+  text-align:center;
+  line-height:100rpx;
+}

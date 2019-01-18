@@ -1,0 +1,285 @@
+<view class="loginBox" wx:if="{{loginBox}}">
+  <view class="loginTop">微信授权</view>
+  <view class="loginBody">
+    <view class="loginBodyson1">
+      <image class="logo" src="../image/logo.jpg"></image>
+      <view class="wenzi">BBall申请获得以下权限：</view>
+    </view>
+    <view class="loginBodyson2">
+      <image class="dian" src="../image/dian.jpg"></image>
+      <view class="wenzi2">获得你的公开信息 （昵称，头像等）</view>
+    </view>
+
+  </view>
+  <view class="bbtom">
+    <button class='btn' type='primary' style="background:#fff;color:#000;" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">授权登陆</button>
+  </view>
+</view>
+
+<view class="mask" wx:if="{{mask}}"></view>
+
+<!-- top -->
+<view class="top">
+  <view class="{{title1?'title1':'title'}}" catchtap='zhanli'>
+    战力
+    <view class="hx1" wx:if="{{hx1}}"></view>
+  </view>
+  <view class="{{title2?'title2':'title'}}" catchtap='jingyan'>
+    经验值
+    <view class="hx2" wx:if="{{hx2}}"></view>
+  </view>
+</view>
+<!-- <view class="titleBox">
+      <view class="titleSon">
+            <view catchtap="clickqg" class="{{titleA?'titleA':''}}">
+                {{title1}}
+                <image class="xsj" src="../image/xsjl.jpg" wx:if="{{xsjl}}"></image>
+                <image class="xsj" src="../image/xsjh.jpg" wx:else></image>
+            </view>
+            <view catchtap="clickuser" class="{{titleB?'titleB':''}}">
+            {{title2}}
+                <image class="xsj" src="../image/xsjh.jpg" wx:if="{{xsjh}}"></image>
+                 <image class="xsj" src="../image/xsjl.jpg" wx:else></image>
+            </view>
+       </view>
+</view> -->
+
+<!-- <view class="fullBox" hidden="{{hidden}}">
+       <view catchtap="qg" class="v1">全国</view>
+       <view catchtap="hd">华东地区</view>
+       <view catchtap="hn">华南地区</view>
+       <view catchtap="hb">华北地区</view>
+</view>
+
+<view class="userBox" hidden="{{hiddenuser}}">
+       <view catchtap="full">全部用户</view>
+        <view catchtap="my">我关注的</view>
+</view> -->
+
+<view class="zhan" wx:if="{{zhanli}}">
+  <view class="listBox1" catchtap='goMyPage' id="{{user.userid}}">
+    <image style="height:50rpx;width:45rpx;" src="../image/no1.png" wx:if="{{user.rownum==1}}"></image>
+    <image style="height:50rpx;width:45rpx;" src="../image/no2.png" wx:if="{{user.rownum==2}}"></image>
+    <image style="height:50rpx;width:45rpx;" src="../image/no3.png" wx:if="{{user.rownum==3}}"></image>
+    <view class="paiming" wx:if="{{user.rownum!=1 || user.rownum!=2 || user.rownum!=3}}">
+      <view>No.</view>
+      <view>{{user.rownum?user.rownum:'N+'}}</view>
+      <!-- <view>{{user.rownum?user.rownum:'暂无排名'}}</view> -->
+    </view>
+    <view class="listSon">
+      <image src="{{user.avatar?user.avatar:userInfo.avatarUrl}}" class="head"></image>
+      <text class="nickname">{{user.nickName?user.nickName:userInfo.nickName}}</text>
+      <view class="weizhi">{{user.position?user.position:'未知'}} </view>
+    </view>
+
+    <view class="listSon">
+      <view>
+        <text class="num">{{user.power?user.power:0}}</text>
+        <text class="fen">分</text>
+      </view>
+      <view class="zonghe">综合实力</view>
+    </view>
+
+    <view class="listSon">
+      <view class="sonson">
+        <view class="wenzi2">场次</view>
+        <view class="progress">{{user.count?user.count:0}}</view>
+      </view>
+
+      <view class="sonson">
+        <view class="wenzi2">胜率</view>
+        <view class="progress">{{user.round?user.round:0}}%</view>
+      </view>
+
+      <view class="sonson">
+        <view class="wenzi2">总得分</view>
+        <view class="progress">{{user.score?user.score:0}}</view>
+      </view>
+
+      <view class="sonson">
+        <view class="wenzi2">总篮板</view>
+        <view class="progress">{{user.backboard?user.backboard:0}}</view>
+      </view>
+
+      <view class="sonson">
+        <view class="wenzi2">总助攻</view>
+        <view class="progress">{{user.assists?user.assists:0}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cx"></view>
+
+  <!-- 战力板块-->
+  <scroll-view class="list" scroll-y style="height:{{clientHeight?clientHeight+'px':'auto'}};" bindscrolltolower="lower" wx:if="{{zhanlizhi}}">
+    <block wx:for="{{dataBox}}" wx:key="{{item.userid}}">
+      <view class="listBox2" catchtap='gohePage' id="{{item.userid}}">
+        <image style="height:50rpx;width:45rpx; margin-right:-25rpx;" src="../image/no1.png" wx:if="{{item.rownum==1}}"></image>
+        <image style="height:50rpx;width:45rpx; margin-right:-25rpx;" src="../image/no2.png" wx:if="{{item.rownum==2}}"></image>
+        <image style="height:50rpx;width:45rpx; margin-right:-25rpx;" src="../image/no3.png" wx:if="{{item.rownum==3}}"></image>
+        <view wx:if="{{item.rownum>3}}" class="paiming">
+          <view>No.</view>
+          <view>{{item.rownum}}</view>
+        </view>
+
+
+        <view class="listSon">
+          <image src="{{item.avatar}}" class="head"></image>
+          <text class="nickname">{{item.nickName}}</text>
+          <view class="weizhi">{{item.position}} </view>
+        </view>
+
+        <view class="listSon">
+          <view>
+            <text class="num">{{item.power}}</text>
+            <text class="fen">分</text>
+          </view>
+          <view class="zonghe">综合实力</view>
+        </view>
+
+        <view class="listSon">
+          <view class="sonson">
+            <view class="wenzi2">场次</view>
+            <view class="progress">{{item.count}}</view>
+          </view>
+
+          <view class="sonson">
+            <view class="wenzi2">胜率</view>
+            <view class="progress">{{item.round}}%</view>
+          </view>
+
+          <view class="sonson">
+            <view class="wenzi2">总得分</view>
+            <view class="progress">{{item.score}}</view>
+          </view>
+
+          <view class="sonson">
+            <view class="wenzi2">总篮板</view>
+            <view class="progress">{{item.backboard}}</view>
+          </view>
+
+          <view class="sonson">
+            <view class="wenzi2">总助攻</view>
+            <view class="progress">{{item.assists}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+
+<!-- 经验值板块 -->
+<view wx:if="{{jingyan}}">
+  <view class="jyBox1" catchtap='goMyPage' id="{{userJ.userid}}">
+    <view class="jySon1">
+      <image style="height:50rpx;width:45rpx;margin-right:16rpx;" src="../image/no1.png" wx:if="{{userJ.rownum==1}}"></image>
+      <image style="height:50rpx;width:45rpx;margin-right:16rpx;" src="../image/no2.png" wx:if="{{userJ.rownum==2}}"></image>
+      <image style="height:50rpx;width:45rpx;margin-right:16rpx;" src="../image/no3.png" wx:if="{{userJ.rownum==3}}"></image>
+      <view class="jySonL">
+        <image class="head2" src="{{userJ.avatar?userJ.avatar:userInfo.avatarUrl}}"></image>
+        <view class="nickname2">{{userJ.nickName?userJ.nickName:userInfo.nickName}}
+          <view class="pai2">{{userJ.rownum?userJ.rownum:'暂无排名'}}</view>
+        </view>
+      </view>
+      <view class="jySonR">
+        <view style="float:right;display:flex;align-items: center;">
+          <image style="height:30rpx;width:30rpx;margin-right:22rpx;" src="../image/xingxing.jpg"></image>
+          <view style="font-size:36rpx;color:#c71111;font-weight:900;">{{userJ.experience?userJ.experience:0}}</view>
+        </view>
+        <text style="position:absolute;bottom:0;right:0;font-size:18rpx;">经验值</text> </view>
+    </view>
+    <view class="xian"></view>
+    <view class="jySon2">
+      <view>{{userJ.count?userJ.count:0}}
+        <text>场次</text>
+      </view>
+      <image src="../image/heidian.jpg" style="height:3rpx;width:3rpx;"></image>
+      <view>{{userJ.round?userJ.round:0}}%
+        <text>胜率</text>
+      </view>
+      <image src="../image/heidian.jpg" style="height:3rpx;width:3rpx;"></image>
+      <view>{{userJ.mvpCount?userJ.mvpCount:0}}
+        <text>mvp</text>
+      </view>
+      <image src="../image/heidian.jpg" style="height:3rpx;width:3rpx;"></image>
+      <view>{{userJ.score?userJ.score:0}}
+        <text>得分</text>
+      </view>
+      <image src="../image/heidian.jpg" style="height:3rpx;width:3rpx;"></image>
+      <view>{{userJ.backboard?userJ.backboard:0}}
+        <text>篮板</text>
+      </view>
+      <image src="../image/heidian.jpg" style="height:3rpx;width:3rpx;"></image>
+      <view>{{user.assists?user.assists:0}}
+        <text>助攻</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="cx1"></view>
+
+  <scroll-view class="list" scroll-y style="height:{{clientHeight?clientHeight+'px':'auto'}};" bindscrolltolower="lowerJ" wx:if="{{jyBox}}">
+    <block wx:for="{{dataJ}}" wx:key="{{item.userid}}">
+      <view class="jyBox" id="{{item.userid}}" catchtap='gohePage'>
+        <view class="jySon1">
+          <image class="jiangpai" src="../image/no1.png" wx:if="{{item.rownum==1}}"></image>
+          <image class="jiangpai" src="../image/no2.png" wx:if="{{item.rownum==2}}"></image>
+          <image class="jiangpai" src="../image/no3.png" wx:if="{{item.rownum==3}}"></image>
+          <view class="jySonL">
+            <image class="head2" src="{{item.avatar}}"></image>
+            <view class="nickname2">
+              <view class="username">{{item.nick}}</view>
+              <view class="pai2">NO.{{item.rownum}}</view>
+            </view>
+          </view>
+          <view class="jySonR">
+            <view style="float:right;display:flex;align-items: center;">
+              <image style="height:30rpx;width:30rpx;margin-right:22rpx;" src="../image/xingxing.jpg"></image>
+              <view style="font-size:36rpx;color:#c71111;font-weight:900;">{{item.experience}}</view>
+            </view>
+            <text style="position:absolute;bottom:0;right:0;font-size:18rpx;">经验值</text> </view>
+        </view>
+        <view class="xian"></view>
+        <view class="jySon2">
+          <view>{{item.count}}
+            <text>场次</text>
+          </view>
+          <image src="../image/heidian.jpg" style="height:3rpx;width:3rpx;"></image>
+          <view>{{item.round}}%
+            <text>胜率</text>
+          </view>
+          <image src="../image/heidian.jpg" style="height:3rpx;width:3rpx;"></image>
+          <view>{{item.mvpcount}}
+            <text>mvp</text>
+          </view>
+          <image src="../image/heidian.jpg" style="height:3rpx;width:3rpx;"></image>
+          <view>{{item.score}}
+            <text>得分</text>
+          </view>
+          <image src="../image/heidian.jpg" style="height:3rpx;width:3rpx;"></image>
+          <view>{{item.backboard}}
+            <text>篮板</text>
+          </view>
+          <image src="../image/heidian.jpg" style="height:3rpx;width:3rpx;"></image>
+          <view>{{item.assists}}
+            <text>助攻</text>
+          </view>
+        </view>
+      </view>
+
+    </block>
+  </scroll-view>
+
+</view>
+
+<!-- <view class="zanwugz" wx:if="{{zanwuguanzhu}}">
+  <image src="../image/nogz.jpg" style="width:342rpx;height:260rpx;"></image>
+  <view class="zanwu">暂无关注</view>
+</view> -->
+<!-- 占位图 -->
+<view class="noDataBox" wx:if="{{noData}}">
+  <image class="noData" src="/pages/image/nomyscore.png"></image>
+  <text class="noHas">暂时没有记录</text>
+</view>

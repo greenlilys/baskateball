@@ -1,0 +1,309 @@
+/* top */
+
+.top {
+  width: 100%;
+  height: 146rpx;
+  background: #000;
+}
+
+.info {
+  width: 670rpx;
+  height: 108px;
+  background: #fff;
+  border-radius: 10px;
+  margin: -56px auto 0px auto;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+
+.head image {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  margin: 0rpx 40rpx;
+}
+
+.detail {
+  height: 72px;
+  margin-right: 20rpx;
+}
+
+.detailson {
+  width: 95%;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detailson1 {
+  width: 205px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nickname {
+  font-size: 20px;
+  color: #131313;
+  white-space: nowrap;
+  width: 200rpx;
+  overflow: hidden;
+}
+
+.wz {
+  width: 60px;
+  height: 21px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  line-height: 21px;
+  background: #8900fe;
+  border-radius: 30px;
+}
+
+.sg {
+  font-size: 16px;
+  color: #c71111;
+}
+
+.dw {
+  font-size: 7px;
+  color: #131313;
+  margin-left: 5px;
+}
+
+.detailon {
+  width: 210px;
+  height: 24px;
+  display: flex;
+  margin-top: 10px;
+}
+
+.gz {
+  width: 100rpx;
+  height: 12px;
+  font-size: 12px;
+  line-height: 12px;
+  border-right: 1px solid #999;
+}
+
+.fs {
+  width: 60px;
+  height: 12px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 12px;
+}
+
+.nav {
+  width: 670rpx;
+  height: 112px;
+  margin: 20px auto;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow:0rpx 0rpx 40rpx #dddddd;
+  /* box-shadow: 0rpx 0rpx 90rpx #ddd; */
+}
+
+.navson {
+  width: 65px;
+  height: 61px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.tp {
+  width: 30px;
+  height: 28px;
+}
+
+.ssgl {
+  width: 38px;
+  height: 28px;
+}
+
+.xx {
+  font-size: 11px;
+  color: #000;
+}
+
+/* bottom */
+
+.bottom {
+  width: 670rpx;
+  height: 532rpx;
+  overflow: hidden;
+  margin: 0 auto 40rpx auto;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0rpx 0rpx 40rpx #ddd;
+}
+
+.bottomson {
+  width: 295px;
+  height: 44px;
+  border-bottom: 1px solid #eee;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottomson1 {
+  width: 295px;
+  height: 44px;
+  border-bottom: 1px solid #eee;
+  margin: 18px auto 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottomson4 {
+  width: 295px;
+  height: 44px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btp {
+  width: 21px;
+  height: 21px;
+}
+
+.sanjiao {
+  width: 7px;
+  height: 9px;
+}
+
+.wzbox {
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #000;
+  margin-left: 13px;
+  margin-right: 175px;
+  position: relative;
+}
+
+.loginBox {
+  position: absolute;
+  width: 625rpx;
+  height: 532rpx;
+  border-radius: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 200;
+  background: #fff;
+}
+
+.loginTop {
+  width: 625rpx;
+  height: 100rpx;
+  border-bottom: 1px solid #d2d3d5;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  color: #000;
+}
+
+.loginBody {
+  width: 625rpx;
+  height: 337rpx;
+  border-bottom: 1px solid #d2d3d5;
+}
+
+.loginBodyson1 {
+  width: 496rpx;
+  height: 208rpx;
+  margin: 0 auto;
+  border-bottom: 1px solid #d2d3d5;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.logo {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+
+.wenzi {
+  font-size: 28rpx;
+  color: #000;
+}
+
+.loginBodyson2 {
+  width: 466rpx;
+  height: 96rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dian {
+  width: 8rpx;
+  height: 8rpx;
+}
+
+.wenzi2 {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.bbtom {
+  width: 625rpx;
+  height: 90rpx;
+}
+
+.btn {
+  width: 100%;
+  height: 83rpx;
+  text-align: center;
+  line-height: 83rpx;
+  font-size: 32rpx;
+  border: none;
+}
+
+button::after {
+  border: none;
+}
+
+.mask {
+  height: 100%;
+  width: 100%;
+  background: #999;
+  opacity: 0.6;
+  position: absolute;
+  z-index: 100;
+}
+
+.hong {
+  width: 24rpx;
+  height: 24rpx;
+  background: #d80033;
+  text-align: center;
+  line-height: 24rpx;
+  font-size: 14rpx;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 20rpx;
+}

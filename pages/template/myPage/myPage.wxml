@@ -1,0 +1,108 @@
+<!-- 个人中心 -->
+
+<view class="top">
+    <view class="info">
+        <view class="head">
+            <!-- <image src="{{userInfo.avatarUrl?userInfo.avatarUrl:'../image/user.png'}}" class="head"></image> -->
+            <image src="{{data.avatar?data.avatar:userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="detail">
+            <view class="detailson1">
+                <text class="nickname">{{data.nickName?data.nickName
+:userInfo.nickName}}</text>
+
+            </view>
+            <view class="detailson">
+                <view>
+                    <text class="sg">{{data.height?data.height:height}}</text>
+                    <text class="dw">cm</text>
+                </view>
+                <view>
+                    <text class="sg">{{data.weight?data.weight:weight}}</text>
+                    <text class="dw">kg</text>
+                </view>
+                <view>
+                    <text class="sg">{{data.age?data.age:old}}</text>
+                    <text class="dw">AGE</text>
+                </view>
+            </view>
+            <view class="detailon">
+                <view class="weizhi">{{data.position ?data.position:sizhi}}
+                </view>
+                <view class="gz">{{data.followCount?data.followCount:gz}} 关注 </view>
+                <view class="fs">{{data.fancCount?data.fancCount:fs}} 粉丝</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!-- databox -->
+<view class="dataBox">
+    <view class="title">
+        <text>个人数据</text>
+    </view>
+    <view class="dataSon">
+        <view class="wenzi">综合实力</view>
+        <view class="shuzi">{{data.power?data.power:0}}</view>
+        <view class="jindutiao">
+            <progress class="progress" border-radius="5" percent="{{data.power?data.power:0}}" activeColor='#c71111' stroke-width='20' active/>
+        </view>
+    </view>
+</view>
+
+<!-- Score statistics -->
+<view class="coreBox">
+    <view class="title">
+        <text>得分统计</text>
+    </view>
+    <view class="coreSon">
+        <view class="sonson">
+            <view class="num">{{data.playNum?data.playNum:0}}</view>
+            <view class="wenzi2">场次</view>
+        </view>
+
+        <view class="sonson">
+            <view class="num">{{data.round?data.round:0}}</view>
+            <view class="wenzi2">胜率</view>
+        </view>
+
+        <view class="sonson">
+            <view class="num">{{data.countScore?data.countScore:0}}</view>
+            <view class="wenzi2">总得分</view>
+        </view>
+
+        <view class="sonson">
+            <view class="num">{{data.countBackboard?data.countBackboard:0}}</view>
+            <view class="wenzi2">总篮板</view>
+        </view>
+
+        <view class="sonson">
+            <view class="num">{{data.countAssists?data.countAssists:0}}</view>
+            <view class="wenzi2">总助攻</view>
+        </view>
+    </view>
+</view>
+
+<view class="heBox" catchtap="gomyFight">
+    <view class="heSon">
+        <view>我的战绩</view>
+        <view>
+            <image class="jiantou" src="../../image/sanjiao.jpg"></image>
+        </view>
+    </view>
+
+    <view class="heSon" catchtap='gogzList'>
+        <view>我的关注</view>
+        <view>
+            <image class="jiantou" src="../../image/sanjiao.jpg"></image>
+        </view>
+    </view>
+
+    <view class="heSon" catchtap='gofsList'>
+        <view>我的粉丝</view>
+        <view>
+            <image class="jiantou" src="../../image/sanjiao.jpg"></image>
+        </view>
+    </view>
+</view>
+

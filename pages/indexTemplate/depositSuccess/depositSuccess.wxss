@@ -1,0 +1,75 @@
+page {
+  background:#c71111;
+}
+
+.box {
+  width:670rpx;
+  height:1073rpx;
+  background:#fff;
+  margin:66rpx auto 20rpx auto;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.boxSon{
+  width:100%;
+  height:830rpx;
+  margin-top:188rpx;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center
+}
+
+.son1{
+  width:379rpx;
+  height:305rpx;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.duihao{
+  width:202rpx;
+  height:204rpx;
+}
+.son2{
+  width:100%;
+  height:132rpx;
+}
+
+.deposit2{
+  width:100%;
+  height:52rpx;
+}
+
+.proBox{
+  width:560rpx;
+  height:103rpx;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size:22rpx;
+}
+.proSon{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.proBox .proSon:nth-child(2){
+  color:#c71111;
+}
+.son3{
+  width:590rpx;
+  height:103rpx;
+  background:#006cff;
+  text-align:center;
+  line-height:103rpx;
+  font-size:30rpx;
+  color:#fff;
+  border-radius:10px;
+}

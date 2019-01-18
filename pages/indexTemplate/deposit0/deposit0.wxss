@@ -1,0 +1,94 @@
+/* top */
+.top{
+  width:100%;
+  height:432rpx;
+  background:#c71111;
+  overflow:hidden;
+}
+
+.title{
+  font-size:36rpx;
+  font-weight:900;
+  color:#fff;
+  margin-top:80rpx;
+  margin-left:40rpx;
+}
+
+.numbox{
+  margin-left:40rpx;
+  margin-top:70rpx;
+  color:#fff;
+}
+
+.num{
+  font-size:128rpx;
+}
+
+.dw{
+  font-size:36rpx;
+  margin-left:51rpx;
+}
+
+.box{
+  width:670rpx;
+  height:463rpx;
+  background:#fff;
+  margin:-50rpx auto 0 auto;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.boxSon{
+  margin-top:85rpx;
+  margin-left:40rpx;
+}
+
+.what{
+  font-size:40rpx;
+  color:#c71111;
+  margin-left:16rpx;
+  font-weight:900;
+}
+.wenhao{
+  width:33rpx;
+  height:33rpx;
+}
+
+.jindu{
+     width:100%;
+     height:52rpx;
+     margin-top:128rpx;
+}
+
+.boxSon2{
+  width:570rpx;
+  height:96rpx;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sonson{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size:22rpx;
+}
+
+.boxSon2 .sonson:nth-child(1){
+  color:#c71111;
+}
+
+.pay{
+  width:670rpx;
+  height:101rpx;
+  background:#006cff;
+  border-radius:10px;
+  text-align:center;
+  line-height:101rpx;
+  font-size:32rpx;
+  color:#fff;
+  margin:170rpx auto 40rpx auto;
+}

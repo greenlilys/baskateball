@@ -1,0 +1,43 @@
+<!-- top -->
+<view class="top"></view>
+<view class="interest">
+  <view class="title">我正在享有的权益</view>
+  <view class="content">
+      <!-- 占位图 -->
+      <view class="noDataBox">
+        <image class="noData" src="/pages/image/jiaoya.png"></image>
+        <text class="noHas">您已缴纳押金，可以直接缴纳报名费参赛了</text>
+      </view>
+    <!-- <view class="content1">
+      
+    </view> -->
+    <!-- <view class="content1">
+                          Lorem ipsum dolor sit amet,consectetur adipiscing elit.Aenean euismod bibendum laoreet.Proin gravi-da dolor sit amet lacus accumsan et viverra justo commodo.Proin sodales pulvinar sic tempor.Sociis natoque penatibus et magnis dis parturient montes,nascetur ridiculus mus.Nam fermentum,nulla luctus pharetra vulputate,felis tellus mollis orci,sed rhon-cus pronin sapien nunc accuan eget.
+                   </view>
+                    <view class="content1">
+                          Lorem ipsum dolor sit amet,consectetur adipiscing elit.Aenean euismod bibendum laoreet.Proin gravi-da dolor sit amet lacus accumsan et viverra justo commodo.Proin sodales pulvinar sic tempor.Sociis natoque penatibus et magnis dis parturient montes,nascetur ridiculus mus.Nam fermentum,nulla luctus pharetra vulputate,felis tellus mollis orci,sed rhon-cus pronin sapien nunc accuan eget.
+                   </view>
+                    <view class="content1">
+                          Lorem ipsum dolor sit amet,consectetur adipiscing elit.Aenean euismod bibendum laoreet.Proin gravi-da dolor sit amet lacus accumsan et viverra justo commodo.Proin sodales pulvinar sic tempor.Sociis natoque penatibus et magnis dis parturient montes,nascetur ridiculus mus.Nam fermentum,nulla luctus pharetra vulputate,felis tellus mollis orci,sed rhon-cus pronin sapien nunc accuan eget.
+                   </view> -->
+    <view class="bkdeposit" catchtap='bkdeposit'>
+      <image src="../../image/sanjiao.jpg" class="jiantou"></image>
+      <view>退押金</view>
+    </view>
+  </view>
+</view>
+
+<view class="mask" wx:if="{{mask}}"></view>
+<view class="modal" wx:if="{{modal}}">
+  <image src="../../image/backdeposit.jpg" class="modal1"></image>
+  <view class="modal2">
+    你目前拥有{{deposit}}元押金特权
+  </view>
+  <view class="modal3">
+    退还押金后将无法线上约球了
+  </view>
+  <view class="control">
+    <view class="backmoney" catchtap='backbtn'>退押金</view>
+    <view class="stay" catchtap='stay'>留下来</view>
+  </view>
+</view>

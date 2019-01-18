@@ -1,0 +1,56 @@
+page{
+  background:#006cff;
+}
+
+.content{
+  width:670rpx;
+  height:1074rpx;
+  background:#fff;
+  margin:63rpx  auto 0 auto;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.content1{
+  width:386rpx;
+  height:375rpx;
+  margin:280rpx auto 251rpx auto;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.duihao{
+  width:202rpx;
+  height:210rpx;
+}
+
+.wz{
+  width:100%;
+  height:40rpx;
+  font-size:40rpx;
+  text-align:center;
+  line-height:40rpx;
+}
+
+.wz2{
+  width:100%;
+  height:28rpx;
+  font-size:28rpx;
+  color:#888888;
+   text-align:center;
+  line-height:28rpx;
+}
+
+.backindex{
+  width:590rpx;
+  height:102rpx;
+  margin:0 auto;
+  font-size:32rpx;
+  color:#fff;
+  text-align:center;
+  line-height:102rpx;
+  background:#006cff;
+  border-radius:10px;
+}

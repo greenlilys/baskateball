@@ -1,0 +1,43 @@
+page{
+  background:#006cff;
+}
+.contentBox{
+  width:670rpx;
+  height:1075rpx;
+  background:#fff;
+  margin:70rpx auto 20rpx auto;
+  border-radius:10rpx;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.duihao{
+  width:202rpx;
+  height:202rpx;
+  margin-top:200rpx;
+}
+
+.wenzi{
+    font-size:36rpx;
+    margin-top:56rpx;
+    margin-bottom:45rpx;
+}
+
+.wenzi2{
+  font-size:26rpx;
+  color:#999;
+  margin-bottom:258rpx;
+}
+
+.checkxz{
+  width:590rpx;
+  height:100rpx;
+  background:#006cff;
+  border-radius:10rpx;
+  text-align:center;
+  line-height:100rpx;
+  font-size:30rpx;
+  color:#fff;
+}

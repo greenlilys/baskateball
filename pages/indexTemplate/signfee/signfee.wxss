@@ -1,0 +1,194 @@
+.top{
+  width:100%;
+  height:436rpx;
+  background:#c71111;
+  overflow:hidden;
+}
+
+.title1{
+  margin-left:40rpx;
+  margin-top:50rpx;
+  color:#fff;
+  font-size:36rpx;
+}
+
+.num{
+  margin-left:40rpx;
+  font-size: 60rpx;
+}
+
+.dw{
+  font-size:26rpx;
+  margin-left:15rpx;
+}
+
+.title2{
+  margin-left:40rpx;
+  margin-top:10rpx;
+  color:#fff;
+  font-size:36rpx;
+}
+
+.box{
+  width:670rpx;
+  height:463rpx;
+  background:#fff;
+  margin:-167rpx auto 0 auto;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.boxSon{
+  margin-top:85rpx;
+  margin-left:40rpx;
+}
+
+.what{
+  font-size:40rpx;
+  color:#000;
+  margin-left:16rpx;
+  font-weight:900;
+}
+.wenhao{
+  width:33rpx;
+  height:33rpx;
+}
+
+.jindu{
+     width:100%;
+     height:52rpx;
+     margin-top:128rpx;
+}
+
+.boxSon2{
+  width:570rpx;
+  height:96rpx;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sonson{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size:22rpx;
+}
+
+.boxSon2 .sonson:nth-child(2){
+  color:#c71111;
+}
+
+.pay{
+  width:670rpx;
+  height:101rpx;
+  background:#006cff;
+  border-radius:10px;
+  text-align:center;
+  line-height:101rpx;
+  font-size:32rpx;
+  color:#fff;
+  margin:283rpx auto 40rpx auto;
+}
+
+.mask{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  opacity:0.6;
+  background:#787a7b;
+}
+
+.modal{
+  width:592rpx;
+  height:628rpx;
+  background:#fff;
+  border-radius:10px;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  z-index:100;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gantan{
+  width:202rpx;
+  height:205rpx;
+}
+
+.if{
+  font-size:40rpx;
+  color:#000;
+}
+
+.reber{
+  font-size:26rpx;
+  color:#999;
+}
+
+.btnBox{
+  width:522rpx;
+  height:60rpx;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn1{
+  width:248rpx;
+  height:56rpx;
+  font-size:22rpx;
+  border:1px solid #000;
+  border-radius:10px;
+  text-align:center;
+  line-height:56rpx;
+}
+
+.btn2{
+  width:248rpx;
+  height:56rpx;
+  font-size:22rpx;
+  border-radius:10px;
+  text-align:center;
+  line-height:56rpx;
+  background:#006cff;
+  color:#fff;
+}
+
+.btn3{
+  width:248rpx;
+  height:56rpx;
+  font-size:22rpx;
+  border-radius:10px;
+  text-align:center;
+  line-height:56rpx;
+  background:#ccc;
+  color:#fff;
+}
+
+.modal2{
+  width:592rpx;
+  height:628rpx;
+  background:#fff;
+  border-radius:10px;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  z-index:100;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

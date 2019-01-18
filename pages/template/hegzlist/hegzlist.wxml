@@ -1,0 +1,72 @@
+<!-- listBox -->
+
+<scroll-view scroll-y="true" style="height: 1206rpx;" wx:if="{{scroll}}" bindscrolltolower="lower">
+  <block wx:for="{{data}}" wx:key="{{item.userid}}">
+    <view class="listBox" catchtap='gohePage' id="{{item.userid}}">
+      <view class="listSon">
+        <image src="{{item.avatar?item.avatar:userInfo.avatarUrl}}" class="head"></image>
+        <text class="nickname">{{item.nickName?item.nickName:userInfo.nickName}}</text>
+        <view class="weizhi">{{item.position?item.position:'小前锋'}} </view>
+      </view>
+
+      <view class="listSon">
+        <view>
+          <text class="num">{{item.power}}</text>
+          <text class="fen">分</text>
+        </view>
+        <view class="zonghe">综合实力</view>
+      </view>
+
+      <view class="listSon">
+        <view class="sonson">
+          <view class="wenzi2">场次</view>
+          <view class="progress">
+            <progress percent="{{item.countMat}}" stroke-width="15" activeColor="#000" active/>
+            <view class="shu">{{item.countMat}}</view>
+          </view>
+        </view>
+
+        <view class="sonson">
+          <view class="wenzi2">胜率</view>
+          <view class="progress">
+            <progress percent="{{item.round}}" stroke-width="15" activeColor="#000" active/>
+            <view class="shu">{{item.round}}%</view>
+          </view>
+        </view>
+
+        <view class="sonson">
+          <view class="wenzi2">总得分</view>
+          <view class="progress">
+            <progress percent="{{item.sumScore}}" stroke-width="15" activeColor="#000" active/>
+            <view class="shu">{{item.sumScore}}</view>
+          </view>
+        </view>
+
+        <view class="sonson">
+          <view class="wenzi2">总篮板</view>
+          <view class="progress">
+            <progress percent="{{item.sumBck}}" stroke-width="15" activeColor="#000" active/>
+            <view class="shu">{{item.sumBck}}</view>
+          </view>
+        </view>
+
+        <view class="sonson">
+          <view class="wenzi2">总助攻</view>
+          <view class="progress">
+            <progress percent="{{item.sumAss}}" stroke-width="15" activeColor="#000" active/>
+            <view class="shu">{{item.sumAss}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </block>
+
+</scroll-view>
+
+<view class="nogz" wx:if="{{nogz}}">
+  <view class="nogzSon">
+    <image class="tupian" src="../../image/nogz.jpg"></image>
+    <view class="wenzi3">暂无关注</view>
+  </view>
+</view>

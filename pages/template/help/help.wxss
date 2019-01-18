@@ -1,0 +1,28 @@
+page{
+  background:#f1f5f8;
+}
+.content{
+  width:672rpx;
+  background:#fff;
+  border-radius:10px;
+  margin:33rpx auto 20rpx auto;
+  overflow:hidden;
+  padding-bottom: 50rpx;
+  box-shadow:0rpx 0rpx 40rpx #dddddd;
+}
+
+.box{
+    width:588rpx;
+    margin:50rpx auto 0 auto;
+}
+
+.title{
+  font-size:26rpx;
+  color:#000;
+  font-weight:900;
+}
+
+.body{
+  font-size:26rpx;
+  color:#000;
+}

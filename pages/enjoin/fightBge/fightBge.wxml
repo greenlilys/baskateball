@@ -1,0 +1,12 @@
+<image class="fightbg" src="../../image/fightBge.jpg" style="width:750rpx;height:1197rpx;"></image>
+
+<view class="box">
+     <view class="boxSon">
+            <image class="user" src="../../image/user.jpg"></image>
+            <view class="zhan">
+                当前战力：
+                <text class="num">88</text>
+            </view>
+            <image class="xiaozi" src="../../image/xiaozi.jpg"></image>
+     </view>
+</view>

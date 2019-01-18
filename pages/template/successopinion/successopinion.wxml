@@ -1,0 +1,9 @@
+<!-- top -->
+<view class="content">
+         <view class="content1">
+                 <image src="../../image/duihao.jpg" class="duihao"></image>
+                 <view class="wz">反馈成功</view>
+                 <view class="wz2">感谢您提出的宝贵建议</view><view class="wz3">我们会继续努力</view>
+         </view>
+         <view class="backindex" catchtap='backindex'>返回首页</view>
+</view>

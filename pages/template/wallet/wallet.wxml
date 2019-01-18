@@ -1,0 +1,30 @@
+<!-- top -->
+
+<view class='top'>
+    <view class="zhye">
+        账户余额（星钻）：
+    </view>
+    <view class="num">
+        <view style=" float:left;">{{startdrill}}</view>
+        <view class="zuan">钻</view>
+    </view>
+</view>
+<!-- 充值box -->
+<view class="czbox">
+    <view class="czson czson1" catchtap='gochongzhi'>
+        <view>充值</view>
+        <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+    </view>
+
+    <view class="czson czson2" catchtap="gobaozhengjin">
+        <view>押金</view>
+        <view class="jiaona" wx:if="{{isBond==1}}">已缴纳押金</view>
+        <view class="jiaona" wx:if="{{isBond==0}}">未缴纳押金</view>
+        <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+    </view>
+
+    <view class="czson" catchtap="goxiaofeijilu">
+        <view>消费记录</view>
+        <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+    </view>
+</view>

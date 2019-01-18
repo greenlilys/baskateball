@@ -1,0 +1,431 @@
+/* top */
+
+.top {
+  width: 100%;
+  height: 98rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 800;
+  text-align: center;
+}
+
+.zhan {
+  font-size: 30rpx;
+  font-weight: 900;
+  position: relative;
+  text-align: center;
+  width: 50%;
+  line-height: 94rpx;
+}
+
+.zhan1 {
+  position: relative;
+  color: #c71111;
+  line-height: 98rpx;
+  font-weight: bold;
+  font-size: 30rpx;
+  width: 50%;
+}
+
+.zhan2 {
+  position: relative;
+  color: #c71111;
+  line-height: 98rpx;
+  font-weight: bold;
+  font-size: 30rpx;
+  width: 50%;
+}
+
+.hx {
+  border: 3rpx solid #c71111;
+  position: absolute;
+  width: 100%;
+}
+
+.hx1 {
+  width: 100%;
+  border: 3rpx solid #c71111;
+  position: absolute;
+}
+
+.totalBox {
+  width: 672rpx;
+  height: 266rpx;
+  background: #fff;
+  margin: 140rpx auto 40rpx auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0rpx 0rpx 40rpx #ddd;
+}
+
+.totalSon {
+  height: 34rpx;
+  font-size: 34rpx;
+  color: #000;
+  border-left: 6rpx solid #c71111;
+  line-height: 34rpx;
+  margin-left: 40rpx;
+  margin-top: 40rpx;
+}
+
+.totalSon text {
+  margin-left: 36rpx;
+  font-weight: bold;
+}
+
+.totalSon2 {
+  width: 587rpx;
+  height: 40rpx;
+  margin-top: 34rpx;
+  margin-left: 40rpx;
+  line-height: 40rpx;
+  display: flex;
+}
+
+.num {
+  font-size: 48rpx;
+  color: #c71111;
+  font-weight: 900;
+  margin-left: 43rpx;
+}
+
+.progress {
+  width: 459rpx;
+  margin-left: 42rpx;
+}
+
+.show {
+  width: 132rpx;
+  height: 42rpx;
+  background: #c71111;
+  text-align: center;
+  line-height: 42rpx;
+  font-size: 24rpx;
+  color: #fff;
+  border-radius: 50rpx;
+  float: right;
+  margin-top: 40rpx;
+  margin-right: 40rpx;
+}
+
+.fightBox {
+  width: 670rpx;
+  height: 297rpx;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0 auto 40rpx auto;
+  overflow: hidden;
+  box-shadow: 0rpx 0rpx 40rpx #ddd;
+}
+
+.title {
+  height: 34rpx;
+  font-size: 34rpx;
+  line-height: 34rpx;
+  border-left: 6rpx solid #c71111;
+  margin-top: 40rpx;
+  margin-left: 40rpx;
+}
+
+.wz {
+  margin-left: 35rpx;
+  font-weight: bold;
+}
+
+.dataBox {
+  width: 592rpx;
+  height: 101rpx;
+  margin: 58rpx auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dataSon {
+  width: 100rpx;
+  height: 100rpx;
+  background: #000;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Num {
+  font-size: 36rpx;
+  font-weight: 600;
+  height: 50rpx;
+}
+
+.dw {
+  font-size: 18rpx;
+  margin-top: -30rpx;
+}
+
+.bottomBox {
+  width: 670rpx;
+  height: 297rpx;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0 auto 20rpx auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0rpx 0rpx 40rpx #ddd;
+}
+
+.jibai {
+  width: 150rpx;
+  height: 186rpx;
+}
+
+.box {
+  font-size: 26rpx;
+  line-height: 50rpx;
+}
+
+.percent {
+  font-size: 36rpx;
+  color: #c71111;
+}
+
+.content {
+  width: 100%;
+  background: #f1f5f8;
+}
+
+.toptop {
+  width: 670rpx;
+  height: 101rpx;
+  margin: 0 auto;
+  font-size: 23rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contSon {
+  width: 670rpx;
+  height: 121rpx;
+  background: #fff;
+  margin: 0 auto 20rpx auto;
+  border-radius: 10rpx;
+  display: flex;
+  position: relative;
+}
+
+.ifBox {
+  width: 121rpx;
+  height: 121rpx;
+  background: #999;
+  color: #fff;
+  font-size: 36rpx !important;
+  text-align: center;
+  line-height: 121rpx;
+  border-radius: 10rpx;
+  /* font-weight: bold; */
+}
+
+.contSon view {
+  font-size: 29rpx;
+}
+
+.contSon .rq {
+  font-size: 18rpx;
+}
+
+.contSon .lb {
+  color: #c71111;
+  width: 111rpx;
+  height: 20rpx;
+  text-align: center;
+  line-height: 20rpx;
+  border-right: 2rpx solid #000;
+  border-left: 2rpx solid #000;
+  font-size: 36rpx;
+}
+
+.contSon .bcore {
+  color: #000;
+  font-weight: 900;
+  font-size: 36rpx;
+}
+
+.contSon .core {
+  color: #c71111;
+  margin-left: 30rpx;
+  font-size: 36rpx;
+}
+
+.contSon .zg {
+  color: #c71111;
+  font-size: 36rpx;
+}
+
+.contSon1 {
+  width: 525rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 10rpx;
+  box-shadow: 0rpx 0rpx 40rpx #ddd;
+}
+
+.winBox {
+  width: 121rpx;
+  height: 121rpx;
+  /* background: linear-gradient(to right, yellow , red); */
+  background: #c71111;
+  color: #fff;
+  font-size: 36rpx !important;
+  text-align: center;
+  line-height: 121rpx;
+  border-radius: 10rpx;
+}
+
+.mvp {
+  width: 43rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.wishBox {
+  width: 670rpx;
+  height: 121rpx;
+  background: #2783ff;
+  margin: 0 auto 20rpx auto;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.tiao {
+  width: 36rpx;
+  height: 45rpx;
+}
+
+.loginBox {
+  position: absolute;
+  width: 625rpx;
+  height: 532rpx;
+  border-radius: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 200;
+  background: #fff;
+}
+
+.loginTop {
+  width: 625rpx;
+  height: 100rpx;
+  border-bottom: 1px solid #d2d3d5;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  color: #000;
+}
+
+.loginBody {
+  width: 625rpx;
+  height: 337rpx;
+  border-bottom: 1px solid #d2d3d5;
+}
+
+.loginBodyson1 {
+  width: 496rpx;
+  height: 208rpx;
+  margin: 0 auto;
+  border-bottom: 1px solid #d2d3d5;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.logo {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+
+.wenzi {
+  font-size: 28rpx;
+  color: #000;
+}
+
+.loginBodyson2 {
+  width: 466rpx;
+  height: 96rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dian {
+  width: 8rpx;
+  height: 8rpx;
+}
+
+.wenzi2 {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.bbtom {
+  width: 625rpx;
+  height: 90rpx;
+  display: flex;
+}
+
+.btn {
+  width: 100%;
+  height: 83rpx;
+  text-align: center;
+  line-height: 83rpx;
+  font-size: 32rpx;
+  border: none;
+}
+
+button::after {
+  border: none;
+}
+
+.mask {
+  height: 100%;
+  width: 100%;
+  background: #999;
+  opacity: 0.6;
+  position: absolute;
+  z-index: 100;
+}
+
+.lianWin {
+  justify-content: center;
+  align-items: center;
+  font-size:36rpx;
+}
+
+.winLeft {
+  width: 60rpx;
+  height: 66rpx;
+  margin-right: 20rpx;
+}
+
+.winRight {
+  width: 60rpx;
+  height: 66rpx;
+  margin-left: 20rpx;
+}

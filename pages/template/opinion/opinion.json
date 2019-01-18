@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "意见与反馈",
+    "usingComponents": {
+        "back-index": "../../components/backindex/backindex"
+    }
+}

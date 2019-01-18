@@ -1,0 +1,200 @@
+page{width:100%;height:100%;}
+.detail1{
+  width:670rpx;
+  height:350rpx;
+  background:#fff;
+  margin:30rpx auto 0 auto;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0rpx 0rpx 40rpx #dddddd;
+}
+
+.sonbox{
+  width:590rpx;
+  height:88rpx;
+  margin:36rpx auto 0 auto;
+  display:flex;
+  justify-content: space-between;
+  line-height:88rpx;
+
+}
+.tx{
+  font-size:28rpx;
+}
+.txbox{
+  display:flex;
+  align-items: center
+}
+.txtp{
+  width:61rpx;
+  height:61rpx;
+  margin-right:20rpx;
+}
+
+.sanjiao{
+  width:12rpx;
+  height:20rpx;
+}
+
+.sonbox1{
+  width:590rpx;
+  height:88rpx;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  line-height:88rpx;
+  border-top:2rpx solid #eee;
+  border-bottom:2rpx solid #eee;
+}
+
+.nick{
+  font-size:28rpx;
+  color:#999;
+  margin-right:20rpx;
+}
+
+.nickInput{
+  font-size:28rpx;
+  color:#999;
+  width:130rpx;
+}
+
+.sonbox2{
+  width:590rpx;
+  height:88rpx;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  line-height:88rpx;
+}
+
+.sizhi{
+  width:120rpx;
+  height:40rpx;
+  background:#8a00ff;
+  text-align:center;
+  line-height:40rpx;
+  font-size:24rpx;
+  color:#fff;
+  border-radius:10px;
+  margin-right:20rpx;
+}
+
+#detail2{
+  width:670rpx;
+  background:#fff;
+  margin:28rpx auto 0 auto;
+  padding:36rpx 0;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0rpx 0rpx 40rpx #dddddd;
+}
+
+#detail2 .sonson{
+  width:590rpx;
+  height:88rpx;
+ margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  line-height:88rpx;
+ border-top:solid 1rpx #eee;
+}
+#detail2 .firstbox{border-top:none;}
+
+
+.detail3{
+  width:670rpx;
+  height:172rpx;
+  margin:30rpx auto 0 auto;
+  border-radius:10rpx;
+  background:#fff;
+  box-shadow:0rpx 0rpx 40rpx #dddddd;
+}
+
+.cellbox{
+  width:590rpx;
+  height:172rpx;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.keepbtn{
+  width:670rpx;
+  height:101rpx;
+  margin:29rpx auto 70rpx auto;
+  background:#006cff;
+  border-radius:10px;
+  text-align:center;
+  line-height:101rpx;
+  color:#fff;
+  font-size:36rpx;
+  box-shadow:0rpx 10rpx 40rpx #8fbeff;
+}
+.info text{
+  font-size:28rpx;
+  color:#999;
+  margin-right:20rpx;
+}
+.citypicker {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -245px;
+  opacity: 0;
+  z-index: 4;
+  background-color: #fff;
+  transition: all .4s ease-in-out;
+}
+
+.city-show {
+  opacity: 1;
+  bottom: 0;
+  transition: all .41s ease-in-out;
+}
+
+.cityheader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -45px;
+  display: flex;
+  background-color: #eee;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #ff5a60;
+  font-weight: bold;
+}
+
+.cityheader view {
+  flex-grow: 1;
+}
+
+.picker-item {
+  line-height: 40px;
+  text-align: center;
+}
+
+.mask {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  top: 0;
+  bottom:0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.5); 
+  transition: all 0.3s ease-in;
+}
+
+.tanchuang{width:590rpx;height:580rpx;background:#fff;border-radius:20rpx;padding-top:90rpx;box-sizing: border-box;position:absolute;left:0;right:0;margin: auto;bottom:640rpx;}
+.infostar,.starbox{width:138rpx;height:116rpx;}
+.starbox{margin:0 auto;}
+.infotitle{font-size:36rpx;text-align:center;color:#000;margin-top:50rpx;margin-bottom:20rpx;}
+.infofir,.infotime{font-size:30rpx;color:#666;text-align:center;line-height:44rpx;}
+.btnbox{width:520rpx;margin:60rpx auto 0 auto;display:flex;flex-direction:row;justify-content:space-between;}
+.btncancle,.btnsure{width:250rpx;height:60rpx;line-height:60rpx;border-radius:10rpx;text-align:center;font-size:24rpx;}
+.btncancle{border:1rpx solid #000;color:#000;}
+.btnsure{background:#006cff;color:#fff;border:1rpx solid #006cff;}
+

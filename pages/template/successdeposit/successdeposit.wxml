@@ -1,0 +1,9 @@
+<!-- top -->
+<view class="content">
+         <view class="content1">
+                 <image src="../../image/duihao.jpg" class="duihao"></image>
+                 <view class="wz">申请退款成功</view>
+                 <view class="wz2">预计将在3个工作日返回原帐户</view>
+         </view>
+         <view class="backindex" catchtap='backindex'>返回首页</view>
+</view>

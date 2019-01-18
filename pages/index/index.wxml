@@ -1,0 +1,149 @@
+<view class="loginBox" wx:if="{{loginBox}}">
+    <view class="loginTop">微信授权</view>
+    <view class="loginBody">
+        <view class="loginBodyson1">
+            <image class="logo" src="../image/logo.jpg"></image>
+            <view class="wenzi">BBALL申请获得以下权限：</view>
+        </view>
+        <view class="loginBodyson2">
+            <image class="dian" src="../image/dian.jpg"></image>
+            <view class="wenzi2">获得你的公开信息 （昵称，头像等）</view>
+        </view>
+
+    </view>
+    <view class="bbtom">
+        <button class='btn' type='primary' style="background:#fff;color:#000;" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">授权登陆</button>
+    </view>
+</view>
+
+<view class="mask" wx:if="{{mask}}"></view>
+<!-- top -->
+<view class="top">
+    <view class="topSon">
+        <view bindtap="nearby" style="position:relative;width:50%;">
+            <form bindsubmit="pushFormSubmit" report-submit='true'>
+                <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:98rpx; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+                <view class="{{text1?'text1':'normal'}}" style="width:100%">
+                    附近的比赛
+                    <view class="hx1" wx:if="{{hx1}}"></view>
+                </view>
+            </form>
+        </view>
+        <view bindtap="myjoin" style="position:relative;width:50%;">
+            <form bindsubmit="pushFormSubmit" report-submit='true'>
+                <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:98rpx; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+                <view class="{{text2?'text2':'normal'}}" style="width:100%">
+                    我参加的
+                    <view class="hx2" wx:if="{{hx2}}"></view>
+                </view>
+            </form>
+        </view>
+    </view>
+</view>
+
+<scroll-view class="list" scroll-y style="height: {{windowHeight? (windowHeight - 70)+'px':'auto'}}" bindscrolltolower="lower" wx:if="{{fightBox}}">
+    <block wx:for="{{data}}" wx:key="{{item.mid}}">
+        <view class="fightBox" bindtap="godetail" id="{{item.mid + item.STATUS}}">
+            <view class="titlebox">
+                <view class="juli">据您{{item.juli}}千米</view>
+                <view class="bmz" wx:if="{{item.STATUS=='报名中'}}">报名中</view>
+                <view class="yiman" wx:if="{{item.STATUS=='已满'}}">已满</view>
+                <view class="yijs" wx:if="{{item.STATUS=='已结束'}}">已结束</view>
+                <view class="yiqx" wx:if="{{item.STATUS=='已取消'}}">已取消</view>
+                <view class="yijinxing" wx:if="{{item.STATUS=='进行中'}}">进行中</view>
+            </view>
+            <view class="title">
+                {{item.mName}}
+            </view>
+            <view class="timeBox">
+                <image class="biao" src="../image/biao.jpg"></image>
+                <view class="time">
+                    <text>{{item.mDate}} </text>
+                </view>
+            </view>
+            <view class="timeBox">
+                <image class="weizhi" src="../image/dingwei.jpg"></image>
+                <view class="time">
+                    {{item.mPlace}}
+                </view>
+            </view>
+            <view class="timeBox">
+                <image class="weizhi" src="../image/user.jpg"></image>
+                <view class="time">
+                    {{item.count}}人已报名
+                </view>
+            </view>
+            <view class="headBox">
+                <image class="head" src="{{item.avatar[0]}}"></image>
+                <image class="head" src="{{item.avatar[1]}}"></image>
+                <image class="head" src="{{item.avatar[2]}}"></image>
+                <image class="head" src="{{item.avatar[3]}}"></image>
+            </view>
+        </view>
+
+    </block>
+</scroll-view>
+
+
+<!-- 我参加的 -->
+<scroll-view class="list" scroll-y style="height: {{windowHeight?windowHeight+'px':'auto'}};" bindscrolltolower="lowerMy" wx:if="{{myjoin}}">
+    <block wx:for="{{myData}}" wx:key="{{item.mid}}">
+        <view class="fightBox" id="{{item.mid + item.STATUS}}" catchtap="godetail" data-index="{{index}}">
+            <view class="titlebox">
+                <view class="juli">据您{{item.juli}}千米</view>
+                <view class="bmz" wx:if="{{item.STATUS=='报名中'}}">报名中</view>
+                <view class="yiman" wx:if="{{item.STATUS=='已满'}}">已满</view>
+                <view class="yijs" wx:if="{{item.STATUS=='已结束'}}">已结束</view>
+                <view class="yiqx" wx:if="{{item.STATUS=='已取消'}}">已取消</view>
+                <view class="yijinxing" wx:if="{{item.STATUS=='进行中'}}">进行中</view>
+            </view>
+            <view class="title">
+                {{item.mName}}
+            </view>
+
+
+            <view class="timeBox">
+                <image class="biao" src="../image/biao.jpg"></image>
+                <view class="time">
+                    <text>{{item.mDate}}</text>
+                </view>
+            </view>
+
+            <view class="timeBox">
+                <image class="weizhi" src="../image/dingwei.jpg"></image>
+                <view class="time">
+                    {{item.mPlace}}
+                </view>
+            </view>
+
+            <view class="timeBox">
+                <image class="weizhi" src="../image/user.jpg"></image>
+                <view class="time">
+                    {{item.count}}人已报名
+                </view>
+            </view>
+            <view class="headBox">
+                <image class="head" src="{{item.avatar[0]}}"></image>
+                <image class="head" src="{{item.avatar[1]}}"></image>
+                <image class="head" src="{{item.avatar[2]}}"></image>
+                <image class="head" src="{{item.avatar[3]}}"></image>
+            </view>
+        </view>
+    </block>
+</scroll-view>
+
+<!-- 占位图 -->
+<view class="noDataBox" wx:if="{{noData}}">
+    <image class="noData" src="/pages/image/nofight2.png"></image>
+    <text class="noHas">暂时没有记录</text>
+</view>
+
+<!-- 广告弹窗 -->
+<view class="banner" wx:if="{{isBanner}}" catchtouchmove="preventTouchMove">
+    <image src="/pages/image/banner.jpg" class="img" mode="widthFix" bindtap="enlarge">
+        <view wx:if="{{isClose}}" class="countDown">{{num}}
+            <text class="minutes">s</text>
+        </view>
+        <image wx:else src="/pages/image/close.png" catchtap="closeBanner" class="closeImg"></image>
+    </image>
+</view>

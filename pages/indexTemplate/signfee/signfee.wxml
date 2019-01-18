@@ -1,0 +1,70 @@
+<!-- top -->
+<view class="top">
+        <view class="title1">
+              <text>缴纳报名费</text>
+              <text class="num">{{num}}<text class="dw">星钻</text></text>
+        </view>
+
+        <view class="title2">
+              <text>我的星钻</text>
+              <text class="num">{{myNum}}<text class="dw">星钻</text></text>
+        </view>
+</view>
+
+<view class="box">
+      <view class="boxSon">
+              <image class="wenhao" src="../../image/wenhao.jpg"></image>
+              <text class="what">什么是报名费</text>
+      </view>
+      <image class="jindu" src="../../image/baoming.jpg"></image>
+      <view class="boxSon2">
+             <view class="sonson">
+                    <view>Step.1</view>
+                    <view>缴纳押金</view>
+             </view>
+
+             <view class="sonson">
+                    <view>Step.2</view>
+                    <view>缴纳报名费</view>
+             </view>
+
+              <view class="sonson">
+                    <view>Step.3</view>
+                    <view>报名成功</view>
+             </view>
+      </view>
+</view>
+
+<view class="pay" catchtap='pay'>缴纳报名费</view>
+
+<view class="mask" wx:if="{{mask}}"></view>
+<view class="modal" wx:if="{{modal}}">
+       <image class="gantan" src="../../image/gantanhao.jpg"></image>
+       <view class="if">您是否确定报名参赛</view>
+       <view class="reber">记得准时来参加哦</view>
+       <view class="btnBox">
+               <view class="btn1" catchtap='cancel'>
+                      取消
+               </view>
+               <view class="btn2" catchtap='confirm' wx:if="{{confirm}}">
+                     确定
+               </view>
+               <view class="btn3" wx:else>
+                     确定
+               </view>
+       </view>
+</view>
+
+<view class="modal2" wx:if="{{modal2}}">
+       <image class="gantan" src="../../image/gantanhao.jpg"></image>
+       <view class="if">星钻余额不足了</view>
+       <view class="reber">小充一下吧</view>
+       <view class="btnBox">
+               <view class="btn1" catchtap="btn1">
+                      取消
+               </view>
+               <view class="btn2" catchtap="btn2">
+                     充值
+               </view>
+       </view>
+</view>

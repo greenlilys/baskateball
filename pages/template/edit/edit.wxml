@@ -1,0 +1,165 @@
+<!-- top -->
+
+<scroll-view scroll-y style="width:100%;height:100%;">
+<view class="detail1">
+    <view class="sonbox">
+        <view class="tx">
+            头像
+        </view>
+        <view class="txbox">
+            <image class="txtp" src="{{userDetail.avatar?userDetail.avatar:''}}" mode="aspectFill"></image>
+        </view>
+    </view>
+
+    <view class="sonbox1">
+        <view class="tx">
+            昵称
+        </view>
+        <view class="txbox">
+            <input class="nickInput" value="{{userDetail.nickName ? userDetail.nickName : ''}}" bindinput='nickInput' />
+            <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+        </view>
+    </view>
+
+    <picker value="{{value}}" bindchange="choosesizhi" range="{{arraysizhi}}" range-key="{{'name'}}">
+        <view class="sonbox2">
+            <view class="tx">
+                司职
+            </view>
+            <view class="txbox">
+                <view class="sizhi"> {{userDetail.position ? userDetail.position : '未知'}}</view>
+                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+            </view>
+        </view>
+    </picker>
+</view>
+
+<view id="detail2">
+    <picker value="{{index}}" range="{{sexArr}}" bindchange="setSex">
+        <view class="sonson firstbox">
+            <view class="tx">
+                性别
+            </view>
+            <view class="txbox">
+                <text class="nick">{{sex}}</text>
+                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+            </view>
+        </view>
+    </picker>
+    <picker mode="date" value="{{value}}" start="1950-01-01" end="2018-12-31" fields="day" bindchange="chooseOld">
+        <view class="sonson">
+            <view class="tx">
+                年龄
+            </view>
+            <view class="txbox">
+                <text class="nick">{{userDetail.age?userDetail.age:'添加'}}</text>
+                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+            </view>
+        </view>
+    </picker>
+
+    <picker value="{{value}}" bindchange="chooseHeight" range="{{arrayHeight}}">
+        <view class="sonson">
+            <view class="tx">
+                身高
+            </view>
+            <view class="txbox">
+                <text class="nick" >{{userDetail.height?userDetail.height:'添加'}}</text>                
+                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+            </view>
+        </view>
+    </picker>
+
+    <picker bindchange="chooseWeight" value="{{value}}" range="{{arrayWeight}}">
+        <view class="sonson">
+            <view class="tx">
+                体重
+            </view>
+            <view class="txbox">
+                <text class="nick">{{userDetail.weight?userDetail.weight:'添加'}}</text> 
+                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+            </view>
+        </view>
+    </picker>
+
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+        <view class="sonson">
+            <view class="tx">
+                城市
+            </view>
+            <view class="txbox">
+                <view class="info">
+                    <text class="nick">{{userDetail.area?userDetail.area:'添加'}}</text>                      </view>
+                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+            </view>
+        </view>
+    </picker>
+
+    <picker value="{{index}}" range="{{schoolArr}}" bindchange="setSchool">
+        <view class="sonson">
+            <view class="tx">
+                学校
+            </view>
+            <view class="txbox">
+                <text class="nick">{{isFinish ? isFinish : '添加'}}</text>
+                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+            </view>
+        </view>
+    </picker>
+    <picker mode="date" value="{{value}}" start="2010-01-01" end="2018-12-31" fields="month" bindchange="inSchoolTime" wx:if="{{userSchool}}">
+        <view class="sonson">
+            <view class="tx">
+                入学年月
+            </view>
+            <view class="txbox">
+                <text class="nick">{{inSchoolTime?inSchoolTime:'未填写'}}</text>
+                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+            </view>
+        </view>
+    </picker>
+    <picker mode="date" value="{{value}}" start="2019-12-31" end="2029-12-31" fields="month" bindchange="outSchoolTime" wx:if="{{userSchool}}">
+        <view class="sonson">
+            <view class="tx">
+                毕业年月
+            </view>
+            <view class="txbox">
+                <text class="nick">{{outSchoolTime?outSchoolTime:'未填写'}}</text>
+                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+            </view>
+        </view>
+    </picker>
+
+</view>
+
+
+<view class="detail3" catchtap='bindcell'>
+    <view class="cellbox">
+        <view class="tx">手机</view>
+        <view class="txbox">
+            <text class="nick">{{userDetail.phone ? '已绑定' : '立即绑定'}}</text>
+            <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+        </view>
+    </view>
+</view>
+<view class="keepbtn" catchtap="keepbtn">保存</view>
+
+</scroll-view>
+
+<!-- 提示信息 -->
+<view class="mask" hidden="{{isWarn}}" catchtouchmove="preventTouchMove">
+    <view class="tanchuang">
+        <view class="starbox">
+            <image src="/pages/image/infostar.png" class="infostar" mode="scaleToFill"></image>
+        </view>
+        <view class="infotitle">{{infotitle}}</view>
+        <view class="infofir">{{sex}}
+            <text wx:if="{{userSchool}}">{{'/' + userSchool}}</text> </view>
+        <view class="infotime">
+            <text wx:if="{{inSchoolTime}}">{{inSchoolTime + '入学'}}</text>
+            <text wx:if="{{outSchoolTime}}">{{'/' + outSchoolTime + '毕业'}}</text> </view>
+        <view class="btnbox">
+            <view class="btncancle" bindtap="cancle">修改</view>
+            <view class="btnsure" bindtap="sendUserDetail">确定</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,115 @@
+<!-- top -->
+<movable-area class="movbox">
+<view class="loginBox" wx:if="{{loginBox}}">
+    <view class="loginTop">微信授权</view>
+    <view class="loginBody">
+        <view class="loginBodyson1">
+            <image class="logo" src="../image/logo.jpg"></image>
+            <view class="wenzi">BBall申请获得以下权限：</view>
+        </view>
+        <view class="loginBodyson2">
+          <image class="dian" src="../image/dian.jpg"></image>
+          <view class="wenzi2">获得你的公开信息 （昵称，头像等）</view>
+        </view>
+    </view>
+    <view class="bbtom">
+      <button class='btn' type='primary' style="background:#fff;color:#000;" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">授权登陆</button>
+    </view>
+</view>
+
+<view class="mask" wx:if="{{mask}}"></view>
+
+<view class="top">
+  <view class="titleBox">
+    <view class="title">
+      {{data.mName}}
+      <view class="bm" wx:if="{{data.isFull==3}}">
+        报名中
+      </view>
+      <view class="bm" wx:if="{{data.isFull==2}}">
+        已报名
+      </view>
+    </view>
+    <view class="time">
+      <view>
+        <text class="date">{{data.mDate}}</text>
+      </view>
+      <!-- <view class="Retire" catchtap='Retire' wx:if="{{data.isFull==2}}">退赛</view> -->
+    </view>
+    <view class="wzBox">
+      <image class="weizhi" src="../../image/landingwei.png"></image>
+      <view class="wz">
+        {{data.mPlace}}
+      </view>
+    </view>
+    <view class="wzBox" catchtap='openmap'>
+      <image class="weizhi" src="../../image/juli.png"></image>
+      <view class="wz">
+        距您当前位置{{num}}km
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- detail -->
+<view class="detailBox">
+    <view class="rule">
+      <text class="bsgz">比赛玩法</text>
+    </view>
+    <view class="ruleBox">
+      {{data.mRole}}
+    </view>
+</view>
+  <!-- <view class="rule">
+                 <text class="bsgz">比赛时间</text>
+          </view>
+          <view class="plain">比赛时间为1小时，每局比赛5分钟，中场休息1分钟</view>
+          <view class="rule">
+                 <text class="bsgz">注意事项</text>
+          </view>
+          <view class="atation">
+                  配有专业记分员与裁判
+          </view> -->
+  <!-- <view style="width:100rpx;height:100rpx;border-radius:50rpx;background:#313131;text-align:center;position:fixed;right:40rpx;z-index:100;display:flex;flex-direction:column;justify-content:center;align-tiem:center;">
+    <image catchtap="backIndex" src="/pages/image/backhome.png" style="width:40rpx;height:40rpx;margin:0 auto;"></image>
+    <text style="color:#fff;font-size:20rpx;">首页</text>  
+   </view> -->
+
+
+
+<view class="playerBox">
+    <view class="yqd">
+      <text> 参赛球员 （{{data.userList.length}}人）</text>
+      <button class="Invitation" open-type="share">邀请好友+</button>
+    </view>
+    <view class="yqdBox">
+      <block wx:for="{{data.userList}}" wx:key="{{index}}">
+        <view class="userbox" id="{{item.userId}}" catchtap="goHePage">
+          <image class="txtp" src="{{item.avatar}}"></image>
+          <text class="nickname">{{item.nickName}}</text>
+        </view>
+      </block>
+    </view>
+</view>
+
+<view class="start" catchtap="baoming" wx:if="{{data.isFull==3}}">我要报名</view>
+<view class="yiman" wx:if="{{data.isFull==1}}">报名人数已满</view>
+<view class="start" wx:if="{{data.isFull==2}}">已报名</view>
+<view class="mask" wx:if="{{mask}}"></view>
+
+<view class="modal" wx:if="{{modal}}">
+    <image src="../../image/gantanhao.jpg" class="gantanhao"></image>
+    <view class="confirm">确定要退赛吗</view>
+    <view class="backMoney">报名星钻会返还您的账户</view>
+    <view class="btnBox">
+      <view class="RetireBox" catchtap="confirmRetire">退赛</view>
+      <view class="cancel" catchtap='cancel'>取消</view>
+    </view>
+</view>
+
+<!-- 回到首页 -->
+    <movable-view catchtap="backIndex" class="backBtn" direction="all" x="{{x}}" y="{{y}}">
+        <image src="/pages/image/backhome.png" class="homeimg"></image>
+        <text class="shouye">首页</text>      
+    </movable-view>   
+</movable-area> 

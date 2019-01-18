@@ -1,0 +1,39 @@
+<!-- top -->
+<movable-area class="movbox">
+<view class="top">
+    <view class="czje">充值金额</view>
+</view>
+
+<!-- 充值box -->
+<block class="block" wx:for="{{data}}" wx:key="{{item.id}}" id="{{item.id}}">
+    <view class="czson" catchtap="chongzhi" id="{{item.id}}" data-index="{{index}}">
+        <view class="czbox">
+            <view class="czbox2">{{item.gifbagName}}</view>
+            <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+        </view>
+        <view class="czbox">
+            <view>￥{{item.gifbagAmount}} 元
+            </view>
+            <view>
+                <text class="dele">{{item.gifbagCount}}</text> {{item.actualAmount }}星钻
+            </view>
+            <image src="../../image/tuijian.jpg" class="tuijian" wx:if="{{item.isCommend==0}}" style="border-top-right-radius:10px;"></image>
+        </view>
+    </view>
+</block>
+<view class="czson czson4">
+    <view class="czbox3">
+        <view class="czbox2">自定义金额</view>
+        <input class="jine" placeholder='请输入金额' focus="{{focus}}" bindinput="jinInput" />
+    </view>
+    <view class="czbox">
+        <view>1元=10星钻</view>
+        <view class="confirmcz" catchtap="confirmcz">确定充值</view>
+    </view>
+</view>
+<!-- 回到首页 -->
+<movable-view catchtap="backIndex" class="backBtn" direction="all" x="{{x}}" y="{{y}}">
+      <image src="/pages/image/backhome.png" class="homeimg"></image>
+      <text class="shouye">首页</text>      
+    </movable-view>   
+</movable-area> 

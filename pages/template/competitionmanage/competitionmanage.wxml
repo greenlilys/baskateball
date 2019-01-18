@@ -1,0 +1,37 @@
+<!-- top -->
+<view class="top">
+    <view class="title">
+        成为赛事运营可以获得
+    </view>
+    <!-- <view class="hx"></view> -->
+    <view class="content">
+        <view class="wenzi">
+
+        </view>
+        <!-- <view class="wenzi">
+                          LOREM IPSUM DOLOR SIT AMET,CONSECTETUR ADIPISCING ELIT.AENEAN EUISMOD BIBENDUM LAOREET.PROIN GRAVI-DA DOLOR SIT AMET LACUS ACCUMSAN ET VIVERRA JUSTO COMMODO.PROIN SODALES PULVINAR SIC TEMPOR.SOCIIS NATOQUE PENATIBUS ET MAGNIS DIS PARTURIENT MONTES,NASCETUR RIDICULUS MUS.NAM FERMENTUM,NULLA LUCTUS PHARETRA VULPUTATE,FELIS TELLUS MOLLIS ORCI,SED RHON-CUS PRONIN SAPIEN NUNC ACCUAN EGET.
+                </view> -->
+        <view class="box">
+            <view class="smallbox">
+                <image src="../../image/jishu.jpg" class="tp"></image>
+                <text class="wz">专业技术支持</text>
+            </view>
+
+            <view class="smallbox">
+                <image src="../../image/saishi.jpg" class="tp"></image>
+                <text class="wz">标准赛事系统</text>
+            </view>
+
+            <view class="smallbox">
+                <image src="../../image/peixun.jpg" class="tp"></image>
+                <text class="wz">系统人员培训</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="newbtn" catchtap="apply">
+    <text class="jia">+</text>
+    <text class="new">申请合作</text>
+</view>
+

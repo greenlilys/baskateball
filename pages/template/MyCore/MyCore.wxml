@@ -1,0 +1,40 @@
+<view class="top">
+    <view class="nowCore">当前累计积分</view>
+    <view class="coreBox">
+        <text class="core">{{integral?integral:0}}</text>
+        <text class="dw">积分</text>
+    </view>
+    <view class="history">
+        <view class="titleBox">
+            <text>历史积分明细</text>
+        </view>
+    </view>
+</view>
+
+
+<view class="bigBox">
+    <scroll-view class="list" scroll-y style="height:750rpx;" lower-threshold="10px" bindscrolltolower="lower">
+        <block wx:for="{{data}}" wx:key="{{index}}">
+            <view class="son1">
+                <view class="son1son">
+                    <view class="t1" wx:if="{{item.type == 1}}">创建用户</view>
+                    <view class="t1" wx:if="{{item.type == 2}}">完善资料</view>
+                    <view class="t1" wx:if="{{item.type == 3}}">绑定手机号</view>
+                    <view class="t1" wx:if="{{item.type == 4}}">邀请用户</view>
+                    <view class="t1" wx:if="{{item.type == 5}}">分享比赛</view>
+                    <view class="t1" wx:if="{{item.type == 6}}">分享小程序</view>
+                    <view class="t1" wx:if="{{item.type == 7}}">参加比赛</view>
+                    <view class="t1" wx:if="{{item.type == 8}}">连胜分享</view>
+                    <view class="t1" wx:if="{{item.type == 9}}">缺席比赛</view>
+                    <view class="t1" wx:if="{{item.type == 10}}">分享积分</view>
+                    <view class="t1" wx:if="{{item.type == 11}}">分享新增</view>
+                    <view class="t2">{{item.createDate}}
+                    </view>
+                </view>
+                <view class="addCore">
+                    +{{item.integral}}
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+</view>

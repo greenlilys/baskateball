@@ -1,0 +1,184 @@
+page{
+  background:#c71111;
+}
+
+.top{
+  width:591rpx;
+  height:283rpx;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftTop{
+  width:295rpx;
+  height:189rpx;
+}
+
+.myBox{
+  width:141rpx;
+  text-align:center;
+}
+
+.head{
+  width:141rpx;
+  height:141rpx;
+  border-radius:10rpx;
+}
+
+.nick{
+  font-size:22rpx;
+  color:#fff;
+}
+
+.rightTop{
+  width:295rpx;
+  height:189rpx;
+}
+
+.rightSon1{
+  width:295rpx;
+  height:94rpx;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hx{
+  width:96rpx;
+  height:4rpx;
+  background:#fff;
+}
+
+.fvic{
+  font-size:45rpx;
+  color:#fff;
+}
+
+.rightSon2{
+  width:295rpx;
+  height:94rpx;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  color:#fff;
+}
+
+.red{
+  font-size:22rpx;
+}
+
+.core{
+  font-size:40rpx;
+  font-weight:900;
+  margin-right:4rpx;
+  margin-left:4rpx;
+  margin-top:-10rpx;
+}
+
+.dataBox{
+  width:670rpx;
+  height:405rpx;
+  background:#fff;
+  margin:0 auto 40rpx auto;
+  border-radius:10rpx;
+}
+
+.titleBox{
+  width:591rpx;
+  height:101rpx;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title1{
+  width:217rpx;
+  height:40rpx;
+}
+
+.redBox{
+  width:102rpx;
+  height:40rpx;
+  background:#ff0000;
+  border-radius:10rpx;
+  font-size:22rpx;
+  color:#fff;
+  text-align:center;
+  line-height:40rpx;
+}
+
+.title2{
+  width:372rpx;
+  height:22rpx;
+  font-size:22rpx;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fighterBox{
+  width:591rpx;
+  height:61rpx;
+  margin:0 auto 40rpx auto;
+  display:flex;
+}
+.headBox{
+  width:225rpx;
+  display:flex;
+  align-items: center;
+}
+.head2{
+  width:60rpx;
+  height:60rpx;
+  border-radius:10rpx;
+}
+
+.nick2{
+  font-size:24rpx;
+  margin-left:29rpx;
+}
+
+.smallBox{
+  width:245rpx;
+  height:60rpx;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:29rpx;
+  color:#000;
+  font-weight:900;
+}
+
+.lb{
+  width:107rpx;
+  height:20rpx;
+  border-right:2rpx solid #000;
+  border-left:2rpx solid #000;
+  text-align:center;
+  line-height:20rpx;
+}
+
+.mvpBox{
+  width:120rpx;
+  height:60rpx;
+}
+
+.mvp{
+  width:52rpx;
+  height:60rpx;
+  float:right;
+}
+
+.blueBox{
+  width:102rpx;
+  height:40rpx;
+  background:#006bfc;
+  border-radius:10rpx;
+  font-size:22rpx;
+  color:#fff;
+  text-align:center;
+  line-height:40rpx;
+}

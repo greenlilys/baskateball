@@ -1,0 +1,115 @@
+.top {
+  width: 100%;
+  height: 260rpx;
+  background: #c71111;
+}
+
+.top1 {
+  width: 100%;
+  height: 120rpx;
+  background: #c71111;
+}
+
+.topSon {
+  width: 516rpx;
+  height: 100rpx;
+  float: right;
+  margin-right: 35rpx;
+  color: #fff;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom {
+  width: 100%;
+  height: 950rpx;
+  background: #fff;
+  margin-top: -5rpx;
+  border-radius: 10px;
+}
+
+.num {
+  float: left;
+  color: #000;
+  width: 7%;
+}
+
+.bigBox {
+  /* width:693rpx; */
+  width: 92%;
+  line-height: 127rpx;
+  margin: 0 auto;
+  display: flex;
+}
+
+.MybigBox {
+  /* width:693rpx; */
+  width: 87%;
+  height: 127rpx;
+  line-height: 127rpx;
+  margin: 0rpx auto 0 48rpx;
+  display: flex;
+}
+
+.smallBox {
+  /* width:681rpx; */
+  width: 93%;
+  height: 141rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.MysmallBox {
+  width: 681rpx;
+  height: 141rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 5rpx;
+}
+
+.txBox {
+  height: 141rpx;
+  text-align: center;
+  width: 61rpx;
+}
+
+.txBox .head image {
+  width: 61rpx;
+  height: 61rpx;
+  border-radius: 100px;
+}
+
+.head {
+  padding-top: 10rpx;
+  height: 91rpx;
+}
+
+.nickname {
+  width: 61rpx;
+  font-size: 20rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.numn {
+  font-size: 32rpx;
+  color: #000;
+  font-weight: 900;
+  width:40rpx;
+  text-align:center;
+}
+
+.numn_1 {
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: 900;
+}

@@ -1,0 +1,100 @@
+
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #f1f5f8;
+}
+
+/* top */
+.top{
+  width:100%;
+  height:246rpx;
+  background:#c71111;
+  overflow:hidden;
+}
+
+.czje{
+  width:168rpx;
+  height:40rpx;
+  font-size:38rpx;
+  color:#fff;
+  line-height:40rpx;
+  font-weight:900;
+  margin-top:46rpx;
+  margin-left:40rpx;
+}
+
+
+.czson{
+  width:671rpx;
+  height:204rpx;
+  font-size:32rpx;
+  color:#000;
+  background:#fff;
+  border-radius:10px;
+  margin:0 auto;
+   position:relative;
+}
+.czson:nth-child(2){
+   margin:-102rpx auto 30rpx auto;
+}
+
+.czson:nth-child(n){
+  margin-bottom:30rpx;
+}
+
+.czbox{
+  width:590rpx;
+  height:102rpx;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+}
+.czbox3{
+  width:590rpx;
+  height:102rpx;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.sanjiao{
+  width:11rpx;
+  height:20rpx;
+}
+
+.tuijian{
+     width:76rpx;
+     height:76rpx;
+    position:absolute;
+    right:0rpx;
+    top:0rpx;
+}
+
+.dele{
+color:#b0b0b0;
+text-decoration:line-through;
+}
+
+.jine{
+  width:160rpx;
+}
+
+.confirmcz{
+  width:249rpx;
+  height:61rpx;
+  background:#c71111;
+  font-size:24rpx;
+  color:#fff;
+  text-align:center;
+  line-height:61rpx;
+  border-radius:5px;
+}
+.czbox2{
+  font-weight: 900;
+  font-size: 32rpx;
+}

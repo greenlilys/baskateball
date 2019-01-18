@@ -1,0 +1,100 @@
+.top{
+  width:100%;
+  height:450rpx;
+  background:#006cff;
+  overflow:hidden;
+}
+
+.title1{
+  width:150rpx;
+  height:48rpx;
+  font-size:48rpx;
+  font-weight:bold;
+  color:#fff;
+  margin-top:60rpx;
+  margin-left:40rpx;
+}
+
+.title2{
+  width:580rpx;
+  height:48rpx;
+  font-weight:bold;
+  font-size:48rpx;
+  color:#fff;
+  margin-top:25rpx;
+  margin-left:40rpx;
+}
+.droTitle{
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bold;
+}
+.hx{
+  width:86rpx;
+  height:8rpx;
+  background:#fff;
+  margin-top:42rpx;
+  margin-left:40rpx;
+}
+
+.choosebox{
+  width:670rpx;
+  height:353rpx;
+  font-size:28rpx;
+  color:#999;
+  background:#fff;
+  border-radius:10px;
+  margin:-176rpx auto 0 auto;
+  overflow:hidden;
+}
+
+.citybox{
+  width:588rpx;
+  height:90rpx;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:36rpx auto 0 auto;
+}
+
+.xiasj{
+  width:18rpx;
+  height:12rpx;
+}
+
+.jgbox{
+  width:588rpx;
+  height:90rpx;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0 auto;
+  border-top:2rpx solid #eee;
+  border-bottom:2rpx solid #eee;
+}
+
+.cellbox{
+  width:588rpx;
+  height:90rpx;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0 auto;
+}
+
+.subbtn{
+  width:670rpx;
+  height:102rpx;
+  background:#006ccf;
+  border-radius:10px;
+  text-align:center;
+  line-height:102rpx;
+  font-size:32rpx;
+  color:#fff;
+  margin:251rpx auto 0 auto;
+}
+input{
+  width:418rpx;
+}
+
+

@@ -1,0 +1,37 @@
+/* top */
+.top{
+  width:100%;
+  height:210rpx;
+  background:#000;
+}
+
+.opinionbox{
+  width:670rpx;
+  height:502rpx;
+  background:#fff;
+  border-radius:10rpx;
+  margin:-155rpx auto 0 auto;
+  overflow:hidden;
+  /* box-shadow:0rpx 0rpx 40rpx #dddddd; */
+}
+
+
+.weui-textarea{
+  height:100%;
+  margin:40rpx auto 0 auto;
+  font-size:28rpx;
+  color:#999;
+}
+
+.submit{
+  width:670rpx;
+  height:102rpx;
+  background:#006cff;
+  border-radius:10rpx;
+  margin:500rpx auto 20rpx auto;
+  font-size:30rpx;
+  color:#fff;
+  text-align:center;
+  line-height:102rpx;
+  box-shadow:0rpx 10rpx 40rpx #8fbeff;
+}

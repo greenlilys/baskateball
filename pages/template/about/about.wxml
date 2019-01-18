@@ -1,0 +1,34 @@
+<!-- content -->
+
+<view class="content">
+    <!-- <view class="story">我们的故事</view>
+       <view class="hx"></view>
+       <view class="conwz">
+               <view>
+                      初到南京，最舍不得深圳的一帮球友，数据知根知底，按实力组局，每一场都痛快淋漓。
+               </view>
+               <view class="con">如今在陌生城市，每次去球场，要么人数太多，只能一边观战，要么就是球场空无一人，只能自己投投篮...要么遇到完全不会打的，浪费时间。
+               </view>
+               <view class="con">
+                       "为什么没有一个APP，让喜欢打球的人，记录自己的每场数据，用于分享和交流，在家里就能看到附近的球友信息，包括个人数据（场次，胜率，得分等）"
+               </view>
+               <view class="con">
+                      能看到附近球场里打过球的球员排行榜，能看到每个球子的球霸MVP是谁，篮板怪是谁，能够真正地以球会友。
+               </view>
+               <view class="con">
+                       有了个人数据的沉淀，你就可以拉上数据互补的球友开黑，不至于误约坑货做队友。
+               </view>
+               <view class="con">
+                      我们想做个最有趣的球赛，有专业篮球赛的资格，没有篮球赛的门槛，打球不用凑人，单排即可上分。我们想让所有人都能随时随地打篮球。
+               </view>
+               <view class="con">
+                      希望能把打场球赛做得像进入一场游戏一样简单，让全国各地的球友们”无论身处何地，都能同台竞技。
+               </view>
+       </view> -->
+    <view class="bottom">
+        <image class="logo" src="../../image/logo.png"></image>
+        <view>版本号：V1.0.1</view>
+    </view>
+
+</view>
+

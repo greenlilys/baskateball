@@ -1,0 +1,54 @@
+<view class="{{isHaveMe?'top':'top1'}}">
+  <view class="topSon">
+    <text>MVP</text>
+    <text>胜率</text>
+    <text>得分</text>
+    <text>篮板</text>
+    <text>助攻</text>
+    <text>场次</text>
+  </view>
+  <view class="MybigBox" wx:if="{{isHaveMe}}">
+    <view class="MysmallBox">
+      <view class="txBox">
+        <view class="head"><image src="{{myBox.avatar?myBox.avatar:userInfo.avatarUrl}}"></image></view>
+        <!-- <view class="nickname" wx:if="{{nickName.length==4}}">{{nickName}}</view>
+        <view class="nickname" wx:if="{{nickName.length==1}}">{{"战斗机"+nickName}}</view>
+        <view class="nickname" wx:if="{{nickName.length==2}}">{{"星战"+nickName}}</view>
+        <view class="nickname" wx:if="{{nickName.length==3}}">{{"星"+nickName}}</view> -->
+        <view class="nickname">{{nickName}}</view>
+      </view>
+      <view class="numn_1">{{myBox.countmvp?myBox.countmvp:'--'}}</view>
+      <view class="numn_1">{{myBox.round?myBox.round:'--'}}</view>
+      <view class="numn_1">{{myBox.countScore?myBox.countScore:'--'}}</view>
+      <view class="numn_1">{{myBox.countBackboard?myBox.countBackboard:'--'}}</view>
+      <view class="numn_1">{{myBox.countAssists?myBox.countAssists:'--'}}</view>
+      <view class="numn_1">{{myBox.play_num?myBox.play_num:'--'}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="bottom">
+  <scroll-view class="list" scroll-y style="height:950rpx;" bindscrolltolower="lower">
+    <block wx:for="{{otherBox}}" wx:key="{{index}}">
+      <view class="bigBox">
+        <view class="num">{{item.rownum}}</view>
+        <view class="smallBox">
+          <view class="txBox">
+            <view class="head"><image src="{{item.avatar?item.avatar:userInfo.avatarUrl}}" ></image></view>
+            <!-- <view class="nickname" wx:if="{{item.nick.length==4}}">{{item.nick}}</view>
+            <view class="nickname" wx:if="{{item.nick.length==1}}">{{'战斗机'+item.nick}}</view>
+            <view class="nickname" wx:if="{{item.nick.length==2}}">{{'星战'+item.nick}}</view>
+            <view class="nickname" wx:if="{{item.nick.length==3}}">{{'星'+item.nick}}</view> -->
+            <view class="nickname">{{item.nick}}</view>
+          </view>
+          <view class="numn">{{item.countmvp}}</view>
+          <view class="numn">{{item.round?item.round:'--'}}</view>
+          <view class="numn">{{item.countScore}}</view>
+          <view class="numn">{{item.countBackboard}}</view>
+          <view class="numn">{{item.countAssists}}</view>
+          <view class="numn">{{item.play_num}}</view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

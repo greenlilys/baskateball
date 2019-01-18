@@ -1,0 +1,9 @@
+<!-- top -->
+<view class="content">
+         <view class="content1">
+                 <image src="../../image/duihao.jpg" class="duihao"></image>
+                 <view class="wz">签到扫码成功</view>
+                 <view class="wz2">按照签到顺序，您的编号为<text style="font-size:28rpx;color:#006cff;">{{signNum}}</text>号请根据编号注意赛事情况</view>
+         </view>
+         <view class="backindex" catchtap='backindex'>返回首页</view>
+</view>

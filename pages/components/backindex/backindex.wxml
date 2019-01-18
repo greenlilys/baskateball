@@ -1,0 +1,9 @@
+<!--pages/components/backindex/backindex.wxml-->
+<!-- 回到首页按钮(组件) -->
+
+  <!-- <movable-area class="movbox"> -->
+    <!-- <movable-view catchtap="backIndex" class="backBtn" direction="all" x="{{x}}" y="{{y}}"> -->
+      <image src="/pages/image/backhome.png" class="homeimg"></image>
+      <text class="shouye">首页</text>
+    <!-- </movable-view> -->
+   <!-- </movable-area>  -->

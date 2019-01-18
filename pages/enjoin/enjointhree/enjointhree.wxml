@@ -1,0 +1,13 @@
+<view class="bck">
+<image src='../../image/bckimg.jpg' class="bckimg"></image>
+     <view class="bckSon">
+           <image class="head" src="{{userInfo.avatarUrl}}"></image>
+           <view class="nickName">我的昵称</view>
+           <view class="who">谁去终止他吧</view>
+           <image class="bigsvic" src="../../image/bigsanvic.jpg"></image>
+    </view>
+</view>
+
+<view class="erweima">
+     <image class="erwei" src="../../image/erweima.jpg"></image>
+</view>

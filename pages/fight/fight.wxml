@@ -1,0 +1,138 @@
+<view class="loginBox" wx:if="{{loginBox}}">
+  <view class="loginTop">微信授权</view>
+  <view class="loginBody">
+    <view class="loginBodyson1">
+      <image class="logo" src="../image/logo.jpg"></image>
+      <view class="wenzi">BBall申请获得以下权限：</view>
+    </view>
+    <view class="loginBodyson2">
+      <image class="dian" src="../image/dian.jpg"></image>
+      <view class="wenzi2">获得你的公开信息 （昵称，头像等）</view>
+    </view>
+
+  </view>
+  <view class="bbtom">
+    <button class='btn' type='primary' style="background:#fff;color:#000;" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">授权登陆</button>
+  </view>
+</view>
+
+<view class="mask" wx:if="{{mask}}"></view>
+<!-- top -->
+<view class="top">
+  <view class="{{zhan1?'zhan1':'zhan'}}" catchtap='myFight'>
+    我的战力
+    <view class="hx" wx:if="{{hx}}"></view>
+  </view>
+  <view class="{{zhan2?'zhan2':'zhan'}}" catchtap="myFight2">
+    我的战绩
+    <view class="hx1" wx:if="{{hx1}}"></view>
+  </view>
+</view>
+
+<!-- total -->
+<view wx:if="{{myFight}}">
+  <view class="totalBox">
+    <view class="totalSon">
+      <text>综合战力</text>
+    </view>
+    <view class="totalSon2">
+      <view class="num">{{dataBox.power?dataBox.power:0}}</view>
+      <view class="progress">
+        <progress percent="{{dataBox.power?dataBox.power:0}}" stroke-width="20" color="#c71111" active background-color="#f1f5f8" border-radius="5" />
+        <!-- <progress percent="dataBox.power?dataBox.power:0" stroke-width="20" activeColor="{{color}}" color="#c71111"  active background-color="#f1f5f8"  border-radius="5"/> -->
+      </view>
+    </view>
+    <button class="show" open-type="share">
+      秀战力
+    </button>
+  </view>
+
+  <view class="fightBox">
+    <view class="title">
+      <text class="wz">战力统计</text>
+    </view>
+    <view class="dataBox">
+      <view class="dataSon">
+        <view class="Num">{{dataBox.playNum?dataBox.playNum:0}}</view>
+        <view class="dw">场次</view>
+      </view>
+
+      <view class="dataSon">
+        <view class="Num">{{dataBox.round?dataBox.round:0}}%</view>
+        <view class="dw">胜率</view>
+      </view>
+
+      <view class="dataSon">
+        <view class="Num">{{dataBox.countScore?dataBox.countScore:0}}</view>
+        <view class="dw">总得分</view>
+      </view>
+
+      <view class="dataSon">
+        <view class="Num">{{dataBox.countBackboard?dataBox.countBackboard:0}}</view>
+        <view class="dw">总篮板</view>
+      </view>
+
+      <view class="dataSon">
+        <view class="Num">{{dataBox.countAssists?dataBox.countAssists:0}}</view>
+        <view class="dw">总助攻</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottomBox">
+    <image class="jibai" src="../image/jibai.jpg"></image>
+    <view class="box">
+      <view>您的综合实力击败了</view>
+      <view>
+        <text class="percent">{{dataBox.beatRound?dataBox.beatRound:0}}%</text>的用户</view>
+      <view>请继续加油！</view>
+    </view>
+  </view>
+</view>
+
+
+<view wx:if="{{myFight2}}">
+  <view class="content">
+    <view class="toptop">
+      <text>战果</text>
+      <text>比分</text>
+      <text>得分</text>
+      <text>篮板</text>
+      <text>助攻</text>
+      <text>日期</text>
+    </view>
+    <scroll-view class="list" scroll-y style="height:{{clientHeight?clientHeight+'px':'auto'}};" bindscrolltolower="lower">
+      <block wx:for="{{data}}" wx:key="{{item.sectionid}}">
+        <view class='contSon lianWin' wx:if="{{item.teamType==3}}">
+          <image class="winLeft" src="/pages/image/winLeft.png"></image>
+          <text>恭喜获得{{item.score}}连胜</text>
+          <image class="winRight" src="/pages/image/winRight.png"></image>
+        </view>
+        <view class="contSon" catchtap="godataDetail" id="{{item.sectionid}}" data-index="{{index}}">
+          <view class="winBox" wx:if="{{item.isWin==1}}">
+            胜利
+          </view>
+          <view class="ifBox" wx:if="{{item.isWin==2}}">
+            失败
+          </view>
+          <view class="contSon1">
+            <view class="bcore">{{item.Bscore}}</view>
+            <view class="core">{{item.score}}</view>
+            <view class="lb">{{item.backboard}}</view>
+            <view class="zg">{{item.assists}}</view>
+            <view class="rq">
+              <image class="mvp" src="../image/MVPz.jpg" wx:if="{{item.mvp=='mvp'}}"></image>
+              {{item.matchTime}}
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 占位图 -->
+<view class="noDataBox" wx:if="{{noData}}">
+  <image class="noData" src="/pages/image/nomyscore.png"></image>
+  <text class="noHas">暂时没有记录</text>
+</view>

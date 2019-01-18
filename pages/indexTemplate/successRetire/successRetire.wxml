@@ -1,0 +1,6 @@
+<view class="contentBox">
+     <image class="duihao" src="../../image/duihao.jpg"></image>
+     <view class="wenzi">您已成功退赛</view>
+     <view class="wenzi2">报名星钻已退还您的账户</view>
+     <view class="checkxz">查看星钻余额</view>
+</view>

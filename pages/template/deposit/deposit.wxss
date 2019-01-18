@@ -1,0 +1,110 @@
+/* top */
+.top{
+  width:100%;
+  height:440rpx;
+  background:#c71111;
+  overflow:hidden;
+}
+
+.bmf{
+  width:485rpx;
+  height:42rpx;
+  font-size:40rpx;
+  color:#fff;
+  line-height:42rpx;
+  margin-top:58rpx;
+  margin-left:80rpx;
+}
+
+.bzj{
+  width:485rpx;
+  height:30rpx;
+  line-height:30rpx;
+  font-size:26rpx;
+  color:#fff;
+  margin-left:80rpx;
+}
+
+.fy{
+  margin-bottom:20rpx;
+  margin-top:30rpx;
+}
+
+.whybox{
+  width:670rpx;
+  height:704rpx;
+  margin:-180rpx auto 0 auto;
+  border-radius:10px;
+  background:#fff;
+  overflow:hidden;
+}
+
+.title{
+  width:380rpx;
+  height:40rpx;
+  font-size:38rpx;
+  font-weight:900;
+  line-height:40rpx;
+  margin-left:40rpx;
+  margin-top:86rpx;
+}
+
+.content1{
+  width:585rpx;
+  height:100rpx;
+  font-size:26rpx;
+  margin:50rpx 0 45rpx 40rpx;
+}
+
+.content2{
+  width:585rpx;
+  height:66rpx;
+  font-size:26rpx;
+  margin-left:40rpx;
+}
+
+.prosbox{
+  width:100%;
+  height:56rpx;
+  margin-top:115rpx;
+  }
+
+  .step{
+    width:590rpx;
+    height:90rpx;
+
+    margin:0 auto;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .stepson{
+    width:120rpx;
+    height:90rpx;
+    font-size:24rpx;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around
+  }
+
+  .step1{
+      color:#c71111;
+  }
+
+  .deposit{
+    width:670rpx;
+    height:100rpx;
+    font-size:32rpx;
+    text-align:center;
+    line-height:100rpx;
+    color:#fff;
+    background:#006cff;
+    margin:45rpx auto 45rpx auto;
+    border-radius:10px;
+  }
+
+
+
+

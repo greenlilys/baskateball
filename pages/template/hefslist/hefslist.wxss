@@ -1,0 +1,123 @@
+/* pages/indexTemplate/gzlist/gzlist.wxss */
+page{
+  background:#f1f5f8;
+  overflow:hidden;
+}
+
+.listBox{
+  width:672rpx;
+  height:310rpx;
+  background:#fff;
+  margin:0 auto 40rpx auto;
+  border-radius:10px;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow:0rpx 0rpx 40rpx #dddddd;
+
+}
+
+.listBox:nth-child(1){
+     margin:40rpx auto 40rpx auto;
+}
+.zonghe{
+  font-size: 30rpx;
+  margin-top: -80rpx;
+}
+.listSon{
+  width:180rpx;
+  height:230rpx;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: -20rpx;
+}
+
+.head{
+  width:70px;
+  height:70px;
+  border-radius:10px;
+}
+
+.nickname{
+  font-size:28rpx;
+  width: 140rpx;
+  overflow: hidden;
+  white-space:nowrap;
+}
+
+.weizhi{
+  font-size:22rpx;
+  color:#999999;
+}
+
+.num{
+  font-size:92rpx;
+  color:#c71111;
+}
+
+.fen{
+  font-size:32rpx;
+    color:#c71111;
+}
+
+.sonson{
+  width:100%;
+  height:32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wenzi2{
+  font-size:22rpx;
+}
+
+.progress{
+  width:80rpx;
+  position:relative;
+  background:#000;
+color:#fff;
+font-size:20rpx;
+border-radius:5rpx;
+padding-left:15rpx;
+
+}
+
+.shu{
+  position:absolute;
+  top:0;
+  left:12rpx;
+  font-size:20rpx;
+  color:#fff;
+}
+
+.nogz{
+  width:672rpx;
+  height:1078rpx;
+  background:#fff;
+  border-radius:10px;
+  margin:40rpx auto 40rpx auto;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nogzSon{
+  width:340rpx;
+  height:353rpx;
+   display:flex;
+   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tupian{
+  width:340rpx;
+  height:263rpx;
+}
+
+.wenzi3{
+  font-size:36rpx;
+  color:#999;
+}

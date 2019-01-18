@@ -1,0 +1,26 @@
+<!-- top -->
+<view class="top">
+         <view class="nowcell">当前手机号</view>
+         <view class="cell">{{phone}}</view>
+
+         <view class="hx"></view>
+         <view class="changecell">
+                 更改新的手机号
+         </view>
+</view>
+
+<view class="cellbox">
+        <view class="sonbox">
+                <input placeholder='请输入需绑定的手机号' class="cellInput" bindinput='getPhoneValue'  value='{{phone}}'/>
+         </view>
+
+         <view class="sonbox2">
+                <input placeholder='请输入验证码' class="cellInput" bindinput='getCodeValue' value='{{code}}'/>
+                <view class="code"  catchtap='getVerificationCode'>{{codename}}</view>
+         </view>
+</view>
+
+<view class="confirm" catchtap="confirmbind">
+       确认更改
+</view>
+

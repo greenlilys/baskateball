@@ -1,0 +1,40 @@
+
+<view>
+  <view class="content">
+    <view class="toptop">
+      <text>战果</text>
+      <text>比分</text>
+      <text>得分</text>
+      <text>篮板</text>
+      <text>助攻</text>
+      <text>日期</text>
+    </view>
+    <scroll-view class="list" scroll-y style="height:1100rpx;" bindscrolltolower="lower">
+      <block wx:for="{{data}}" wx:key="{{item.sectionid}}">
+        <view class='contSon lianWin' wx:if="{{item.teamType==3}}">
+          <image class="winLeft" src="../../image/winLeft.png"></image>
+          <text>恭喜获得{{item.score}}连胜</text>
+          <image class="winRight" src="../../image/winRight.png"></image>
+        </view>
+        <view class="contSon" wx:if="{{item.teamType!=3}}" catchtap="godataDetail" id="{{item.sectionid}}" data-index="{{index}}">
+          <view class="winBox" wx:if="{{item.isWin==1}}">
+            胜利
+          </view>
+          <view class="ifBox" wx:if="{{item.isWin==2}}">
+            失败
+          </view>
+          <view class="contSon1">
+            <view class="bcore">{{item.Bscore}}</view>
+            <view class="core">{{item.score}}</view>
+            <view class="lb">{{item.backboard}}</view>
+            <view class="zg">{{item.assists}}</view>
+            <view class="rq">
+              <image class="mvp" src="../../image/MVPz.jpg" wx:if="{{item.mvp=='mvp'}}"></image>
+              {{item.matchTime}}
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

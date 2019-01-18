@@ -1,0 +1,32 @@
+.nickbox{
+  width:670rpx;
+  height:172rpx;
+  margin:40rpx auto 40rpx auto;
+  background:#fff;
+  border-radius:10px;
+  display:flex;
+  align-items: center
+}
+
+.sonbox{
+  width:598rpx;
+  height:78rpx;
+  margin:0 auto;
+  border-bottom:2rpx solid #eee;
+}
+
+.nickInput{
+  font-size:30rpx;
+}
+
+.confirm{
+  width:670rpx;
+  height:101rpx;
+  background:#006cff;
+  margin:0 auto;
+  border-radius:10px;
+  text-align:center;
+  line-height:101rpx;
+  font-size:32rpx;
+  color:#fff;
+}

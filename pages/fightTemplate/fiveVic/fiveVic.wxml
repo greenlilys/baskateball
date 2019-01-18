@@ -1,0 +1,10 @@
+<view class="content">
+       <view class="contentSon">
+              <image class="threeVic" src="../../image/fiveVic.jpg"></image>
+              <view class="t1">五连胜达成</view>
+              <view class="t2">你，你，还有你，一起来防</view>
+       </view>
+       <view class="showBox">
+             炫耀一下
+       </view>
+</view>

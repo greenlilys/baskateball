@@ -1,0 +1,50 @@
+.city_box{  
+  /* background: #fff; */
+  display: flex;
+  flex:1;
+  color:#131313;
+}
+.city_left{
+  flex: 1;
+}
+.city_right{
+  width: 60rpx;
+  height:80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.letter_item{
+  flex: 1;
+  display: block;
+  font-size: 24rpx;  
+  text-align: center;
+}
+
+
+
+.city_first_letter{
+  line-height: 40rpx;
+  height: 40rpx;
+  padding-left: 25rpx;
+  font-size: 28rpx;
+  font-weight:600;
+  /* background: #eee; */
+}
+.city_name{
+  display: block;
+  line-height: 80rpx;
+  height: 80rpx;
+  /* border-bottom: 1px solid #efefef; */
+  font-size: 28rpx; 
+  padding-left: 25rpx;
+}
+.content{height:100%;width:100%;display:flex;flex-direction:column;
+background:#f1f5f8;}
+.headbox{width:670rpx;height:150rpx;margin:0 auto;display:flex;flex-direction:row;
+justify-content:space-between;align-items:center;}
+.addr{width:25rpx;height:30rpx;}
+.leftBtn{width:180rpx;height:60rpx;background:#c71110;text-align:center;
+color:#fff;border-radius:6rpx;display:flex;flex-direction:row;align-items:center;justify-content:center;}
+.rightText{margin-left:10rpx;font-size:34rpx;line-height:60rpx;}
+.changecity{font-size:28rpx;color:#017efe;padding:10rpx 0;}

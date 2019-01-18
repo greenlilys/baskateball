@@ -1,0 +1,35 @@
+<!-- top -->
+<view class="top">
+  <view class="title1">
+    想加入
+  </view>
+  <view class="title2">
+    BBall篮球排位赛主办方？
+  </view>
+  <!-- <view class="hx"></view> -->
+</view>
+
+<!-- choose -->
+<view class="choosebox">
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+    <view class="citybox">
+      <text class='droTitle'>所在城市</text>
+      <text>{{region[0]}}</text>
+      <text>{{region[1]}}</text>
+      <text>{{region[2]}}</text>
+      <image src="../../image/xiasanjiao.jpg" class="xiasj"></image>
+    </view>
+  </picker>
+  <view class="jgbox">
+    <text class='droTitle'>机构名称</text>
+    <input class="city" placeholder='' bindinput="jgInput" />
+  </view>
+  <view class="cellbox">
+    <text class='droTitle'>手机号</text>
+    <input class="city" placeholder='' bindinput="cellInput" />
+  </view>
+</view>
+
+<view class="subbtn" catchtap="subbtn">
+  提交审核
+</view>

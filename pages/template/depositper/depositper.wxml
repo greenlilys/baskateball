@@ -1,0 +1,44 @@
+<!-- top -->
+<movable-area class="movbox">
+<view class="top">
+       <view class="bmf">报名比赛需要缴纳以下费用</view>
+        <view class="bzj fy">1.押金{{deposit}}元（比赛结束可退还）</view>
+        <view class="bzj">2.报名费（包含场地费和裁判费）</view>
+</view>
+
+ <view class="whybox">
+        <view class="title">
+               为什么要缴纳押金?
+        </view>
+        <view class="content1">
+               缴纳押金的目的在于保证比赛有秩序的正常进行，一旦在比赛过程中出现恶性事件，将扣除个人押金，我们一起致力于文明的比赛！
+        </view>
+        <view class="content2">
+                 押金在比赛结束后可以退还。如果没有及时取消报名或缺席比赛，系统将会扣除部分押金。
+        </view>
+        <image src="../../image/prosess.jpg" class="prosbox"></image>
+        <view class="step">
+                   <view class="stepson step1"> 
+                          <view> Step.1</view>
+                          <view>缴纳押金</view>
+                   </view>
+                    <view class="stepson"> 
+                          <view> Step.2</view>
+                          <view>缴纳报名费</view>
+                   </view>
+                    <view class="stepson"> 
+                          <view> Step.3</view>
+                          <view>报名成功</view>
+                   </view>
+        </view>
+ </view>
+
+ <!-- bottom -->
+ <view class="deposit" catchtap='pay'>缴纳押金</view>
+ 
+<!-- 回到首页 -->
+    <movable-view catchtap="backIndex" class="backBtn" direction="all" x="{{x}}" y="{{y}}">
+      <image src="/pages/image/backhome.png" class="homeimg"></image>
+      <text class="shouye">首页</text>      
+    </movable-view>   
+</movable-area>

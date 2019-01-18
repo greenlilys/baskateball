@@ -1,0 +1,12 @@
+<!-- top -->
+
+<view class="top"></view>
+<view class="opinionbox">
+    <view class="sonbox" style="font-size:36rpx;margin-top:67rpx;margin-left:41rpx;color:#000;font-weight:900;">
+        <text class="title">觉得我们哪里需要提高</text>
+    </view>
+    <textarea class="weui-textarea" placeholder="点击这里输入您的建议" bindinput="getInput" maxlength="1000" />
+</view>
+
+<view class="submit" catchtap="submit">提交</view>
+

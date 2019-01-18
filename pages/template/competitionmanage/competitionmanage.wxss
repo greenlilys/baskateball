@@ -1,0 +1,86 @@
+/* top */
+.top{
+  width:100%;
+  height:1009rpx;
+  background:#006cff;
+  overflow: hidden
+}
+
+.title{
+  width:306rpx;
+  height:107rpx;
+  font-size:46rpx;
+  font-weight: bold;
+  color:#fff;
+  margin-top:68rpx;
+  margin-left:40rpx;
+}
+
+.hx{
+  width:86rpx;
+  height:8rpx;
+  background:#fff;
+  margin-top:40rpx;
+  margin-left:40rpx;
+}
+
+.content{
+  width:586rpx;
+  height:679rpx;
+  margin-left:40rpx;
+  margin-top:48rpx;
+}
+
+.wenzi{
+  font-size:24rpx;
+  color:#fff;
+}
+
+.box{
+  width:586rpx;
+  height:214rpx;
+  margin-top:75rpx;
+  display:flex;
+  justify-content: space-around;
+  align-items: center
+}
+
+.smallbox{
+  width:172rpx;
+  height:186rpx;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tp{
+  width:123rpx;
+  height:123rpx;
+}
+
+.wz{
+  font-size:23rpx;
+  color:#fff;
+}
+
+.newbtn{
+  width:670rpx;
+  height:146rpx;
+  background:#fff;
+  border-radius:10px;
+  text-align:center;
+ line-height:146rpx;
+  margin:-74rpx auto 40rpx auto;
+}
+
+.jia{
+  font-size:50rpx;
+  color:#006cff;
+}
+
+.new{
+  font-size:34rpx;
+  color:#000;
+  margin-left:34rpx;
+}

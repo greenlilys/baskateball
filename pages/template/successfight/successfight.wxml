@@ -1,0 +1,9 @@
+<!-- top -->
+<view class="content">
+         <view class="content1">
+                 <image src="../../image/duihao.jpg" class="duihao"></image>
+                 <view class="wz">操作成功</view>
+                 <view class="wz2">您已成功提交信息</view><view class="wz3">请耐心等待我们与您联系</view>
+         </view>
+         <view class="backindex" catchtap='backindex'>返回首页</view>
+</view>

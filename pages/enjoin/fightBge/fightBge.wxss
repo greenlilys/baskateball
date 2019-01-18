@@ -1,0 +1,43 @@
+/* pages/enjoin/fightBge/fightBge.wxss */
+.box{
+  width:630rpx;
+  height:1100rpx;
+  background:#1477ff;
+  opacity: 0.7;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+
+.boxSon{
+  width:100%;
+  height:922rpx;
+  margin-top:60rpx;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user{
+  width:139rpx;
+  height:139rpx;
+  border-radius:10rpx;
+}
+
+.zhan{
+  font-size:40rpx;
+  color:#fff;
+}
+
+.num{
+  font-size:52rpx;
+}
+
+.xiaozi{
+  width:500rpx;
+  height:556rpx;
+}

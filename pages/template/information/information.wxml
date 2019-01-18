@@ -1,0 +1,71 @@
+<!-- top -->
+
+<view class="top">
+    <view class="{{infobox?'infobox':'infonamal'}}" catchtap="xtxx">
+        <text>系统消息</text>
+        <view class="hx" wx:if="{{xthx}}"></view>
+    </view>
+    <view class="{{infoboxx?'infoboxx':'infonamal'}}" catchtap="bsxx">
+        <text>比赛消息</text>
+        <view class="hx" wx:if="{{bshx}}"></view>
+    </view>
+</view>
+
+<view class="titlebox">
+    <view class="titlel">
+        有
+        <text class="num">{{count}}</text>条未读消息
+    </view>
+    <view class="titler" catchtap="fullRead">全部已读</view>
+</view>
+
+<!-- System message -->
+<!-- 循环 -->
+<scroll-view class="list" wx:if="{{hasData}}" scroll-y style="height:950rpx;" bindscrolltolower="lower">
+    <block wx:for="{{dataBox}}" wx:key="{{index}}">
+        <view class="infomationbox" catchtap="look" id="{{item.id}}">
+            <image src="../../image/wake.jpg" class="wake" wx:if="{{item.isRead==0}}"></image>
+            <image src="../../image/wakehui.jpg" class="wake" wx:if="{{item.isRead==1}}"></image>
+            <view class="newsbox">
+                <view class="xttz">{{item.msgTitle}}</view>
+                <view class="yuandian" wx:if="{{item.isRead==0}}"></view>
+                <view class="yuan" wx:if="{{item.isRead==1}}"></view>
+                <view class="content">
+                    {{item.msgContent}}
+                </view>
+                <view class="time">
+                    <text>{{item.msgTime}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+</scroll-view>
+
+<view class="mask" wx:if="{{mask}}"></view>
+<view class="modal" wx:if="{{modalx}}">
+    <view class="close">
+        <image src="../../image/close.jpg" class="closetp" catchtap="close"></image>
+    </view>
+    <view class="modalbox">
+        <image src="../../image/wake.jpg" class="modalwake"></image>
+        <view class="modalsonbox">
+            <view class="modalxttz">{{msgBox.msgTitle}}</view>
+            <view class="modaltime">
+                <text>{{msgBox.msgTime}}</text>
+                <!-- <text class="modaldian">18:30</text> -->
+            </view>
+        </view>
+    </view>
+    <view class="substance">
+        <view class="subcontent">
+            <text class="subsub"> {{msgBox.msgContent}}</text>
+        </view>
+    </view>
+</view>
+
+<!-- 占位图 -->
+<view class="noDataBox" wx:if="{{noData}}">
+    <image class="noData" src="/pages/image/nomes.png"></image>
+    <text class="noHas">暂时没有记录</text>
+</view>
+

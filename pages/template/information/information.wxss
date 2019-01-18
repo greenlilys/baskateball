@@ -1,0 +1,274 @@
+/* top */
+.top{
+  width:100%;
+  height:49px;
+  display:flex;
+  justify-content: space-around;
+  align-items:flex-end;
+  background:#fff;
+}
+
+.infobox{
+  width:62px;
+  height:32px;
+  font-size:14px;
+  color:#006cff;
+  text-align:center;
+}
+.infoboxx{
+  width:62px;
+  height:32px;
+  font-size:14px;
+  color:#006cff;
+  text-align:center;
+}
+.infonamal{
+  width:50%;
+  height:98rpx;
+  font-size:14px;
+  color:#000;
+  text-align:center;
+  line-height: 98rpx;
+}
+.hx{
+  width:100%;
+  border:3rpx solid #c71111;
+}
+
+/* title */
+.titlebox{
+  width:335px;
+  height:60px;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titlel{
+  width:103px;
+  height:20px;
+  font-size:14px;
+  text-align:center;
+  border-left:4px solid #c71111;
+}
+
+.num{
+  color:#c71111;
+  font-weight: blod;
+}
+
+.titler{
+  width:72px;
+  height:27px;
+  font-size:11px;
+  color:#006cff;
+  border:1px solid #006cff;
+  border-radius:30px;
+  text-align:center;
+  line-height:27px;
+}
+
+.infomationbox{
+  width:335px;
+  height:111px;
+  margin:0px auto 20px auto;
+  border-radius:10px;
+  background:#fff;
+  box-shadow:0rpx 0rpx 40rpx #dddddd
+}
+
+.wake{
+  width:25px;
+  height:25px;
+  float:left;
+  margin-left:20px;
+  margin-top:18px;
+}
+
+.newsbox{
+  width:260px;
+  height:72px;
+  float:left;
+  margin-top:18px;
+  margin-left:10px;
+ position:relative;
+}
+
+.content{
+  font-size:12px;
+  color:#131313;
+  text-overflow:ellipsis;           
+   white-space:nowrap;
+   overflow:hidden; 
+   margin-top:20rpx;
+}
+
+.xttz{
+  font-size:18px;
+  color:#000;
+}
+
+.yuandian{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:#d80033;
+  position:absolute;
+  right:0;
+  top:0;
+}
+
+.yuan{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  margin-top:4px;
+  margin-right:10px;
+  background:#eee;
+   position:absolute;
+   top:0;
+   right:0;
+}
+
+.yuandianb{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  margin-top:4px;
+  margin-right:10px;
+  background:#d80033;
+}
+
+.yuanb{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  margin-top:4px;
+  margin-right:10px;
+  background:#eee;
+}
+
+
+.time{
+  font-size:10px;
+  color:#999;
+  margin-top:18px;
+}
+
+.dian{
+  margin-left:180px;
+}
+
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #7f7f7f;
+    z-index: 9000;
+    opacity: 0.7;
+}
+
+.modal{
+   width:295px;
+   height:402px;
+   background:#fff;
+   position:absolute;
+    top:102px;
+    left: 0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+   border-radius:10px;
+   z-index: 9999;
+}
+
+.close{
+  width:295px;
+  height:40px;
+  line-height:40px;
+}
+.closetp{
+  width:10px;
+  height:10px;
+  margin-left:269px;
+}
+.modalbox{
+  width:256px;
+  height:45px;
+  margin:0 auto;
+}
+.modalwake{
+  width:25px;
+  height:25px;
+  float:left;
+}
+.modalsonbox{
+ width:222px;
+  height:45px;
+  float:left;
+  margin-left:9px;
+  display:flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+
+.modalxttz{
+  width:222px;
+  font-size:18px;
+  color:#000;
+}
+
+.modaltime{
+  font-size:10px;
+  color:#999;
+  margin-top:9px;
+}
+
+.modaldian{
+  margin-left:150px;
+}
+
+.substance{
+  width:100%;
+  height:300px;
+  margin-top:19px;
+  overflow:hidden;
+  background:#f1f5f8;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+}
+
+.subcontent{
+  width:204px;
+  height:271px;
+  margin:28px auto 0px auto;
+  font-size:10px;
+  color:#131313;
+  position:relative;
+}
+
+.bsdetail{
+  width:187px;
+  height:41px;
+  font-size:16px;
+  color:#fff;
+  text-align:center;
+  line-height:41px;
+  background:#006cff;
+  border-radius:5px;
+  position:absolute;
+  left:0px;
+  right: 0px;
+  top:0px;
+  bottom: -150px;
+  margin:auto;
+}
+
+.noDataBox{
+  margin:40rpx auto 0 auto;
+}
+
+

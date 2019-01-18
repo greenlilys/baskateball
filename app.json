@@ -1,0 +1,93 @@
+{
+    "pages": [
+       
+        "pages/index/index",
+        "pages/template/choiceSchool/choiceSchool",  
+        "pages/template/choiceCity/choiceCity",      
+        "pages/template/about/about",
+        "pages/personal/personal",
+        "pages/template/edit/edit",
+        "pages/template/hegzlist/hegzlist",
+        "pages/template/hefslist/hefslist",
+        "pages/template/backdeposit/backdeposit",
+        "pages/enjoin/enjointhree/enjointhree",
+        "pages/enjoin/fightBge/fightBge",
+        "pages/template/information/information",
+        "pages/indexTemplate/depositSuccess/depositSuccess",
+        "pages/template/depositper/depositper",
+        "pages/indexTemplate/fullDetails/fullDetails",
+        "pages/template/help/help",
+        "pages/template/gofight/gofight",
+        "pages/template/successdeposit/successdeposit",
+        "pages/fight/fight",
+        "pages/indexTemplate/dataDetail/dataDetail",
+        "pages/template/successScan/successScan",
+        "pages/indexTemplate/signfee/signfee",
+        "pages/template/MyCore/MyCore",
+        "pages/template/recharge/recharge",
+        "pages/indexTemplate/signSuccess/signSuccess",
+        "pages/template/bindingcell/bindingcell",
+        "pages/ranking/ranking",
+        "pages/template/opinion/opinion",
+        "pages/template/sponsor/sponsor",
+        "pages/template/competitionmanage/competitionmanage",
+        "pages/template/consumptionrecords/consumptionrecords",
+        "pages/rankingTemplate/template",
+        "pages/template/fslist/fslist",
+        "pages/template/gzlist/gzlist",
+        "pages/indexTemplate/successRetire/successRetire",
+        "pages/fightTemplate/mySelfData/mySelfData",
+        "pages/fightTemplate/tenVic/tenVic",
+        "pages/fightTemplate/fiveVic/fiveVic",
+        "pages/template/myPage/myPage",
+        "pages/template/hePage/hePage",
+        "pages/indexTemplate/deposit0/deposit0",
+        "pages/template/changenickname/changenickname",
+        "pages/template/changecell/changecell",
+        "pages/template/deposit/deposit",
+        "pages/template/wallet/wallet",
+        "pages/logs/logs",
+        "pages/template/successbindcell/successbindcell",
+        "pages/template/successopinion/successopinion",
+        "pages/template/successfight/successfight",
+        "pages/ence_push/ence_push"
+        
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#000",
+        "navigationBarTitleText": "BBALL",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#000",
+        "selectedColor": "#c71111",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "iconPath": "./pages/image/indexhei.png",
+                "selectedIconPath": "./pages/image/indexnew.png",
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "iconPath": "./pages/image/zhanjihei.png",
+                "selectedIconPath": "./pages/image/zhanjilan.png",
+                "pagePath": "pages/fight/fight",
+                "text": "战绩"
+            },
+            {
+                "iconPath": "./pages/image/paihanghei.png",
+                "selectedIconPath": "./pages/image/paihangl.png",
+                "pagePath": "pages/ranking/ranking",
+                "text": "排行"
+            },
+            {
+                "iconPath": "./pages/image/gerenhei.png",
+                "selectedIconPath": "./pages/image/userl.png",
+                "pagePath": "pages/personal/personal",
+                "text": "个人中心"
+            }
+        ]
+    }
+}

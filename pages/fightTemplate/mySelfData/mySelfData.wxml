@@ -1,0 +1,140 @@
+<view class="top">
+       <view class="leftTop">
+           <view class="myBox">
+                    <image class="head" src="{{userInfo.avatarUrl}}"></image>
+                    <view class="nick">{{userInfo.nickName}}</view>
+          </view>
+       </view>
+       <view class="rightTop">
+              <view class="rightSon1">
+                      <view class="hx"></view>
+                      <view class="fvic" wx:if="{{isWin==2}}">失败</view>
+                      <view class="fvic" wx:if="{{isWin==1}}">胜利</view>
+                      <view class="hx"></view>
+              </view>
+              <view class="rightSon2">
+                      <view class="red">红队</view>
+                      <view class="core">
+                        {{ Bscore}}
+                        </view>
+                       <view class="red">蓝队</view>
+              </view>
+       </view>
+</view>
+
+<view class="dataBox">
+       <view class="titleBox">
+              <view class="title1">
+                    <view class="redBox">红队</view>
+              </view>
+              <view class="title2">
+                    <text>得分</text>
+                    <text>篮板</text>
+                    <text>助攻</text>
+                    <text>MVP</text>
+              </view>
+       </view>
+       <view class="fighterBox">
+             <view class="headBox">
+                     <image class="head2" src="{{dataRed[0].avatar}}"></image>
+                    <text class="nick2">{{dataRed[0].nickName}}</text>
+             </view>
+             <view class="smallBox">
+                    <view>{{dataRed[0].score}}</view>
+                    <view class="lb">{{dataRed[0].backboard}}</view>
+                    <view>{{dataRed[0].assists}}</view>
+             </view>
+             <view class="mvpBox">
+                   <image class="mvp" src="../../image/mvpb.jpg" wx:if="{{dataRed[0].mvp=='mvp'}}"></image>
+             </view>
+       </view>
+
+       <view class="fighterBox">
+             <view class="headBox">
+                     <image class="head2" src="{{dataRed[1].avatar}}"></image>
+                    <text class="nick2">{{dataRed[1].nickName}}</text>
+             </view>
+             <view class="smallBox">
+                    <view>{{dataRed[1].score}}</view>
+                    <view class="lb">{{dataRed[1].backboard}}</view>
+                    <view>{{dataRed[1].assists}}</view>
+             </view>
+             <view class="mvpBox">
+                   <image class="mvp" src="../../image/mvpb.jpg" wx:if="{{dataRed[1].mvp=='mvp'}}"></image>
+             </view>
+       </view>
+
+         <view class="fighterBox">
+             <view class="headBox">
+                    <image class="head2" src="{{dataRed[2].avatar}}"></image>
+                    <text class="nick2">{{dataRed[2].nickName}}</text>
+             </view>
+             <view class="smallBox">
+                   <view>{{dataRed[2].score}}</view>
+                    <view class="lb">{{dataRed[2].backboard}}</view>
+                    <view>{{dataRed[2].assists}}</view>
+             </view>
+             <view class="mvpBox">
+                   <image class="mvp" src="../../image/mvpb.jpg" wx:if="{{dataRed[2].mvp=='mvp'}}"></image>
+             </view>
+       </view>
+</view>
+
+
+<view class="dataBox">
+       <view class="titleBox">
+              <view class="title1">
+                    <view class="blueBox">蓝队</view>
+              </view>
+              <view class="title2">
+                    <text>得分</text>
+                    <text>篮板</text>
+                    <text>助攻</text>
+                    <text>MVP</text>
+              </view>
+       </view>
+       <view class="fighterBox">
+             <view class="headBox">
+                    <image class="head2" src="{{dataBlue[0].avatar}}"></image>
+                    <text class="nick2">{{dataBlue[0].nickName}}</text>
+             </view>
+             <view class="smallBox">
+                    <view>{{dataBlue[0].score}}</view>
+                    <view class="lb">{{dataBlue[0].backboard}}</view>
+                    <view>{{dataBlue[0].assists}}</view>
+             </view>
+             <view class="mvpBox">
+                   <image class="mvp" src="../../image/mvpb.jpg" wx:if="{{dataBlue[0].mvp=='mvp'}}"></image>
+             </view>
+       </view>
+
+       <view class="fighterBox">
+             <view class="headBox">
+                    <image class="head2" src="{{dataBlue[1].avatar}}"></image>
+                    <text class="nick2">{{dataBlue[1].nickName}}</text>
+             </view>
+             <view class="smallBox">
+                    <view>{{dataBlue[1].score}}</view>
+                    <view class="lb">{{dataBlue[1].backboard}}</view>
+                    <view>{{dataBlue[1].assists}}</view>
+             </view>
+             <view class="mvpBox">
+                   <image class="mvp" src="../../image/mvpb.jpg" wx:if="{{dataBlue[1].mvp=='mvp'}}"></image>
+             </view>
+       </view>
+
+         <view class="fighterBox">
+             <view class="headBox">
+                    <image class="head2" src="{{dataBlue[2].avatar}}"></image>
+                    <text class="nick2">{{dataBlue[2].nickName}}</text>
+             </view>
+             <view class="smallBox">
+                     <view>{{dataBlue[2].score}}</view>
+                    <view class="lb">{{dataBlue[2].backboard}}</view>
+                    <view>{{dataBlue[2].assists}}</view>
+             </view>
+             <view class="mvpBox">
+                   <image class="mvp" src="../../image/mvpb.jpg" wx:if="{{dataBlue[2].mvp=='mvp'}}"></image>
+             </view>
+       </view>
+</view>

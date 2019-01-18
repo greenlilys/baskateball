@@ -1,0 +1,190 @@
+<template name="dataList">
+     <view class="listBox" catchtap='gohePage'>
+       <!-- <view class="paiming">
+            <view>No.</view>
+            <view>66</view>
+       </view> -->
+        <image style="height:50rpx;width:45rpx;" src="../image/no1.jpg"></image>
+       <view class="listSon">
+             <image src="{{item.avatar?item.avatar:userInfo.avatarUrl}}" class="head"></image>
+             <text class="nickname">{{item.nickName?item.nickName:userInfo.nickName}}</text>
+              <view class="weizhi">{{item.position?item.position:'小前锋'}} </view>
+       </view>
+
+       <view class="listSon">
+             <view>
+                 <text  class="num">66</text>
+                 <text class="fen">分</text>
+             </view>
+              <view class="zonghe">综合实力</view>
+       </view>
+
+       <view class="listSon">
+             <view class="sonson">
+                    <view class="wenzi2">场次</view>
+                    <view class="progress">
+                           <progress percent="{{item.countMat}}" stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">{{item.countMat}}</view>
+                    </view>
+             </view>
+
+             <view class="sonson">
+                    <view class="wenzi2">胜率</view>
+                    <view class="progress">
+                           <progress percent="60" stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">60%</view>
+                    </view>
+             </view>
+
+             <view class="sonson">
+                    <view class="wenzi2">总得分</view>
+                    <view class="progress">
+                           <progress percent="{{item.sumScore}}" stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">{{item.sumScore}}</view>
+                    </view>
+             </view>
+
+             <view class="sonson">
+                    <view class="wenzi2">总篮板</view>
+                    <view class="progress">
+                           <progress percent="{{item.sumBck}}" stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">{{item.sumBck}}</view>
+                    </view>
+             </view>
+
+              <view class="sonson">
+                    <view class="wenzi2">总助攻</view>
+                    <view class="progress">
+                           <progress percent="{{item.sumAss}}"   stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">{{item.sumAss}}</view>
+                    </view>
+             </view>
+       </view>
+</view>
+
+<view class="listBox" catchtap='gohePage'>
+       <!-- <view class="paiming">
+            <view>No.</view>
+            <view>66</view>
+       </view> -->
+        <image style="height:50rpx;width:45rpx;" src="../image/no2.jpg"></image>
+       <view class="listSon">
+             <image src="{{item.avatar?item.avatar:userInfo.avatarUrl}}" class="head"></image>
+             <text class="nickname">{{item.nickName?item.nickName:userInfo.nickName}}</text>
+              <view class="weizhi">{{item.position?item.position:'小前锋'}} </view>
+       </view>
+
+       <view class="listSon">
+             <view>
+                 <text  class="num">66</text>
+                 <text class="fen">分</text>
+             </view>
+              <view class="zonghe">综合实力</view>
+       </view>
+
+       <view class="listSon">
+             <view class="sonson">
+                    <view class="wenzi2">场次</view>
+                    <view class="progress">
+                           <progress percent="{{item.countMat}}" stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">{{item.countMat}}</view>
+                    </view>
+             </view>
+
+             <view class="sonson">
+                    <view class="wenzi2">胜率</view>
+                    <view class="progress">
+                           <progress percent="60" stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">60%</view>
+                    </view>
+             </view>
+
+             <view class="sonson">
+                    <view class="wenzi2">总得分</view>
+                    <view class="progress">
+                           <progress percent="{{item.sumScore}}" stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">{{item.sumScore}}</view>
+                    </view>
+             </view>
+
+             <view class="sonson">
+                    <view class="wenzi2">总篮板</view>
+                    <view class="progress">
+                           <progress percent="{{item.sumBck}}" stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">{{item.sumBck}}</view>
+                    </view>
+             </view>
+
+              <view class="sonson">
+                    <view class="wenzi2">总助攻</view>
+                    <view class="progress">
+                           <progress percent="{{item.sumAss}}"   stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">{{item.sumAss}}</view>
+                    </view>
+             </view>
+       </view>
+</view>
+
+<view class="listBox" catchtap='gohePage'>
+       <!-- <view class="paiming">
+            <view>No.</view>
+            <view>66</view>
+       </view> -->
+        <image style="height:50rpx;width:45rpx;" src="../image/no3.jpg"></image>
+       <view class="listSon">
+             <image src="{{item.avatar?item.avatar:userInfo.avatarUrl}}" class="head"></image>
+             <text class="nickname">{{item.nickName?item.nickName:userInfo.nickName}}</text>
+              <view class="weizhi">{{item.position?item.position:'小前锋'}} </view>
+       </view>
+
+       <view class="listSon">
+             <view>
+                 <text  class="num">66</text>
+                 <text class="fen">分</text>
+             </view>
+              <view class="zonghe">综合实力</view>
+       </view>
+
+       <view class="listSon">
+             <view class="sonson">
+                    <view class="wenzi2">场次</view>
+                    <view class="progress">
+                           <progress percent="{{item.countMat}}" stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">{{item.countMat}}</view>
+                    </view>
+             </view>
+
+             <view class="sonson">
+                    <view class="wenzi2">胜率</view>
+                    <view class="progress">
+                           <progress percent="60" stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">60%</view>
+                    </view>
+             </view>
+
+             <view class="sonson">
+                    <view class="wenzi2">总得分</view>
+                    <view class="progress">
+                           <progress percent="{{item.sumScore}}" stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">{{item.sumScore}}</view>
+                    </view>
+             </view>
+
+             <view class="sonson">
+                    <view class="wenzi2">总篮板</view>
+                    <view class="progress">
+                           <progress percent="{{item.sumBck}}" stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">{{item.sumBck}}</view>
+                    </view>
+             </view>
+
+              <view class="sonson">
+                    <view class="wenzi2">总助攻</view>
+                    <view class="progress">
+                           <progress percent="{{item.sumAss}}"   stroke-width="15" activeColor="#006cff" active/>
+                           <view class="shu">{{item.sumAss}}</view>
+                    </view>
+             </view>
+       </view>
+</view>
+</template> 

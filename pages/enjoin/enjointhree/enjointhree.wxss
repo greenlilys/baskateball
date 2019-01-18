@@ -1,0 +1,70 @@
+.bck{
+  width:100%;
+  height:1073rpx;
+  overflow:hidden;
+  position:relative;
+}
+.bckimg{
+ width:750rpx;
+  height:1073rpx; 
+  position:absolute;
+  top:0;
+}
+.bckSon{
+  z-index:100;
+  width:386rpx;
+  height:960rpx;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  top:0;
+  margin:112rpx auto 0 auto;
+}
+
+.head{
+  width:141rpx;
+  height:141rpx;
+  border-radius:10px;
+}
+
+.nickName{
+  font-size:38rpx;
+  color:#000;
+text-shadow: 1px 0 0 #fff, 0 1px 0 #fff, 
+    0 -1px 0 #fff, -1px 0 0 #fff, 
+    1px 0 1px #fff, 0 1px 1px #fff, 
+    0 -1px 1px #fff, -1px 0 1px #fff;
+}
+
+.who{
+  font-size:48rpx;
+  color:#000;
+  text-shadow: 1px 0 0 #fff, 0 1px 0 #fff, 
+    0 -1px 0 #fff, -1px 0 0 #fff, 
+    1px 0 1px #fff, 0 1px 1px #fff, 
+    0 -1px 1px #fff, -1px 0 1px #fff;
+}
+
+.bigsvic{
+  width:376rpx;
+  height:613rpx;
+}
+
+.erweima{
+  width:100%;
+  height:264rpx;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  background:#fff;
+}
+
+.erwei{
+  width:211rpx;
+  height:211rpx;
+}

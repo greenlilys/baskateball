@@ -1,0 +1,34 @@
+<!-- top -->
+<view class="top">
+     <view class="title">缴纳押金</view>
+     <view class="numbox">
+            <text class="num">{{deposit}}</text>
+            <text class="dw">元</text>
+     </view>
+</view>
+
+<view class="box">
+      <view class="boxSon">
+              <image class="wenhao" src="../../image/wenhao.jpg"></image>
+              <text class="what">什么是押金</text>
+      </view>
+      <image class="jindu" src="../../image/jindutiao1.jpg"></image>
+      <view class="boxSon2">
+             <view class="sonson">
+                    <view>Step.1</view>
+                    <view>缴纳押金</view>
+             </view>
+
+             <view class="sonson">
+                    <view>Step.2</view>
+                    <view>缴纳报名费</view>
+             </view>
+
+              <view class="sonson">
+                    <view>Step.3</view>
+                    <view>报名成功</view>
+             </view>
+      </view>
+</view>
+
+<view class="pay" catchtap='pay'>缴纳押金</view>

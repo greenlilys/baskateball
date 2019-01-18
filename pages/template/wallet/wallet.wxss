@@ -1,0 +1,79 @@
+/* top */
+.top{
+  width:100%;
+  height:602rpx;
+  background:#c71111;
+  overflow:hidden;
+}
+
+.zhye{
+  width:350rpx;
+  height:46rpx;
+  font-size:36rpx;
+  color:#fff;
+  text-align:center;
+  line-height:46rpx;
+ margin-left:40rpx;
+ margin-top:70rpx;
+ font-weight: bold;
+}
+
+.num{
+  width:426rpx;
+  height:146rpx;
+float:left;
+  font-size:180rpx;
+  color:#fff;
+  line-height:146rpx;
+  margin-left:40rpx;
+  margin-top:64rpx;
+}
+
+.zuan{
+  width:22px;
+  height:22px;
+  font-size:36rpx;
+  float:left;
+  margin-top:50rpx;
+  font-weight: bold;
+  margin-left: 40rpx;
+}
+
+.czbox{
+  width:671rpx;
+  height:352rpx;
+  border-radius:10px;
+  margin:-177rpx auto;
+  font-size:30rpx;
+  color:#000;
+  background:#fff;
+  overflow:hidden;
+  /* box-shadow:0rpx 0rpx 40rpx #dddddd; */
+  /* mix-blend-mode: multiply; */
+}
+
+.czson{
+  width:590rpx;
+  height:90rpx;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.czson1{
+   margin-top:38rpx;
+}
+.czson2{
+    border-top:2rpx solid #eee;
+    border-bottom:2rpx solid #eee;
+}
+
+.sanjiao{
+  width:11rpx;
+  height:20rpx;
+}
+
+.jiaona{
+  color:#999;
+  margin-left:200rpx;
+}

@@ -1,0 +1,496 @@
+/* 战力板块 */
+
+.top {
+  width: 100%;
+  height: 98rpx;
+  background: #fff;
+  /* color:#000; */
+  display: flex;
+  /* justify-content:space-around; */
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  font-weight: bold;
+  font-size: 30rpx;
+  line-height: 98rpx;
+}
+
+.title {
+  width: 50%;
+  text-align: center;
+}
+
+.title1 {
+  width: 50%;
+  text-align: center;
+  color: #c71111;
+}
+
+.title2 {
+  width: 50%;
+  text-align: center;
+  color: #c71111;
+}
+
+.hx1 {
+  width: 50%;
+  border: 3rpx solid #c71111;
+  position: absolute;
+}
+
+.hx2 {
+  width: 50%;
+  border: 3rpx solid #c71111;
+  position: absolute;
+}
+
+.titleBox {
+  width: 100%;
+  height: 72rpx;
+  background: #fff;
+  font-size: 22rpx;
+  position: relative;
+}
+
+.titleSon {
+  width: 470rpx;
+  height: 72rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.fullBox {
+  width: 375rpx;
+  height: 287rpx;
+  position: absolute;
+  left: 0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 28rpx;
+  z-index: 100;
+}
+
+.titleA {
+  color: #006cff;
+}
+
+.titleB {
+  color: #006cff;
+}
+
+.userBox {
+  width: 375rpx;
+  height: 200rpx;
+  background: #fff;
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 26rpx;
+  z-index: 100;
+}
+
+.xsj {
+  width: 16rpx;
+  height: 9rpx;
+  margin-left: 12rpx;
+}
+
+.listBox1 {
+  width: 672rpx;
+  height: 310rpx;
+  background: #fff;
+  margin: 140rpx auto 40rpx auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0rpx 0rpx 40rpx #ddd;
+}
+
+.listBox2 {
+  width: 672rpx;
+  height: 310rpx;
+  background: #fff;
+  margin: 0rpx auto 40rpx auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 10rpx;
+  box-shadow: 0rpx 0rpx 40rpx #ddd;
+}
+
+.zonghe {
+  font-size: 30rpx;
+  margin-top: -78rpx;
+}
+
+.listSon {
+  width: 160rpx;
+  height: 230rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.head {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+
+.head2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.nickname {
+  text-align: center;
+  font-size: 28rpx;
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-content: space-between; */
+  overflow: hidden;
+  width: 135rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  /* white-space: nowrap;
+  align-items:center; */
+  /* display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.weizhi {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.num {
+  font-size: 92rpx;
+  color: #c71111;
+}
+
+.fen {
+  font-size: 32rpx;
+  color: #c71111;
+}
+
+.sonson {
+  width: 100%;
+  height: 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wenzi2 {
+  font-size: 22rpx;
+}
+
+.progress {
+  width: 65rpx;
+  position: relative;
+  background: #000;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 5rpx;
+  padding-left: 15rpx;
+}
+
+.shu {
+  position: absolute;
+  top: 0;
+  left: 12rpx;
+  font-size: 20rpx;
+  color: #fff;
+}
+
+.nogz {
+  width: 672rpx;
+  height: 1078rpx;
+  background: #fff;
+  border-radius: 10px;
+  margin: 40rpx auto 40rpx auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nogzSon {
+  width: 340rpx;
+  height: 353rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tupian {
+  width: 340rpx;
+  height: 263rpx;
+}
+
+.wenzi3 {
+  font-size: 36rpx;
+  color: #999;
+}
+
+.paiming {
+  width: 50rpx;
+  font-size: 18rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  margin-right: -25rpx;
+}
+
+.cx {
+  width: 100%;
+  height: 10rpx;
+  background: #e6eaed;
+  margin: 40rpx 0 40rpx 0;
+}
+
+.zanwugz {
+  width: 100%;
+  height: 525rpx;
+  margin: -40rpx auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: #fff;
+}
+
+.zanwu {
+  font-size: 28rpx;
+  color: #999;
+}
+
+/* 经验板块 */
+
+.jyBox1 {
+  width: 672rpx;
+  height: 243rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 140rpx auto 40rpx auto;
+  overflow: hidden;
+  box-shadow: 0rpx 0rpx 40rpx #ddd;
+}
+
+.jyBox {
+  width: 672rpx;
+  height: 243rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 40rpx auto 0rpx auto;
+  overflow: hidden;
+  box-shadow: 0rpx 0rpx 40rpx #ddd;
+}
+
+.cx1 {
+  width: 100%;
+  height: 10rpx;
+  background: #e6eaed;
+}
+
+.jiangpai {
+  position: absolute;
+  height: 46rpx;
+  width: 47rpx;
+  margin-right: 16rpx;
+  bottom: 20rpx;
+  left: 72rpx;
+}
+
+.jySon1 {
+  width: 592rpx;
+  height: 170rpx;
+  margin: 15rpx auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.jySonL {
+  width: 295rpx;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.pai {
+  font-size: 22rpx;
+  color: #c71111;
+  height: 20rpx;
+}
+
+.pai2 {
+  font-size: 24rpx;
+  color: #c71111;
+  height: 20rpx;
+}
+
+.nickname2 {
+  padding-left: 25rpx;
+  font-size: 36rpx;
+  width: 180rpx;
+  /* white-space: nowrap; */
+  height: 83rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.username{
+  width: 180rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jySonR {
+  width: 295rpx;
+  height: 88rpx;
+  position: relative;
+}
+
+.xian {
+  width: 100%;
+  height: 2rpx;
+  background: #eaeaea;
+}
+
+.jySon2 {
+  width: 592rpx;
+  margin: 0 auto;
+  height: 57rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18rpx;
+}
+
+.jySon2 text {
+  margin-left: 8rpx;
+}
+
+.loginBox {
+  position: absolute;
+  width: 625rpx;
+  height: 532rpx;
+  border-radius: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 2000;
+  background: #fff;
+}
+
+.loginTop {
+  width: 625rpx;
+  height: 100rpx;
+  border-bottom: 1px solid #d2d3d5;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  color: #000;
+}
+
+.loginBody {
+  width: 625rpx;
+  height: 337rpx;
+  border-bottom: 1px solid #d2d3d5;
+}
+
+.loginBodyson1 {
+  width: 496rpx;
+  height: 208rpx;
+  margin: 0 auto;
+  border-bottom: 1px solid #d2d3d5;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.logo {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+
+.wenzi {
+  font-size: 28rpx;
+  color: #000;
+}
+
+.loginBodyson2 {
+  width: 466rpx;
+  height: 96rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dian {
+  width: 8rpx;
+  height: 8rpx;
+}
+
+.wenzi2 {
+  font-size: 22rpx;
+  color: #000;
+}
+
+.bbtom {
+  width: 625rpx;
+  height: 90rpx;
+  display: flex;
+}
+
+.btn {
+  width: 100%;
+  height: 83rpx;
+  text-align: center;
+  line-height: 83rpx;
+  font-size: 32rpx;
+  border: none;
+}
+
+button::after {
+  border: none;
+}
+
+.mask {
+  height: 100%;
+  width: 100%;
+  background: #999;
+  opacity: 0.6;
+  position: absolute;
+  z-index: 100;
+}
+
+.noDataBox {
+  margin: 40rpx auto 0 auto;
+}
