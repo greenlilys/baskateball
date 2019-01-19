@@ -1,7 +1,8 @@
 {
     "pages": [
-       
+        
         "pages/index/index",
+        "pages/template/changecell/changecell",
         "pages/template/choiceSchool/choiceSchool",  
         "pages/template/choiceCity/choiceCity",      
         "pages/template/about/about",
@@ -43,7 +44,7 @@
         "pages/template/hePage/hePage",
         "pages/indexTemplate/deposit0/deposit0",
         "pages/template/changenickname/changenickname",
-        "pages/template/changecell/changecell",
+        
         "pages/template/deposit/deposit",
         "pages/template/wallet/wallet",
         "pages/logs/logs",
@@ -58,6 +59,11 @@
         "navigationBarBackgroundColor": "#000",
         "navigationBarTitleText": "BBALL",
         "navigationBarTextStyle": "white"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
     },
     "tabBar": {
         "color": "#000",

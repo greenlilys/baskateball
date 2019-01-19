@@ -80,7 +80,7 @@ Page({
   },
   backbtn () {
     wx.request({
-      url: app.data.localg + 'stbondrefund/createBondRefund',
+      url: app.data.local + 'stbondrefund/createBondRefund',
       data: {
         userId:app.globalData.userId
       },

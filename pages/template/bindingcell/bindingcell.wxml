@@ -6,7 +6,7 @@
 
          <view class="sonbox2">
                 <input placeholder='请输入验证码' class="cellInput"  bindinput='getCodeValue' value='{{code}}'/>
-                <view class="code"  catchtap='getVerificationCode'>{{codename}}</view>
+                <view class="code"  catchtap='getCodeBtn'>{{codename}}</view>
          </view>
 </view>
 

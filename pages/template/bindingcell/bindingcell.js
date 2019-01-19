@@ -3,134 +3,139 @@ const app = getApp();
 Page({
     data: {
         phone: '',//手机号
-        code: '',//验证码
-        verifyCode: null,//用于存放验证码接口里获取到的code
+        code: '',//验证码       
         codename: '获取验证码',
-        addPhone: ''//如果是强制绑定，绑定成功后返回上一页
+        disabled:true
+       
     },
-    getPhoneValue: function (e) {
+    //获取输入框手机号
+    getPhoneValue: function (e) {       
         this.setData({
             phone: e.detail.value
         })
     },
+    //获取输入框验证码
     getCodeValue: function (e) {
         this.setData({
             code: e.detail.value
         })
     },
-
+    //获取验证码
+    getCodeBtn() {
+        if (this.data.disabled) {
+            this.getCode();
+        }
+    },
+    //获取验证码
     getCode: function () {
-        var a = this.data.phone;
-        var _this = this;
-        var myreg = /^(14[0-9]|13[0-9]|15[0-9]|17[0-9]|18[0-9])\d{8}$$/;
-        if (this.data.phone == "") {
+        this.setData({
+            disabled:false
+        })
+        let phone = this.data.phone;       
+        let myreg = /^(14[0-9]|13[0-9]|15[0-9]|17[0-9]|18[0-9])\d{8}$$/;
+        if (phone == "") {
             wx.showToast({
                 title: '手机号不能为空',
-                icon: 'none',
+                image: '/pages/image/warn.png',
                 duration: 1000
             })
+            this.setData({
+                disabled: true
+            })
             return false;
-        } else if (!myreg.test(this.data.phone)) {
+        } else if (!myreg.test(phone)) {
             wx.showToast({
                 title: '请输入正确的手机号',
-                icon: 'none',
+                image: '/pages/image/warn.png',
                 duration: 1000
+            })
+            this.setData({
+                disabled: true
             })
             return false;
         } else {
-            wx.request({
-                data: {
-
-                },
-                method: 'POST',
-                url: app.data.localc + 'stuser/sendSms/' + this.data.phone,
-                success(res) {
-                    console.log(res)
-                    _this.setData({
-                        verifyCode: res.data.data
-                    })
+            app.sendRequest({
+                data: {},                
+                url: 'stuser/sendSms/' + phone,
+                success:(res)=>{ 
                     var num = 61;
                     var timer = setInterval(function () {
                         num--;
                         if (num <= 0) {
                             clearInterval(timer);
-                            _this.setData({
+                            this.setData({
                                 codename: '重新发送',
-                                disabled: false
+                                disabled: true
                             })
-
                         } else {
-                            _this.setData({
+                            this.setData({
                                 codename: num + "s"
                             })
                         }
-                    }, 1000)
+                    }.bind(this), 1000)
+                },
+                fail:(res)=>{
+                    this.setData({
+                        disabled: true
+                    })
                 }
             })
-
         }
-
-
     },
-    //获取验证码
-    getVerificationCode() {
-        this.getCode();
-        var _this = this
-        _this.setData({
-            disabled: true
-        })
-    },
-    confirmbind: function () {
-        var myreg = /^(14[0-9]|13[0-9]|15[0-9]|17[0-9]|18[0-9])\d{8}$$/;
-        if (this.data.phone == "") {
+    
+    //确认绑定
+    confirmbind: function () {      
+        let phone = this.data.phone; 
+        let code = this.data.code;
+        let myreg = /^(14[0-9]|13[0-9]|15[0-9]|17[0-9]|18[0-9])\d{8}$$/;
+        if (phone == "") {          
             wx.showToast({
                 title: '手机号不能为空',
-                icon: 'none',
+                image: '/pages/image/warn.png',
                 duration: 1000
             })
             return false;
-        } else if (!myreg.test(this.data.phone)) {
+        } else if (!myreg.test(phone)) {
             wx.showToast({
                 title: '请输入正确的手机号',
-                icon: 'none',
+                image: '/pages/image/warn.png',
                 duration: 1000
             })
             return false;
         }
-        if (this.data.code == "") {
+        if (code == "") {
             wx.showToast({
                 title: '验证码不能为空',
-                icon: 'none',
+                image: '/pages/image/warn.png',
                 duration: 1000
             })
             return false;
 
-        } else {
-            wx.request({
+        } else {          
+            app.sendRequest({                           
+                url: 'stuser/bind',
                 data: {
-                    phone: this.data.phone,
-                    verifyCode: this.data.code,
+                    phone: phone,
+                    verifyCode: code,
                     userId: app.globalData.userId
-                },
-                method: 'POST',
-                url: app.data.local + 'stuser/bind',
+                }, 
                 success: (res) => {
-                    console.log(res)
-                    if (res.data.errcode == "200") {
-                        wx.showToast({
-                            title: '绑定成功',
-                        })
-                        if (this.data.addPhone) {
-                            wx.navigateBack({
-                                delta: 1
-                            })
-                        }                        
-                    } else {
-                        wx.showToast({
-                            icon: 'none',
-                            title: '绑定失败',
-                        })
-                    }
+                    // console.log(res)                    
+                    wx.showToast({
+                        title: '绑定成功',
+                        icon: 'success',
+                        duration: 1000
+                    })
+                    wx.navigateBack({
+                        delta: 1
+                    })                   
+                },
+                fail:(res)=>{
+                    wx.showToast({
+                        title: '绑定失败',
+                        image: '/pages/image/warn.png',
+                        duration: 1000
+                    })
                 }
             })
         }
@@ -147,12 +152,8 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-        if (options.addPhone) {
-            this.setData({
-                addPhone: options.addPhone
-            })
-        }
+    onLoad: function () {
+       
     },
 
     /**

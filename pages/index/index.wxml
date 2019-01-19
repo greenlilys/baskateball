@@ -86,7 +86,7 @@
 
 
 <!-- 我参加的 -->
-<scroll-view class="list" scroll-y style="height: {{windowHeight?windowHeight+'px':'auto'}};" bindscrolltolower="lowerMy" wx:if="{{myjoin}}">
+<scroll-view class="list" scroll-y style="height: {{windowHeight? (windowHeight - 70)+'px':'auto'}}" bindscrolltolower="lowerMy" wx:if="{{myjoin}}">
     <block wx:for="{{myData}}" wx:key="{{item.mid}}">
         <view class="fightBox" id="{{item.mid + item.STATUS}}" catchtap="godetail" data-index="{{index}}">
             <view class="titlebox">

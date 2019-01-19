@@ -1,19 +1,19 @@
 <view class="loginBox" wx:if="{{loginBox}}">
     <view class="loginTop">微信授权</view>
     <view class="loginBody">
-            <view class="loginBodyson1">
-                   <image class="logo" src="../image/logo.jpg"></image>
-                   <view class="wenzi">BBall申请获得以下权限：</view>
-            </view>
-            <view class="loginBodyson2">
-                  <image class="dian" src="../image/dian.jpg"></image>
-                  <view class="wenzi2">获得你的公开信息 （昵称，头像等）</view>
-            </view>
-            
+        <view class="loginBodyson1">
+            <image class="logo" src="../image/logo.jpg"></image>
+            <view class="wenzi">BBall申请获得以下权限：</view>
+        </view>
+        <view class="loginBodyson2">
+            <image class="dian" src="../image/dian.jpg"></image>
+            <view class="wenzi2">获得你的公开信息 （昵称，头像等）</view>
+        </view>
+
     </view>
- <view class="bbtom">
-                  <button class='btn' type='primary' style="background:#fff;color:#000;" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo" >授权登陆</button>
-            </view>
+    <view class="bbtom">
+        <button class='btn' type='primary' style="background:#fff;color:#000;" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">授权登陆</button>
+    </view>
 </view>
 
 <view class="mask" wx:if="{{mask}}"></view>
@@ -21,98 +21,107 @@
 <!-- 个人中心 -->
 <view class="top"></view>
 <view class="info">
-       <view class="head" catchtap='goMypage'>
-            <image src="{{userDetail.avatar}}" mode="aspectFill"></image>
-            
-       </view>
-       <view class="detail">
-              <view class="detailson1">
-                    <text class="nickname">{{userDetail.nickName}}</text>
-                    <view class="wz">{{userDetail.position
-?userDetail.position:'未知'}}</view>
-              </view>
-              <view class="detailson">
-                         <view ><text class="sg">{{userDetail.height?userDetail.height:'--'}}</text><text class="dw">cm</text></view>
-                         <view><text class="sg">{{userDetail.weight?userDetail.weight:'--'}}</text><text class="dw">kg</text></view>
-                         <view><text class="sg">{{userDetail.age?userDetail.age:'--'}}</text><text class="dw">AGE</text></view>
-              </view>
-              <view class="detailon">
-                      <view class="gz">{{userDetail. followCount?userDetail. followCount:'0'}}  关注  </view>
-                      <view class="fs">{{userDetail.fancCount?userDetail.fancCount:'0'}}  粉丝</view>
-              </view>
-       </view>
+    <view class="head" catchtap='goMypage'>
+        <image src="{{userDetail.avatar}}" mode="aspectFill"></image>
+
+    </view>
+    <view class="detail">
+        <view class="detailson1">
+            <text class="nickname">{{userDetail.nickName}}</text>
+            <view class="wz">{{userDetail.position ?userDetail.position:'未知'}}
+            </view>
+        </view>
+        <view class="detailson">
+            <view>
+                <text class="sg">{{userDetail.height?userDetail.height:'--'}}</text>
+                <text class="dw">cm</text>
+            </view>
+            <view>
+                <text class="sg">{{userDetail.weight?userDetail.weight:'--'}}</text>
+                <text class="dw">kg</text>
+            </view>
+            <view>
+                <text class="sg">{{userDetail.age?userDetail.age:'--'}}</text>
+                <text class="dw">AGE</text>
+            </view>
+        </view>
+        <view class="detailon">
+            <view class="gz">{{userDetail.followCount?userDetail.followCount:'0'}} 关注 </view>
+            <view class="fs">{{userDetail.fancCount?userDetail.fancCount:'0'}} 粉丝</view>
+        </view>
+    </view>
 </view>
 
 <!-- nav -->
 <view class="nav">
-        <view class="navson" catchtap="message">
-                   <image src="../image/message.jpg" class="tp"></image>
-                   <text class="xx">消息</text>
-                   <view class="hong" wx:if="{{userDetail.msgUnread>0}}">{{userDetail.msgUnread}}</view>
-        </view>
-        <view class="navson" catchtap="wallet">
-                 <image src="../image/wallet.jpg"  class="tp"></image>
-                 <text class="xx">钱包</text>
-        </view>
-        
-<navigator class='navigatorClass' target="miniProgram" open-type="navigate" app-id="wxc5afbb0b1c7cc625" path="pages/login/login" extra-data="MiniProgram-Parameter" version="release">
+    <view class="navson" catchtap="message">
+        <image src="../image/message.jpg" class="tp"></image>
+        <text class="xx">消息</text>
+        <view class="hong" wx:if="{{userDetail.msgUnread>0}}">{{userDetail.msgUnread}}</view>
+    </view>
+    <view class="navson" catchtap="wallet">
+        <image src="../image/wallet.jpg" class="tp"></image>
+        <text class="xx">钱包</text>
+    </view>
+
+    <navigator class='navigatorClass' target="miniProgram" open-type="navigate" app-id="wxc5afbb0b1c7cc625" path="pages/login/login" extra-data="MiniProgram-Parameter" version="release">
         <view class="navson" catchtap="sai" wx:if="{{userDetail.isOrg==0}}">
-                <image src="../image/administration.jpg"  class="ssgl"></image>
-                <text class="xx">赛事管理</text>
+            <image src="../image/administration.jpg" class="ssgl"></image>
+            <text class="xx">赛事管理</text>
         </view>
 
         <view class="navson" wx:if="{{userDetail.isOrg==1}}">
-                <image src="../image/administration.jpg"  class="ssgl"></image>
-                <text class="xx">赛事管理</text>
+            <image src="../image/administration.jpg" class="ssgl"></image>
+            <text class="xx">赛事管理</text>
         </view>
     </navigator>
-        <view class="navson" catchtap="sao">
-                <image src="../image/scan.jpg"  class="tp"></image>
-                <text class="xx">扫一扫</text>
-        </view>
+    <view class="navson" catchtap="sao">
+        <image src="../image/scan.jpg" class="tp"></image>
+        <text class="xx">扫一扫</text>
+    </view>
 </view>
 
 <!-- bottom -->
 <view class="bottom">
 
-        <view class="bottomson1" catchtap="goJF">
-                        <image src="../image/jifen.jpg" class="btp"></image>
-                            <view class="wzbox">
-                                  我的积分
-                            </view>
-                    <text style="font-size:22rpx;color:#999;position:absolute;right:150rpx;">{{userDetail.integral}}积分</text>
-                          <image src="../image/sanjiao.jpg" class="sanjiao"></image>
-                </view>
-
-        <view class="bottomson" catchtap="goedit">
-                 <image src="../image/edit.jpg" class="btp"></image>
-                    <view class="wzbox">
-                          编辑资料
-                    </view>
-                   <image src="../image/sanjiao.jpg" class="sanjiao"></image>
-         </view>
-
-        <view class="bottomson" catchtap="about">
-                <image src="../image/about.jpg" class="btp"></image>
-                <view class="wzbox">
-                      关于BBall
-                </view>
-                   <image src="../image/sanjiao.jpg" class="sanjiao"></image>
+    <view class="bottomson1" catchtap="goJF">
+        <image src="../image/jifen.jpg" class="btp"></image>
+        <view class="wzbox">
+            我的积分
         </view>
+        <text style="font-size:22rpx;color:#999;position:absolute;right:150rpx;">{{userDetail.integral}}积分</text>
+        <image src="../image/sanjiao.jpg" class="sanjiao"></image>
+    </view>
 
-        <view class="bottomson" catchtap="helpme">
-               <image src="../image/help.jpg" class="btp"></image>
-                    <view class="wzbox">
-                          使用帮助
-                    </view>
-                   <image src="../image/sanjiao.jpg" class="sanjiao"></image>
+    <view class="bottomson" catchtap="goedit">
+        <image src="../image/edit.jpg" class="btp"></image>
+        <view class="wzbox">
+            编辑资料
         </view>
+        <image src="../image/sanjiao.jpg" class="sanjiao"></image>
+    </view>
 
-          <view class="bottomson4" catchtap="opinion">
-                    <image src="../image/yijian.jpg" class="btp"></image>
-                    <view class="wzbox">
-                          意见反馈
-                    </view>
-                   <image src="../image/sanjiao.jpg" class="sanjiao"></image>
-         </view>
+    <view class="bottomson" catchtap="about">
+        <image src="../image/about.jpg" class="btp"></image>
+        <view class="wzbox">
+            关于BBall
+        </view>
+        <image src="../image/sanjiao.jpg" class="sanjiao"></image>
+    </view>
+
+    <view class="bottomson" catchtap="helpme">
+        <image src="../image/help.jpg" class="btp"></image>
+        <view class="wzbox">
+            使用帮助
+        </view>
+        <image src="../image/sanjiao.jpg" class="sanjiao"></image>
+    </view>
+
+    <view class="bottomson4" catchtap="opinion">
+        <image src="../image/yijian.jpg" class="btp"></image>
+        <view class="wzbox">
+            意见反馈
+        </view>
+        <image src="../image/sanjiao.jpg" class="sanjiao"></image>
+    </view>
 </view>

@@ -5,13 +5,13 @@ Page({
         //用户详细信息
         userDetail: {}
     },
- 
+
     onLoad: function (options) {
         //查看是否授权
         if (app.globalData.userId) {
             this.setData({
                 loginBox: false,
-                mask: false,
+                mask: false
             })
         }
         if (!app.globalData.userId) {
@@ -19,9 +19,10 @@ Page({
                 loginBox: true,
                 mask: true
             })
-        }      
+        }
+        
     },
-   
+
     /**
        * 用户转发
        */
@@ -54,11 +55,10 @@ Page({
                     wx.setStorageSync('data', data);
                     that.setData({
                         loginBox: false,
-                        mask: false                        
+                        mask: false
                     })
                     app.globalData.userId = that.data.userId;
-                    //userId换个人信息
-                    that.getData();
+                  
                 }
             }
         })
@@ -75,13 +75,13 @@ Page({
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {      
-           app.getUserDetail().then(data => {
-               this.setData({
-                   userDetail:data
-               })
-           })
-      
+    onShow: function () {
+        //获取用户信息
+        app.getUserDetail().then(data => {
+            this.setData({
+                userDetail: data
+            })
+        })
     },
 
     /**
@@ -166,7 +166,7 @@ Page({
     // 跳转钱包
     wallet() {
         wx.navigateTo({
-            url: '../template/wallet/wallet?isBond=' + this.data.data.isBond + '&startdrill=' + this.data.data.startdrill,
+            url: '../template/wallet/wallet?isBond=' + this.data.userDetail.isBond + '&startdrill=' + this.data.userDetail.startdrill,
         }),
             wx.setNavigationBarTitle({
                 title: '我的钱包'
@@ -198,13 +198,13 @@ Page({
     // 跳转计分
     goJF() {
         wx.navigateTo({
-            url: '../template/MyCore/MyCore?integral=' + this.data.data.integral,
+            url: '../template/MyCore/MyCore?integral=' + this.data.userDetail.integral,
         })
     },
     // 跳转编辑资料
     goedit() {
         wx.navigateTo({
-            url: '/pages/template/edit/edit' 
+            url: '/pages/template/edit/edit'
         })
     },
     // 跳转关于星战

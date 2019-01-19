@@ -11,9 +11,8 @@ Page({
         pageNo: 1,
         text1: true,
         hx1: true,
-        fightBox: true,
-        // userInfo: {},
-        // hasUserInfo: false,
+        fightBox: true,  
+        myjoin:false,
         userId: "",
         num: "",
         hasMore: true,
@@ -26,37 +25,37 @@ Page({
         sharePersonId: '',//分享人Id 
         windowHeight:''      
     },
-    onLoad: function (options) {          
-        var that = this;
+    onLoad: function (options) {         
+        if (app.globalData.userId) {//用户是否授权登录
+            this.setData({
+                loginBox: false,
+                mask: false,
+            })
+        } else {
+            this.setData({
+                loginBox: true,
+                mask: true
+            })
+        } 
         //通过转发进入获取转发者的userId
-        that.setData({
-            sharePersonId: options.sharePersonId || ''
+        this.setData({
+            sharePersonId: options.sharePersonId || '',
+            windowHeight: app.globalData.systemInfo.windowHeight
         })      
         // 获取用户坐标,如果未授权，弹窗提示用户授权
         wx.getLocation({
-            success: function (res) {
-                that.setData({
+            success: (res)=>{
+                this.setData({
                     lat: res.latitude,
                     lon: res.longitude
                 })
-                // 获取附近比赛
-                that.getData();
+                // 获取附近比赛                
+                this.getData();
             },
             fail:function(res){
-                console.log('获取用户位置失败' + res)
+                console.log('获取用户位置失败' + res);
             }
-        }),
-        //  获取我参加的比赛
-        that.getMyData();
-        //获取系统信息
-        wx.getSystemInfo({
-            success: function (res) {
-                that.setData({
-                    //windowHeight可使用窗口高度，单位px
-                    windowHeight: res.windowHeight
-                })
-            }
-        })  
+        })            
         // 加密解密
         // console.log(Dec.Decrypt("JveH4kz/DOeVt/itktrsiQ=="));
         // console.log(Dec.Encrypt("songchaoqun"));        
@@ -74,18 +73,6 @@ Page({
        
     },
     onShow: function () {
-        if (app.globalData.userId) {//用户是否授权登录
-            this.setData({
-                loginBox: false,
-                mask: false,
-            })
-        }else{
-            this.setData({
-                loginBox: true,
-                mask: true
-            })
-        } 
-               
     },
     /**
       * 用户转发
@@ -152,9 +139,9 @@ Page({
                     res.data.data[i].juli = that.distance(that.data.lat, that.data.lon, res.data.data[i].lat, res.data.data[i].lon)
                 }
 
-                let data = res.data.data
+                let data = res.data.data;
                 this.setData({
-                    data: this.data.data.concat(data),
+                    data: this.data.data.concat(data)
                 })
                 wx.showLoading({
                     title: '加载中',
@@ -163,7 +150,7 @@ Page({
                 setTimeout(() => {
                     wx.hideLoading();
                 }, 500)
-                //}
+               
                 if (this.data.data.length > 0) {
                     this.setData({
                         fightBox: true,
@@ -208,8 +195,8 @@ Page({
                 });
                 setTimeout(() => {
                     wx.hideLoading();
-                }, 500)
-                //}
+                }, 500)   
+
                 if (this.data.myData.length > 0) {
                     this.setData({
                         myjoin: true,
@@ -220,7 +207,8 @@ Page({
                         myjoin: false,
                         noData: true
                     })
-                }
+                }           
+             
             }
         })
     },
@@ -250,12 +238,12 @@ Page({
     
 
     reset() {
-        this.data.data = []
-        this.getData()
+        this.data.data = [];
+        this.getData();
     },
     resetMy() {
-        this.data.myData = []
-        this.getMyData()
+        this.data.myData = [];
+        this.getMyData();
     },
     //允许登录
     bindGetUserInfo: function (e) {        
@@ -277,7 +265,7 @@ Page({
                     var data = {
                         userId: res.data.data.id
                     }
-                    console.log(res.data.data.id)
+                    // console.log(res.data.data.id)
                     wx.setStorageSync('data', data);                 
                     that.setData({
                         loginBox: false,
@@ -315,13 +303,14 @@ Page({
     },
     // 切换我参加的
     myjoin() {
+       
         this.setData({
             text2: true,
             text1: false,
             hx2: true,
             hx1: false,
-            fightBox: false,
-            myjoin: true,
+            fightBox: false,  
+            myjoin: true,          
             pageNo: 1
         })
         this.resetMy();
@@ -336,7 +325,7 @@ Page({
             })
         } else if (status == "已结束") {
             wx.navigateTo({
-                url: '../indexTemplate/fullDetails/fullDetails?mid=' + id + '&mername=全场数据',
+             url: '../indexTemplate/fullDetails/fullDetails?mid=' + id + '&mername=全场数据',
             })
         } else if (status == "已满") {
             wx.navigateTo({
@@ -345,7 +334,7 @@ Page({
         } else if (status == "进行中") {
             wx.showModal({
                 title: '注意！',
-                content: '比赛正在进行。。。',
+                content: '比赛正在进行。。。'
             })
         }
     },

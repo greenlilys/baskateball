@@ -35,7 +35,7 @@
 </view>
 
 <view id="detail2">
-    <picker value="{{index}}" range="{{sexArr}}" bindchange="setSex">
+    <!-- <picker value="{{index}}" range="{{sexArr}}" bindchange="setSex">
         <view class="sonson firstbox">
             <view class="tx">
                 性别
@@ -45,14 +45,24 @@
                 <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
-    </picker>
+    </picker> -->
+    <!-- <view class="sonson">
+        <view class="tx">
+            姓名
+        </view>
+        <view class="txbox">
+            <input class="nickInput" value="{{userDetail.name ? userDetail.name : '修改'}}" bindinput='setName' />
+            <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+        </view>
+    </view> -->
+    
     <picker mode="date" value="{{value}}" start="1950-01-01" end="2018-12-31" fields="day" bindchange="chooseOld">
-        <view class="sonson">
+        <view class="sonson firstbox">
             <view class="tx">
                 年龄
             </view>
             <view class="txbox">
-                <text class="nick">{{userDetail.age?userDetail.age:'添加'}}</text>
+                <text class="nick">{{userDetail.age?userDetail.age:'修改'}}</text>
                 <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
@@ -64,7 +74,7 @@
                 身高
             </view>
             <view class="txbox">
-                <text class="nick" >{{userDetail.height?userDetail.height:'添加'}}</text>                
+                <text class="nick" >{{userDetail.height?userDetail.height:'修改'}}</text>                
                 <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
@@ -76,26 +86,26 @@
                 体重
             </view>
             <view class="txbox">
-                <text class="nick">{{userDetail.weight?userDetail.weight:'添加'}}</text> 
+                <text class="nick">{{userDetail.weight?userDetail.weight:'修改'}}</text> 
                 <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
     </picker>
 
-    <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+    <picker mode="region" bindchange="bindRegionChange" value="{{areaList}}">
         <view class="sonson">
             <view class="tx">
                 城市
             </view>
             <view class="txbox">
                 <view class="info">
-                    <text class="nick">{{userDetail.area?userDetail.area:'添加'}}</text>                      </view>
+                    <text class="nick">{{userDetail.area?userDetail.area:'修改'}}</text>                      </view>
                 <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
     </picker>
 
-    <picker value="{{index}}" range="{{schoolArr}}" bindchange="setSchool">
+    <!-- <picker value="{{index}}" range="{{schoolArr}}" bindchange="setSchool">
         <view class="sonson">
             <view class="tx">
                 学校
@@ -127,7 +137,7 @@
                 <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
-    </picker>
+    </picker> -->
 
 </view>
 

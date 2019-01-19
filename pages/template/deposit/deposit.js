@@ -79,7 +79,7 @@ Page({
   pay () {
     var that = this
     wx.request({
-      url: app.data.localc + 'pay/wxPay',
+        url: app.data.local + 'pay/wxPay',
       data: {
         userId: app.globalData.userId,
         orderPrice: "",

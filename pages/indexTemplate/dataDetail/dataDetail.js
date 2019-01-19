@@ -24,20 +24,7 @@ Page({
         this.setData({
             mid: options.mid,
             sharePersonId: options.sharePersonId || ''
-        })
-        //获取用户手机号
-        // app.sendRequest({
-        //     url: 'stuser/detail',
-        //     data: {
-        //         userId: app.globalData.userId
-        //     },
-        //     success: (data) => {
-        //         this.setData({
-        //             phone:data.phone
-        //         })
-        //     }
-
-        // })      
+        })          
     },
     /**
     * 生命周期函数--监听页面显示
@@ -210,77 +197,42 @@ Page({
     },
     // 报名
     baoming() {
-        //查看用户是否绑定手机号
-        let promise = new Promise(function(resolve,reject){
-            wx.showLoading({
-                title: '加载中',
-                icon: 'loading',
-            });
-            app.sendRequest({
-                url: 'stuser/detail',
-                data: {
-                    userId: app.globalData.userId
-                },
-                success: (data) => {                    
-                    // resolve(data.phone)
-                    resolve("")
-                },
-                fail:(res)=>{
-                   reject(res);
-                    wx.showToast({
-                        title: '网络错误',
-                        image: '/pages/image/warn.png',
-                        duration: 2000
-                    })
-                   wx.hideLoading();
-                }
-
-            }) 
-        })
-        promise.then(phone=>{
-            if(phone){
+        //查看用户是否绑定手机号        
+        // app.getUserDetail().then(res=>{                    
+        //     if(res.phone){
                 app.sendRequest({
                     url: 'stsign/signupvalidate',                  
                     data: {
                         matchId: this.data.mid,
                         userId: app.globalData.userId
                     },
-                    success: (res) => {
-                        console.log(res);
-                        wx.hideLoading();
-                        if (res.data.data.code == 1) {
+                    success: (res) => {                                           
+                        if (res.code == 1) {
                             wx.showModal({
                                 title: '注意！',
                                 content: '该比赛报名人数已满',
                             })
                         }
-                        if (res.data.data.code == 2) {
+                        if (res.code == 2) {
                             wx.navigateTo({
-                                url: '../deposit0/deposit0?matchId=' + res.data.data.matchId + '&userId=' + res.data.data.userId + '&matchStartdrill=' + res.data.data.matchStartdrill + '&userStartdrill=' + res.data.data.userStartdrill
+                                url: '../deposit0/deposit0?matchId=' + res.matchId + '&userId=' + res.userId + '&matchStartdrill=' + res.matchStartdrill + '&userStartdrill=' + res.userStartdrill
                             })
                         }
-                        if (res.data.data.code == 3) {
+                        if (res.code == 3) {
                             wx.navigateTo({
-                                url: '../signfee/signfee?matchId=' + res.data.data.matchId + '&userId=' + res.data.data.userId + '&matchStartdrill=' + res.data.data.matchStartdrill + '&userStartdrill=' + res.data.data.userStartdrill
+                                url: '../signfee/signfee?matchId=' + res.matchId + '&userId=' + res.userId + '&matchStartdrill=' + res.matchStartdrill + '&userStartdrill=' + res.userStartdrill
                             })
                         }
-                    },
-                    fail: (res) => {
-                        reject(res);
-                        wx.showToast({
-                            title: '网络错误',
-                            image: '/pages/image/warn.png',
-                            duration: 2000
-                        })
-                        wx.hideLoading();
                     }
+                    
                 })
-            }else{//用户没有绑定手机号跳转到绑定手机号页面              
-                wx.navigateTo({
-                    url: '/pages/template/bindingcell/bindingcell?addPhone=addPhone',
-                })
-            }
-        })      
+            
+            // else{                          
+            //     wx.navigateTo({
+            //         url: '/pages/template/bindingcell/bindingcell',
+            //     })
+            // }
+       
        
     },
     //打开地图

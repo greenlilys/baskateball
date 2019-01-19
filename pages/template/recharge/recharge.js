@@ -72,7 +72,7 @@ Page({
       })
     }else{
             wx.request({
-              url: app.data.localc + 'pay/wxPay',
+                url: app.data.local + 'pay/wxPay',
               data: {
                 userId: app.globalData.userId,
                 orderPrice: this.data.jine,
@@ -123,7 +123,7 @@ Page({
     var id = e.currentTarget.id;
     let index = e.currentTarget.dataset.index
     wx.request({
-            url: app.data.localc + 'pay/wxPay',
+        url: app.data.local + 'pay/wxPay',
             data: {
                userId:app.globalData.userId,
               orderPrice: this.data.data[index].gifbagAmount,

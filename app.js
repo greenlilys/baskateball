@@ -5,79 +5,35 @@ const ald = require('./utils/ald-stat.js');
 App = require('./utils/pushsdk.js').pushSdk(App, 'App').App;
 Page = require('./utils/pushsdk.js').pushSdk(Page).Page;
 App({
-    globalData: {       
+    globalData: {
         openid: null,
         userId: "",//用户id
-        userInfo:null,//用户基本信息
+        userInfo: null,//用户基本信息
         systemInfo: {},//设备信息
-        userDetail:{},//用户个人信息
-        loginFlag:''
-            
+        userDetail: {},//用户个人信息
+        loginFlag: ''
     },
-    data: {     
-        
-        local: 'https://xcx.sbtgo.com/starts/sp/',
-        localc: 'https://xcx.sbtgo.com/starts/sp/',
-        localg: 'https://xcx.sbtgo.com/starts/sp/'
-
-        // local: 'http://192.168.3.212:8089/starts/sp/',
-        // localc: 'http://192.168.3.212:8089/starts/sp/',
-        // localg: 'http://192.168.3.212:8089/starts/sp/'
+    data: {
+        // local: 'https://xcx.sbtgo.com/starts/sp/' 
+         local: 'https://xcx.sbtgo.com/starts2/sp/'
+        // local: 'http://192.168.3.212:8089/starts/sp/'
     },
-    onLaunch: function () {        
-        // 存储userId,编译从本地存储读userId
-        var data = wx.getStorageSync('data') || [];        
-        this.globalData.userId = data.userId;       
-    },
-    onShow: function () {              
+    onLaunch: function () {
+        this.getUserId();//如果本地存储有userId,从本地存储读userId
+        this.getOpenid();
         this.getSystemInfo();
         this.getUserInfo();
     },
-    //登录接口code换用户唯一标识openid
-    getOpenid:function(){       
-        wx.login({
-            success: (res)=> {
-                wx.request({
-                    url: this.data.local + 'stuser/getOpenid',
-                    header: {
-                        'content-type': 'application/json'
-                    },
-                    data: res.code,
-                    method: 'POST',
-                    success: (res)=> {
-                        this.globalData.openid = res.data.openid;
-                        //上报粉丝        
-                        wx.xst.setOpenId(res.data.openid);
-                    }
-                })
-            }
-        })
-    },
-    // 请求封装
-    sendRequest:function(options){
-        let method = options.method ? options.method.toUpperCase() : "POST";     
-        wx.request({
-            url: this.data.local + options.url ,
-            method: method,
-            header: { 'content-type': 'application/json' },
-            data: options.data,
-            success: (res) => {
-                if (res.data.errcode == '200'){
-                    typeof options.success == 'function' && options.success(res.data.data);
-                }else{
-                    console.log(res.data);
-                    typeof options.fail == 'function' && options.fail(res);
-                }
-            },
-            fail:(res) => {
-                console.log(res);
-                typeof options.fail == 'function' && options.fail(res);
-            }
+    onShow: function () {
 
-        })
+    },
+    //本地存储读userId
+    getUserId: function () {
+        var data = wx.getStorageSync('data') || [];
+        this.globalData.userId = data.userId ? data.userId : '';
     },
     //用户基本信息，需要用户授权
-    getUserInfo:function(){
+    getUserInfo: function () {
         wx.getSetting({
             success: res => {
                 if (res.authSetting['scope.userInfo']) {
@@ -90,44 +46,102 @@ App({
             }
         })
     },
-   
     //系统信息
-      
     getSystemInfo: function () {
-        var that = this;
         wx.getSystemInfo({
-            success: function (res) {
+            success: (res) => {
                 // console.log(res);
-                that.globalData.systemInfo = res;
+                this.globalData.systemInfo = res;
             }
         });
     },
-  
-      //图片preview
-    
+    //登录接口code换用户唯一标识openid
+    getOpenid: function () {
+        wx.login({
+            success: (res) => {
+                wx.request({
+                    url: this.data.local + 'stuser/getOpenid',
+                    header: {
+                        'content-type': 'application/json'
+                    },
+                    data: res.code,
+                    method: 'POST',
+                    success: (res) => {
+                        this.globalData.openid = res.data.openid;
+                        //上报粉丝        
+                        wx.xst.setOpenId(res.data.openid);
+                    }
+                })
+            }
+        })
+    },
+    // 请求封装
+    sendRequest: function (options) {
+        wx.showLoading({
+            title: '加载中',
+        })
+        let method = options.method ? options.method.toUpperCase() : "POST";
+        wx.request({
+            url: this.data.local + options.url,
+            method: method,
+            header: {'content-type': 'application/json'},
+            data: options.data,
+            success: (res) => {
+                if (res.data.errcode == '200') {
+                    typeof options.success == 'function' && options.success(res.data.data);
+                } else {
+                    console.log(res);
+                    wx.showToast({
+                        title: '系统错误',
+                        image: '/pages/image/warn.png',
+                        duration: 1000
+                    })
+                    typeof options.fail == 'function' && options.fail(res);
+                }
+            },
+            fail: (res) => {
+                console.log(res);
+                wx.showToast({
+                    title: '网络错误',
+                    image: '/pages/image/warn.png',
+                    duration: 1000
+                })
+                typeof options.fail == 'function' && options.fail(res);
+            },
+            complete: (res) => {
+                wx.hideLoading();
+                typeof options.complete == 'function' && options.complete();
+            }
+
+        })
+    },
+
+
+    //图片preview
+
     previewImage: function (options) {
         wx.previewImage({
             current: options.current || '',
             urls: options.urls || [options.current]
         })
     },
-         
+
     // @onShareAppMessage
-     
-    onShareAppMessage: function (options){        
+
+    onShareAppMessage: function (options) {
         let title = '最刺激的3v3篮球排位赛，谁是城市王者？';
         let path = '/pages/index/index?sharePersonId=' + this.globalData.userId;
         let defaultImg = '/pages/image/share.jpg';
         return {
             title: options.title || title,
             path: options.path || path,
-            imageUrl:options.imageUrl || defaultImg
+            imageUrl: options.imageUrl || defaultImg
         }
     },
-    
-      // 转发统计
-     
-    handleShare:function(){
+
+    // 转发统计
+
+    handleShare: function () {
         wx.request({
             url: this.data.local + 'stusermilitary/usershare',
             method: "POST",
@@ -137,10 +151,10 @@ App({
             header: {
                 'content-type': 'application/json'
             },
-            success: (res)=> {                              
-                console.log('发送成功' + JSON.stringify(res))                
+            success: (res) => {
+                console.log('发送成功' + JSON.stringify(res))
             },
-            fail:(res)=> {
+            fail: (res) => {
                 console.log('发送失败')
             }
 
@@ -150,7 +164,7 @@ App({
 
     getUserDetail() {
         let that = this;
-        let promise = new Promise(function (resolve, reject) {           
+        let promise = new Promise(function (resolve, reject) {
             that.sendRequest({
                 url: 'stuser/detail',
                 data: {
@@ -160,17 +174,12 @@ App({
                     console.log(res)
                     that.globalData.userDetail = res;
                     resolve(res);
-
-                },
-                fail: (res) => {
-                    console.log('fail');
-                    reject(res);
                 }
 
             })
         })
         return promise;
-       
+
     }
 
 })
