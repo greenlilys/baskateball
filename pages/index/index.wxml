@@ -51,10 +51,10 @@
                 <view class="yijs" wx:if="{{item.STATUS=='已结束'}}">已结束</view>
                 <view class="yiqx" wx:if="{{item.STATUS=='已取消'}}">已取消</view>
                 <view class="yijinxing" wx:if="{{item.STATUS=='进行中'}}">进行中</view>
+                <view class="yijinxing" wx:if="{{item.STATUS=='超时取消'}}">超时取消</view>
+                 <view class="yijinxing" wx:if="{{item.STATUS=='机构主动取消'}}">机构主动取消</view>
             </view>
-            <view class="title">
-                {{item.mName}}
-            </view>
+            <view class="title">{{item.mName}}</view>
             <view class="timeBox">
                 <image class="biao" src="../image/biao.jpg"></image>
                 <view class="time">
@@ -140,10 +140,15 @@
 
 <!-- 广告弹窗 -->
 <view class="banner" wx:if="{{isBanner}}" catchtouchmove="preventTouchMove">
-    <image src="/pages/image/banner.jpg" class="img" mode="widthFix" bindtap="enlarge">
+    <image src="{{bannerImg}}" class="img" mode="widthFix" bindtap="enlarge">
         <view wx:if="{{isClose}}" class="countDown">{{num}}
             <text class="minutes">s</text>
         </view>
         <image wx:else src="/pages/image/close.png" catchtap="closeBanner" class="closeImg"></image>
     </image>
+</view>
+
+<!-- 抽奖浮标 -->
+<view bindtap="navMiniProgram">
+<image src="/pages/image/chou.png" class="chou"></image>  
 </view>

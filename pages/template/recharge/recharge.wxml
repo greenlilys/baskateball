@@ -1,5 +1,4 @@
-<!-- top -->
-<movable-area class="movbox">
+
 <view class="top">
     <view class="czje">充值金额</view>
 </view>
@@ -31,9 +30,3 @@
         <view class="confirmcz" catchtap="confirmcz">确定充值</view>
     </view>
 </view>
-<!-- 回到首页 -->
-<movable-view catchtap="backIndex" class="backBtn" direction="all" x="{{x}}" y="{{y}}">
-      <image src="/pages/image/backhome.png" class="homeimg"></image>
-      <text class="shouye">首页</text>      
-    </movable-view>   
-</movable-area> 

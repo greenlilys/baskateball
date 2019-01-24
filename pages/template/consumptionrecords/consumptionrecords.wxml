@@ -1,5 +1,4 @@
-<!-- <view class="top"></view> -->
-<movable-area class="movbox">
+
 <scroll-view style="height:100%" scroll-y="true" bindscrolltolower="lower" wx:if="{{scroll}}">
 
     <block wx:for="{{data}}" wx:key="{{item.id}}" id="{{item.id}}">
@@ -32,10 +31,3 @@
         </view>
     </view>
 </view>
-
-<!-- 回到首页 -->
-    <movable-view catchtap="backIndex" class="backBtn" direction="all" x="{{x}}" y="{{y}}">
-      <image src="/pages/image/backhome.png" class="homeimg"></image>
-      <text class="shouye">首页</text>      
-    </movable-view>   
-</movable-area>

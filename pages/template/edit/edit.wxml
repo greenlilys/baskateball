@@ -35,29 +35,29 @@
 </view>
 
 <view id="detail2">
-    <!-- <picker value="{{index}}" range="{{sexArr}}" bindchange="setSex">
+    <picker value="{{index}}" range="{{sexArr}}" bindchange="setSex" disabled="{{canUse}}">
         <view class="sonson firstbox">
             <view class="tx">
                 性别
             </view>
-            <view class="txbox">
-                <text class="nick">{{sex}}</text>
+            <view class="txbox">                                   
+             <text class="nick">{{userDetail.sex == 1? '男' : '女'}}</text>
                 <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
-    </picker> -->
-    <!-- <view class="sonson">
+    </picker>
+    <view class="sonson">
         <view class="tx">
             姓名
         </view>
         <view class="txbox">
-            <input class="nickInput" value="{{userDetail.name ? userDetail.name : '修改'}}" bindinput='setName' />
+            <input class="nickInput" placeholder="修改" value="{{userDetail.name}}" bindinput='setName' disabled="{{canUse}}"/>
             <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
         </view>
-    </view> -->
+    </view>
     
     <picker mode="date" value="{{value}}" start="1950-01-01" end="2018-12-31" fields="day" bindchange="chooseOld">
-        <view class="sonson firstbox">
+        <view class="sonson">
             <view class="tx">
                 年龄
             </view>
@@ -92,52 +92,49 @@
         </view>
     </picker>
 
-    <picker mode="region" bindchange="bindRegionChange" value="{{areaList}}">
-        <view class="sonson">
-            <view class="tx">
-                城市
-            </view>
-            <view class="txbox">
-                <view class="info">
-                    <text class="nick">{{userDetail.area?userDetail.area:'修改'}}</text>                      </view>
-                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
-            </view>
+     <view class="sonson" bindtap='setCity'>
+        <view class="tx">
+            城市
         </view>
-    </picker>
+        <view class="txbox">
+            <text class="nickInput">{{cityObj.city}}</text>           
+            <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+        </view>
+    </view>
 
-    <!-- <picker value="{{index}}" range="{{schoolArr}}" bindchange="setSchool">
+    <picker value="{{index}}" range="{{schoolArr}}" bindchange="setSchool" disabled="{{canUse}}">
         <view class="sonson">
             <view class="tx">
                 学校
             </view>
             <view class="txbox">
-                <text class="nick">{{isFinish ? isFinish : '添加'}}</text>
+                <text class="nick">{{school ? school : '修改'}}</text>
                 <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
     </picker>
-    <picker mode="date" value="{{value}}" start="2010-01-01" end="2018-12-31" fields="month" bindchange="inSchoolTime" wx:if="{{userSchool}}">
+    <picker mode="date" value="{{value}}" start="2010-01-01" end="2018-12-31" fields="month" bindchange="inSchoolTime" wx:if="{{school && school != '我已毕业' && shId}}" disabled="{{canUse}}">
         <view class="sonson">
             <view class="tx">
                 入学年月
             </view>
             <view class="txbox">
-                <text class="nick">{{inSchoolTime?inSchoolTime:'未填写'}}</text>
+                <text class="nick">{{userDetail.admissionTime?userDetail.admissionTime:'未填写'}}</text>
                 <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
     </picker>
-    <picker mode="date" value="{{value}}" start="2019-12-31" end="2029-12-31" fields="month" bindchange="outSchoolTime" wx:if="{{userSchool}}">
+    <picker mode="date" value="{{value}}" start="2019-12-31" end="2029-12-31" fields="month" bindchange="outSchoolTime" wx:if="{{school && school != '我已毕业' && shId}}" disabled="{{canUse}}">
         <view class="sonson">
             <view class="tx">
                 毕业年月
             </view>
             <view class="txbox">
-                <text class="nick">{{outSchoolTime?outSchoolTime:'未填写'}}</text>
+                <text class="nick">{{userDetail.graduationTime?userDetail.graduationTime:'未填写'}}</text>
                 <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
-    </picker> -->
+    </picker>
 
 </view>
 
@@ -162,11 +159,11 @@
             <image src="/pages/image/infostar.png" class="infostar" mode="scaleToFill"></image>
         </view>
         <view class="infotitle">{{infotitle}}</view>
-        <view class="infofir">{{sex}}
-            <text wx:if="{{userSchool}}">{{'/' + userSchool}}</text> </view>
+<view class="infofir">{{userDetail.name + '/'}}{{userDetail.sex == 1? '男':'女'}}{{'/'+cityObj.city}}</view>
+<view class="infofir">{{school}}</view>
         <view class="infotime">
-            <text wx:if="{{inSchoolTime}}">{{inSchoolTime + '入学'}}</text>
-            <text wx:if="{{outSchoolTime}}">{{'/' + outSchoolTime + '毕业'}}</text> </view>
+            <text wx:if="{{school && school != '我已毕业' && shId}}">{{userDetail.admissionTime + '入学'}}</text>
+            <text wx:if="{{school && school != '我已毕业' && shId}}">{{'/' + userDetail.graduationTime + '毕业'}}</text> </view>
         <view class="btnbox">
             <view class="btncancle" bindtap="cancle">修改</view>
             <view class="btnsure" bindtap="sendUserDetail">确定</view>

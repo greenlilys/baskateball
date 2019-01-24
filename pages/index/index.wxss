@@ -52,7 +52,7 @@ page{
 
 .fightBox {
   width: 672rpx;
-  height: 355rpx;
+  /* height: 355rpx; */
   background: #fff;
   margin: 0rpx 40rpx 40rpx 40rpx;
   border-radius: 20rpx;
@@ -116,10 +116,13 @@ page{
 }
 
 .title {
-  margin-left: 40rpx;
-  margin-bottom: 30rpx;
+ width:592rpx;
+ margin:0 auto 30rpx auto;
   font-size: 34rpx;
+  line-height:54rpx;
   font-weight: 900;
+  text-align:justify;
+  /* overflow: hidden; white-space: nowrap; text-overflow: ellipsis; */
 }
 
 .bmz {
@@ -326,6 +329,6 @@ button::after {
 .img{width:80%;border-radius:24rpx;position:relative;}
 .countDown{position:absolute;right:38rpx;top:38rpx;color:#fff;background:#060815;padding:4rpx 20rpx;font-size:24rpx;}
 .closeImg{position:absolute;right:38rpx;top:38rpx;width:40rpx;height:40rpx;}
-
+.chou{width:212rpx;height:166rpx;position:fixed;bottom:220rpx;right:40rpx;z-index: 150;}
 
 

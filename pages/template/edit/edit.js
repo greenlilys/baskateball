@@ -17,46 +17,95 @@ Page({
             { id: 3, name: '小前锋' },
             { id: 4, name: '大前锋' }
         ],
+        setPhone:false,//设置完手机返回
         //性别选项
         sexArr: ['男', '女'],    
         //就读选项       
         schoolArr: ['我已毕业', '我还在读'],
-        userDetail: {},//用户详情 
-       areaList:[],
-        sex: '男',//性别       
-        isFinish: '',//是否毕业
-        userSchool: '',//所在学校
-        inSchoolTime: '',
-        outSchoolTime: '',//毕业时间
+        userDetail: {},//用户详情     
+        cityObj:{
+            city: '南京',//城市
+            cid:'148'
+        }, 
+        canUse:false,
+        school:'',//学校
+        shId:'',//学校id       
         isWarn: true,//弹窗提示
-        infotitle: '以下信息保存后不能修改！'
+        type:'1',//社会1 高校2
+        infotitle: ''  
 
     },
 
     //生命周期函数--监听页面加载  
     onLoad: function () {        
-
+        //获取用户信息        
+        let cityObj = this.data.cityObj;
+        app.getUserDetail().then(data => {   
+            // console.log(cityObj)         
+            // console.log(data.cityName + data.cityId)
+            // console.log(data.school + data.schoolId)
+            cityObj.city = data.cityName ? data.cityName: '南京';
+            cityObj.cid = data.cityId ? data.cityId:'148';
+            if(!data.sex){//性别默认值
+                data.sex = "1"
+            }
+            this.setData({
+                userDetail: data,
+                cityObj: cityObj,
+                school: data.school ? data.school : (data.type == 1? '我已毕业' : ''),      
+                shId:data.schoolId,
+                type:data.type              
+            }) 
+            
+            if (data.updateFlag == 2) {
+                this.setData({
+                    canUse:true
+                })
+            }        
+        })
     },
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
+        if(this.data.setPhone){
+            app.getUserDetail().then(data => {
+                let userDetail = this.data.userDetail;
+                userDetail.phone = data.phone;
+                this.setData({
+                    userDetail: userDetail
+                })
+            })
+        }        
+    },
+   
     //设置性别
     setSex: function (e) {
-        this.setData({
-            sex: this.data.sexArr[e.detail.value]
-        })
+        console.log(e)       
+            let userDetail = this.data.userDetail;
+            userDetail.sex = Number(e.detail.value) + 1;
+            this.setData({                
+                userDetail: userDetail
+            })
+        // console.log(userDetail)
+        
     },
     //是否在读
-    setSchool: function (e) {
-        this.setData({
-            isFinish: this.data.schoolArr[e.detail.value]
-        })
-        if (e.detail.value == 1) {
-            wx.navigateTo({
-                url: '/pages/template/choiceSchool/choiceSchool'
-            })
-        } else {
+    setSchool: function (e) {     
+        let school = e.detail.value == 0 ? this.data.schoolArr[e.detail.value] : '';
+        let type = e.detail.value == 0 ? '1' : '';      
             this.setData({
-                userSchool: ''
+                school: school,
+                shId:'',
+                type: type
             })
-        }
+       
+            if (e.detail.value == 1) {
+                wx.navigateTo({
+                    url: '/pages/template/choiceSchool/choiceSchool?cid=' + this.data.cityObj.cid + '&city=' + this.data.cityObj.city
+                })
+            } 
+       
     },
 
 
@@ -87,34 +136,38 @@ Page({
 
     },
     // 选择司职
-    choosesizhi(e) {
-        console.log(e)
+    choosesizhi(e) {       
         let userDetail = this.data.userDetail;
         userDetail.position = this.data.arraysizhi[e.detail.value].name;      
         this.setData({
             userDetail: userDetail
         })
     },
-    // 选择城市
-    bindRegionChange: function (e) {       
-        let userDetail = this.data.userDetail;
-        userDetail.area = e.detail.value;
-        this.setData({
-            userDetail: userDetail,
-            areaList: e.detail.value
-        })
+    
+    setCity(){
+        if (!this.data.canUse){
+            wx.navigateTo({
+                url: '/pages/template/choiceCity/choiceCity',
+            })
+        }        
     },
     //入学时间
-    inSchoolTime(e) {
-        this.setData({
-            inSchoolTime: e.detail.value
-        })
+    inSchoolTime(e) {        
+            let userDetail = this.data.userDetail;
+            userDetail.admissionTime = e.detail.value;
+            this.setData({
+                userDetail: userDetail            
+            })   
+         
     },
     //毕业时间
-    outSchoolTime(e) {
-        this.setData({
-            outSchoolTime: e.detail.value
-        })
+    outSchoolTime(e) {        
+            let userDetail = this.data.userDetail;
+            userDetail.graduationTime = e.detail.value;
+            this.setData({
+                userDetail: userDetail
+            })  
+       
     },
     //绑定手机
     bindcell() {
@@ -137,18 +190,6 @@ Page({
      */
     onReady: function () {
 
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-        //获取用户信息
-        app.getUserDetail().then(data => {
-            this.setData({
-                userDetail: data
-            })
-        })
     },
 
     /**
@@ -208,61 +249,119 @@ Page({
     },
     // 修改昵称
     nickInput(e) {
-        console.log(e)
+        // console.log(e)
         let userDetail = this.data.userDetail;
         userDetail.nickName = e.detail.value;
         this.setData({
             userDetail: userDetail
         })
     },
+    setName(e){
+        let userDetail = this.data.userDetail;
+        userDetail.name = e.detail.value;
+        this.setData({
+            userDetail: userDetail
+        })       
+    },
     // 保存按钮
     keepbtn() {
-        //选择学校后必须填写入学与毕业年月
-        // if (this.data.userSchool) {
-        //     if (!this.data.inSchoolTime) {
-        //         wx.showToast({
-        //             title: '请填写入学年月',
-        //             image: '/pages/image/warn.png',
-        //             duration: 2000
-        //         })
-        //         return;
-        //     }
-        //     if (!this.data.outSchoolTime) {
-        //         wx.showToast({
-        //             title: '请填写毕业年月',
-        //             image: '/pages/image/warn.png',
-        //             duration: 2000
-        //         })
-        //         return;
-        //     }
-        // }
-        //打开保存信息提示框
-        // this.setData({
-        //     isWarn: false
-        // })      
-        this.sendUserDetail();
+        let userDetail = this.data.userDetail;
+        let school = this.data.school;
+        //选择是否在读必填      
+        if (!userDetail.name){
+            wx.showToast({
+                title: '请填写姓名',
+                image: '/pages/image/warn.png',
+                duration: 2000
+            })
+            return;
+        }        
+        if (!school){
+            wx.showToast({
+                title: '请填写学校',
+                image: '/pages/image/warn.png',
+                duration: 2000
+            })
+            return;
+        }      
+        if (school && school!= '我已毕业' && this.data.shId){       
+            if (!userDetail.admissionTime) {
+                        wx.showToast({
+                            title: '请填写入学年月',
+                            image: '/pages/image/warn.png',
+                            duration: 2000
+                        })
+                        return;
+                    }
+            if (!userDetail.graduationTime) {
+                        wx.showToast({
+                            title: '请填写毕业年月',
+                            image: '/pages/image/warn.png',
+                            duration: 2000
+                        })
+                        return;
+                    }
+        }       
+        
+        if (userDetail.updateFlag == ''){
+            this.setData({
+                infotitle:'以下信息只能修改一次',
+                isWarn: false                
+            })  
+        } else if (userDetail.updateFlag == 1){           
+            this.setData({
+                infotitle: '以下信息保存后不能修改！',
+                isWarn: false               
+            }) 
+        }else{          
+            this.sendUserDetail();
+        }
+           
+       
     },
     //保存用户信息
     sendUserDetail() {
         let userDetail = this.data.userDetail;       
-        wx.request({
-            url: app.data.local + 'stuser/edit',
-            method: "POST",
-            header: { 'content-type': 'application/json' },
+        app.sendRequest({
+            url: 'stuser/edit',           
             data: {
                 id: app.globalData.userId,
                 nickName: userDetail.nickName,
                 height: userDetail.height,
                 weight: userDetail.weight,
                 age: userDetail.age,
-                position: userDetail.position,
-                city: this.data.areaList,
-                avatar: userDetail.avatar
+                position: userDetail.position,                
+                cityId: this.data.cityObj.cid+'',                
+                schoolId: this.data.shId,
+                avatar: userDetail.avatar,
+                name: userDetail.name,
+                sex: userDetail.sex,
+                admissionTime: userDetail.admissionTime,
+                type:this.data.type,
+                graduationTime: userDetail.graduationTime             
             },           
-            success: (res) => {
-                console.log(res)
-                wx.navigateBack({
-                    delta:1
+            success: (res) => { 
+                this.setData({
+                    isWarn: true
+                })
+                wx.showToast({
+                    title: '保存成功',
+                    icon: 'success'
+                }) 
+                setTimeout(function(){
+                    wx.navigateBack({
+                        delta: 1
+                    })
+                },1000)               
+                
+            },
+            fail:(res)=>{
+                this.setData({
+                    isWarn: true
+                }) 
+                wx.showToast({
+                    title: '保存失败',
+                    image:'/pages/image/warn.png'
                 })
             }
         })

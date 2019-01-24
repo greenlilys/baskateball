@@ -4,6 +4,7 @@ const ald = require('./utils/ald-stat.js');
 // 小神推
 App = require('./utils/pushsdk.js').pushSdk(App, 'App').App;
 Page = require('./utils/pushsdk.js').pushSdk(Page).Page;
+
 App({
     globalData: {
         openid: null,
@@ -15,7 +16,7 @@ App({
     },
     data: {
         // local: 'https://xcx.sbtgo.com/starts/sp/' 
-         local: 'https://xcx.sbtgo.com/starts2/sp/'
+        local: 'https://xcx.sbtgo.com/starts2/sp/'
         // local: 'http://192.168.3.212:8089/starts/sp/'
     },
     onLaunch: function () {
@@ -81,35 +82,43 @@ App({
             title: '加载中',
         })
         let method = options.method ? options.method.toUpperCase() : "POST";
+        console.log(options.url + '----->' + JSON.stringify(options.data || {}));
         wx.request({
             url: this.data.local + options.url,
             method: method,
             header: {'content-type': 'application/json'},
-            data: options.data,
-            success: (res) => {
-                if (res.data.errcode == '200') {
+            data: options.data || {},
+            success: (res) => { 
+                wx.hideLoading();
+                console.log(res); 
+                if (res.data.errcode == '200') {                                      
                     typeof options.success == 'function' && options.success(res.data.data);
-                } else {
-                    console.log(res);
-                    wx.showToast({
-                        title: '系统错误',
-                        image: '/pages/image/warn.png',
-                        duration: 1000
-                    })
+                } else{  
+                    setTimeout(function(){
+                        wx.showToast({
+                            title: (res.data.errcode + res.data.errMsg).toString(),
+                            // title: '系统错误',
+                            image: '/pages/image/warn.png',
+                            duration: 2000
+                        })
+                    },2000)                    
                     typeof options.fail == 'function' && options.fail(res);
                 }
             },
             fail: (res) => {
+                wx.hideLoading();
                 console.log(res);
-                wx.showToast({
-                    title: '网络错误',
-                    image: '/pages/image/warn.png',
-                    duration: 1000
-                })
+                setTimeout(function () {
+                    wx.showToast({
+                        title:(res.statusCode + res.errMsg).toString(),
+                        // title: '网络错误',
+                        image: '/pages/image/warn.png',
+                        duration: 2000
+                    })
+                }, 2000)  
                 typeof options.fail == 'function' && options.fail(res);
             },
-            complete: (res) => {
-                wx.hideLoading();
+            complete: (res) => {               
                 typeof options.complete == 'function' && options.complete();
             }
 
@@ -170,8 +179,7 @@ App({
                 data: {
                     userId: that.globalData.userId
                 },
-                success: (res) => {
-                    console.log(res)
+                success: (res) => {                   
                     that.globalData.userDetail = res;
                     resolve(res);
                 }

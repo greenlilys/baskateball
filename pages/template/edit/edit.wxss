@@ -56,7 +56,9 @@ page{width:100%;height:100%;}
 .nickInput{
   font-size:28rpx;
   color:#999;
-  width:130rpx;
+  /* width:130rpx; */
+  text-align:right;
+  margin-right:20rpx;
 }
 
 .sonbox2{
@@ -188,11 +190,11 @@ page{width:100%;height:100%;}
   transition: all 0.3s ease-in;
 }
 
-.tanchuang{width:590rpx;height:580rpx;background:#fff;border-radius:20rpx;padding-top:90rpx;box-sizing: border-box;position:absolute;left:0;right:0;margin: auto;bottom:640rpx;}
+.tanchuang{width:590rpx;height:650rpx;background:#fff;border-radius:20rpx;padding-top:90rpx;box-sizing: border-box;position:absolute;left:0;right:0;margin: auto;bottom:540rpx;}
 .infostar,.starbox{width:138rpx;height:116rpx;}
 .starbox{margin:0 auto;}
 .infotitle{font-size:36rpx;text-align:center;color:#000;margin-top:50rpx;margin-bottom:20rpx;}
-.infofir,.infotime{font-size:30rpx;color:#666;text-align:center;line-height:44rpx;}
+.infofir,.infotime{font-size:30rpx;color:#666;text-align:center;line-height:50rpx;}
 .btnbox{width:520rpx;margin:60rpx auto 0 auto;display:flex;flex-direction:row;justify-content:space-between;}
 .btncancle,.btnsure{width:250rpx;height:60rpx;line-height:60rpx;border-radius:10rpx;text-align:center;font-size:24rpx;}
 .btncancle{border:1rpx solid #000;color:#000;}

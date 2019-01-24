@@ -22,7 +22,7 @@
 <view class="top">
   <view class="titleBox">
     <view class="title">
-      {{data.mName}}
+       <text class="titlename">{{data.mName}}</text>
       <view class="bm" wx:if="{{data.isFull==3}}">
         报名中
       </view>

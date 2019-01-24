@@ -10,9 +10,7 @@ Page({
         jine:'',
        code: null,
        data:[],
-       pageNo:1,
-      x: app.globalData.systemInfo.windowWidth - 70,
-      y: app.globalData.systemInfo.windowHeight - 60
+       pageNo:1
   },
   // 获取充值框金额
   jinInput:function (e) {
@@ -20,11 +18,7 @@ Page({
       jine: Math.ceil(e.detail.value)
       })
   },
-    backIndex() {//返回首页
-        wx.switchTab({
-            url: '../../index/index',
-        })
-    },
+   
   getData() {
     
     wx.request({
@@ -217,10 +211,12 @@ Page({
   
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+    /**
+          * 用户转发
+          */
+    onShareAppMessage: function (res) {
+        app.handleShare();
+        return app.onShareAppMessage({});
+
+    }
 })

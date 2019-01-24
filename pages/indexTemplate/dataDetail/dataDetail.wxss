@@ -2,16 +2,16 @@
 
 .top {
   width: 100%;
-  height: 440rpx;
+  /* height: 440rpx; */
   background: #c71111;
   overflow: hidden;
+  padding-bottom:70rpx;
 }
 
 
 .titleBox {
-  width: 523rpx;
-  margin-left: 40rpx;
-  margin-top: 50rpx;
+  width: 670rpx; 
+  margin:50rpx auto 0 auto;
 }
 
 .title {
@@ -23,7 +23,7 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.titlename{width:520rpx;text-align:justify;}
 .bm {
   width: 120rpx;
   height: 40rpx;

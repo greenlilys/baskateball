@@ -1,10 +1,9 @@
 {
     "pages": [
-        
         "pages/index/index",
+        "pages/template/choiceSchool/choiceSchool",        
+        "pages/template/choiceCity/choiceCity",        
         "pages/template/changecell/changecell",
-        "pages/template/choiceSchool/choiceSchool",  
-        "pages/template/choiceCity/choiceCity",      
         "pages/template/about/about",
         "pages/personal/personal",
         "pages/template/edit/edit",
@@ -65,6 +64,12 @@
             "desc": "你的位置信息将用于小程序位置接口的效果展示"
         }
     },
+    "networkTimeout":{
+        "request":5000
+    },
+    "navigateToMiniProgramAppIdList": [
+        "wxc5afbb0b1c7cc625"
+    ],
     "tabBar": {
         "color": "#000",
         "selectedColor": "#c71111",

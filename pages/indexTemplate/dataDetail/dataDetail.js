@@ -198,8 +198,9 @@ Page({
     // 报名
     baoming() {
         //查看用户是否绑定手机号        
-        // app.getUserDetail().then(res=>{                    
-        //     if(res.phone){
+        app.getUserDetail().then(res=>{ 
+            console.log(res)                   
+            if(res.phone){
                 app.sendRequest({
                     url: 'stsign/signupvalidate',                  
                     data: {
@@ -225,13 +226,12 @@ Page({
                         }
                     }
                     
+                }) }else{                          
+                wx.navigateTo({
+                    url: '/pages/template/bindingcell/bindingcell',
                 })
-            
-            // else{                          
-            //     wx.navigateTo({
-            //         url: '/pages/template/bindingcell/bindingcell',
-            //     })
-            // }
+            }
+        })
        
        
     },

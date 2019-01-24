@@ -7,9 +7,7 @@ Page({
    */
   data: {
      data:[],
-    pageNo:1,
-      x: app.globalData.systemInfo.windowWidth - 70,
-      y: app.globalData.systemInfo.windowHeight - 60
+    pageNo:1     
   },
   getData() {
     wx.request({
@@ -44,11 +42,7 @@ Page({
     })
     this.getData()
   },
-    backIndex() {//返回首页
-        wx.switchTab({
-            url: '../../index/index',
-        })
-    },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -98,10 +92,11 @@ Page({
   
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+    /**
+         * 用户转发
+         */
+    onShareAppMessage: function (res) {
+        app.handleShare();
+        return app.onShareAppMessage({});
+    }
 })

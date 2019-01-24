@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
+const requestUrl = require('../../utils/requireUrl');
 var Dec = require('../../AES/public.js'); //引用封装好的加密解密js
 Page({
     data: {        
@@ -17,15 +18,17 @@ Page({
         num: "",
         hasMore: true,
         hasRefesh: false,
-        hidden: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        hidden: false,       
+        // bannerImg:'http://shineyoobucket.oss-cn-beijing.aliyuncs.com/shineyoo/896622aecdba436c8286a17e150e8ca9.jpg',
+        bannerImg: "",
         isClose: true, //倒计时数字是否显示
         num: 3,//关闭广告弹倒计时
         isBanner: false,//广告弹窗是否显示,根据用户当日是否首次登录设置,默认隐藏
         sharePersonId: '',//分享人Id 
         windowHeight:''      
     },
-    onLoad: function (options) {         
+    onLoad: function (options) {
+        this.getBanner();        
         if (app.globalData.userId) {//用户是否授权登录
             this.setData({
                 loginBox: false,
@@ -59,20 +62,31 @@ Page({
         // 加密解密
         // console.log(Dec.Decrypt("JveH4kz/DOeVt/itktrsiQ=="));
         // console.log(Dec.Encrypt("songchaoqun"));        
-             
+        
     },
-    onReady() { 
+    onReady() {        
        if (app.globalData.loginFlag === 0) {            
             wx.hideTabBar();
             this.setData({
                 isBanner: true
-            })
-            //开始弹窗5s倒计时
+            })           
+            //开始弹窗3s倒计时
             this.countDown();
-        } 
-       
+        }        
     },
     onShow: function () {
+    },
+    //获取开屏广告
+    getBanner(){
+        app.sendRequest({
+            url: requestUrl.openBanner,
+            success:(res)=>{               
+                let bannerImg = 'https://' + res[0].url;                
+                this.setData({
+                    bannerImg: bannerImg
+                })                
+            }
+        })
     },
     /**
       * 用户转发
@@ -106,7 +120,7 @@ Page({
     //点击广告图全屏显示
     enlarge() {
         app.previewImage({
-            current: 'http://shineyoobucket.oss-cn-beijing.aliyuncs.com/shineyoo/896622aecdba436c8286a17e150e8ca9.jpg'
+            current: this.data.bannerImg
         })
     },
     preventTouchMove() {//有弹窗广告时，阻止滑动屏幕事件
@@ -119,8 +133,22 @@ Page({
             url: '../logs/logs'
         })
     },
+    //跳转抽奖小程序
+    navMiniProgram(){
+        wx.navigateToMiniProgram({
+            appId: 'wxc5afbb0b1c7cc625',
+            path: '',//打开的页面路径，如果为空则打开首页
+            extraData: {//需要传递给目标小程序的数据，目标小程序可在 App.onLaunch，App.onShow 中获取到这份数据。
+                foo: 'bar'
+            },
+            envVersion: 'develop',
+            success(res) {
+                // console.log('dakai')
+            }
+        })
+    },
     getData() {
-        var that = this
+        var that = this;
         wx.request({
             url: app.data.local + 'match/nearbymatch',
             data: {

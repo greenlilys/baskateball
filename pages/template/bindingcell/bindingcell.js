@@ -120,7 +120,12 @@ Page({
                     userId: app.globalData.userId
                 }, 
                 success: (res) => {
-                    // console.log(res)                    
+                    // console.log(res)
+                    let pages = getCurrentPages();//当前页面
+                    let prevPage = pages[pages.length - 2];//上一页面                   
+                    prevPage.setData({//直接给上页赋值
+                        setPhone: true
+                    });                    
                     wx.showToast({
                         title: '绑定成功',
                         icon: 'success',
