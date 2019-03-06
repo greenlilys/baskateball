@@ -55,7 +55,7 @@
 }
 
 .wzBox {
-  width: 500rpx;
+  width: 100%;
   font-size: 24rpx;
   color: #fff;
   display: flex;
@@ -73,6 +73,10 @@
   height: 27rpx;
   margin-right: 20rpx;
 }
+.renshu{width: 24rpx;
+  height: 28rpx;
+  margin-left:2rpx;
+  margin-right: 23rpx;}
 
 .detailBox {
   width: 673rpx;
@@ -80,7 +84,9 @@
   margin: -70rpx auto 45rpx auto;
   border-radius: 10px;
   overflow: hidden;
-  /* box-shadow: 0rpx 0rpx 40rpx #ddd; */
+   padding:0 40rpx 20rpx 40rpx; 
+    box-sizing:border-box;
+  
 }
 
 .rule {
@@ -92,21 +98,18 @@
   font-weight: 900;
   line-height: 40rpx;
   margin-top: 39rpx;
-  margin-left: 42rpx;
+ 
 }
 
 .bsgz {
   margin-left: 37rpx;
 }
 
-.ruleBox {
-  width: 614rpx;
+.ruleBox { 
   font-size: 24rpx;
   color: #191919;
-  margin-top: 40rpx;
-  margin-bottom: 40rpx;
-  margin-left: 42rpx;
-  line-height: 36rpx;
+  position:relative;
+  top:-20rpx; 
 }
 
 .plain {

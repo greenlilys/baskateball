@@ -81,18 +81,23 @@
     </view>
 </view>
 
+<view class="navBank" bindtap="navBankProgram">
+<image src="/pages/image/mycenter.png" class="mycenter"></image>
+</view>
+
 <!-- bottom -->
 <view class="bottom">
-
-    <view class="bottomson1" catchtap="goJF">
+     <!-- <form bindsubmit="pushFormSubmit" report-submit='true'>
+                <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:88rpx; width: 670rpx;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button> -->
+    <view class="bottomson1" catchtap="goJF">    
         <image src="../image/jifen.jpg" class="btp"></image>
         <view class="wzbox">
             我的积分
         </view>
         <text style="font-size:22rpx;color:#999;position:absolute;right:150rpx;">{{userDetail.integral}}积分</text>
-        <image src="../image/sanjiao.jpg" class="sanjiao"></image>
+        <image src="../image/sanjiao.jpg" class="sanjiao"></image>       
     </view>
-
+ <!-- </form> -->
     <view class="bottomson" catchtap="goedit">
         <image src="../image/edit.jpg" class="btp"></image>
         <view class="wzbox">

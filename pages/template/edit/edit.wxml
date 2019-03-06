@@ -42,7 +42,7 @@
             </view>
             <view class="txbox">                                   
              <text class="nick">{{userDetail.sex == 1? '男' : '女'}}</text>
-                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+                <image wx:if="{{!canUse}}" src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
     </picker>
@@ -52,7 +52,7 @@
         </view>
         <view class="txbox">
             <input class="nickInput" placeholder="修改" value="{{userDetail.name}}" bindinput='setName' disabled="{{canUse}}"/>
-            <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+            <image wx:if="{{!canUse}}" src="../../image/sanjiao.jpg" class="sanjiao"></image>
         </view>
     </view>
     
@@ -109,29 +109,29 @@
             </view>
             <view class="txbox">
                 <text class="nick">{{school ? school : '修改'}}</text>
-                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+                <image wx:if="{{!canUse}}" src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
     </picker>
-    <picker mode="date" value="{{value}}" start="2010-01-01" end="2018-12-31" fields="month" bindchange="inSchoolTime" wx:if="{{school && school != '我已毕业' && shId}}" disabled="{{canUse}}">
+    <picker mode="date" value="{{value}}" fields="month" bindchange="inSchoolTime" wx:if="{{school && school != '我已毕业' && shId}}" disabled="{{canUse}}">
         <view class="sonson">
             <view class="tx">
                 入学年月
             </view>
             <view class="txbox">
                 <text class="nick">{{userDetail.admissionTime?userDetail.admissionTime:'未填写'}}</text>
-                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+                <image wx:if="{{!canUse}}" src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
     </picker>
-    <picker mode="date" value="{{value}}" start="2019-12-31" end="2029-12-31" fields="month" bindchange="outSchoolTime" wx:if="{{school && school != '我已毕业' && shId}}" disabled="{{canUse}}">
+    <picker mode="date" value="{{value}}" fields="month" bindchange="outSchoolTime" wx:if="{{school && school != '我已毕业' && shId}}" disabled="{{canUse}}">
         <view class="sonson">
             <view class="tx">
                 毕业年月
             </view>
             <view class="txbox">
                 <text class="nick">{{userDetail.graduationTime?userDetail.graduationTime:'未填写'}}</text>
-                <image src="../../image/sanjiao.jpg" class="sanjiao"></image>
+                <image wx:if="{{!canUse}}" src="../../image/sanjiao.jpg" class="sanjiao"></image>
             </view>
         </view>
     </picker>
@@ -159,8 +159,7 @@
             <image src="/pages/image/infostar.png" class="infostar" mode="scaleToFill"></image>
         </view>
         <view class="infotitle">{{infotitle}}</view>
-<view class="infofir">{{userDetail.name + '/'}}{{userDetail.sex == 1? '男':'女'}}{{'/'+cityObj.city}}</view>
-<view class="infofir">{{school}}</view>
+<view class="infofir">{{userDetail.name + '/'}}{{userDetail.sex == 1? '男':'女'}}{{'/'+school}}</view>
         <view class="infotime">
             <text wx:if="{{school && school != '我已毕业' && shId}}">{{userDetail.admissionTime + '入学'}}</text>
             <text wx:if="{{school && school != '我已毕业' && shId}}">{{'/' + userDetail.graduationTime + '毕业'}}</text> </view>

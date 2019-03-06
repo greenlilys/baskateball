@@ -139,7 +139,11 @@ Page({
   onHide: function() {
 
   },
-
+    navhelp(){
+        wx.navigateTo({
+            url: '/pages/template/help/help',
+        })
+    },
   /**
    * 生命周期函数--监听页面卸载
    */
@@ -185,8 +189,9 @@ Page({
       header: {
         'content-type': 'application/json'
       },
-      success: (res) => {
-        let data = res.data.data
+      success: (res) => {         
+        let data = res.data.data;
+          console.log(data)
         this.setData({
           data: this.data.data.concat(data)
         })
@@ -235,6 +240,7 @@ Page({
         userId: app.globalData.userId
       },
       success: (res) => {
+          console.log(res)
         this.setData({
           dataBox: res.data.data
         })

@@ -128,6 +128,7 @@ Page({
     },
     // 获取战力
     getData() {
+        console.log(app.globalData.userId)
         wx.request({
             url: app.data.local + 'stusermilitary/rankings',
             data: {
@@ -141,8 +142,10 @@ Page({
                 'content-type': 'application/json'
             },
             success: (res) => {
-                let dataBox = res.data.data.other
-                let user = res.data.data.user
+                // console.log(res)
+                let dataBox = res.data.data.other;
+                let user = res.data.data.user;
+                
                 this.setData({
                     dataBox: this.data.dataBox.concat(dataBox),
                     user: user
@@ -339,6 +342,7 @@ Page({
 
     // 战力
     zhanli() {
+        console.log("llll")
         this.setData({
             title1: true,
             title2: false,

@@ -21,11 +21,17 @@
 <!-- top -->
 <view class="top">
   <view class="{{title1?'title1':'title'}}" catchtap='zhanli'>
+   <form bindsubmit="pushFormSubmit" report-submit='true'>
+                <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:98rpx; width:50%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
     战力
+    </form>
     <view class="hx1" wx:if="{{hx1}}"></view>
   </view>
   <view class="{{title2?'title2':'title'}}" catchtap='jingyan'>
+   <form bindsubmit="pushFormSubmit" report-submit='true'>
+                <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:98rpx; width: 50%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; right: 0' plain="true" formType="submit"></button>
     经验值
+    </form>
     <view class="hx2" wx:if="{{hx2}}"></view>
   </view>
 </view>
@@ -81,29 +87,33 @@
     </view>
 
     <view class="listSon">
-      <view class="sonson">
+      <!-- <view class="sonson">
         <view class="wenzi2">场次</view>
         <view class="progress">{{user.count?user.count:0}}</view>
-      </view>
+      </view> -->
 
       <view class="sonson">
         <view class="wenzi2">胜率</view>
         <view class="progress">{{user.round?user.round:0}}%</view>
       </view>
-
-      <view class="sonson">
-        <view class="wenzi2">总得分</view>
-        <view class="progress">{{user.score?user.score:0}}</view>
+       <view class="sonson">
+        <view class="wenzi2">MVP率</view>
+        <view class="progress">{{user.mvpv?user.mvpv:0}}%</view>
       </view>
 
       <view class="sonson">
-        <view class="wenzi2">总篮板</view>
-        <view class="progress">{{user.backboard?user.backboard:0}}</view>
+        <view class="wenzi2">得分率</view>
+        <view class="progress">{{user.scorev?user.scorev:0}}%</view>
       </view>
 
       <view class="sonson">
-        <view class="wenzi2">总助攻</view>
-        <view class="progress">{{user.assists?user.assists:0}}</view>
+        <view class="wenzi2">盖帽率</view>
+        <view class="progress">{{user.assistsv?user.assistsv:0}}%</view>
+      </view>
+
+      <view class="sonson">
+        <view class="wenzi2">篮板率</view>
+        <view class="progress">{{user.backboardv?user.backboardv:0}}%</view>
       </view>
     </view>
   </view>
@@ -138,29 +148,33 @@
         </view>
 
         <view class="listSon">
-          <view class="sonson">
+          <!-- <view class="sonson">
             <view class="wenzi2">场次</view>
             <view class="progress">{{item.count}}</view>
-          </view>
+          </view> -->
 
           <view class="sonson">
             <view class="wenzi2">胜率</view>
             <view class="progress">{{item.round}}%</view>
           </view>
-
-          <view class="sonson">
-            <view class="wenzi2">总得分</view>
-            <view class="progress">{{item.score}}</view>
+            <view class="sonson">
+            <view class="wenzi2">MVP率</view>
+            <view class="progress">{{item.mvpv}}%</view>
           </view>
 
           <view class="sonson">
-            <view class="wenzi2">总篮板</view>
-            <view class="progress">{{item.backboard}}</view>
+            <view class="wenzi2">得分率</view>
+            <view class="progress">{{item.scorev}}%</view>
           </view>
 
           <view class="sonson">
-            <view class="wenzi2">总助攻</view>
-            <view class="progress">{{item.assists}}</view>
+            <view class="wenzi2">盖帽率</view>
+            <view class="progress">{{item.assistsv}}%</view>
+          </view>
+
+          <view class="sonson">
+            <view class="wenzi2">篮板率</view>
+            <view class="progress">{{item.backboardv}}%</view>
           </view>
         </view>
       </view>
@@ -212,7 +226,7 @@
       </view>
       <image src="../image/heidian.jpg" style="height:3rpx;width:3rpx;"></image>
       <view>{{user.assists?user.assists:0}}
-        <text>助攻</text>
+        <text>盖帽</text>
       </view>
     </view>
   </view>
@@ -264,7 +278,7 @@
           </view>
           <image src="../image/heidian.jpg" style="height:3rpx;width:3rpx;"></image>
           <view>{{item.assists}}
-            <text>助攻</text>
+            <text>盖帽</text>
           </view>
         </view>
       </view>

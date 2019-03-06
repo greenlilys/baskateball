@@ -46,7 +46,7 @@ Page({
             // console.log(data.school + data.schoolId)
             cityObj.city = data.cityName ? data.cityName: '南京';
             cityObj.cid = data.cityId ? data.cityId:'148';
-            if(!data.sex){//性别默认值
+            if(!data.sex){//性别默认值 男1  女2
                 data.sex = "1"
             }
             this.setData({
@@ -144,12 +144,10 @@ Page({
         })
     },
     
-    setCity(){
-        if (!this.data.canUse){
+    setCity(){      
             wx.navigateTo({
                 url: '/pages/template/choiceCity/choiceCity',
-            })
-        }        
+            })              
     },
     //入学时间
     inSchoolTime(e) {        

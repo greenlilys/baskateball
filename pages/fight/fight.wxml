@@ -20,11 +20,15 @@
 <!-- top -->
 <view class="top">
   <view class="{{zhan1?'zhan1':'zhan'}}" catchtap='myFight'>
-    我的战力
+   <form bindsubmit="pushFormSubmit" report-submit='true'>
+                <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:98rpx; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+    我的战力</form>
     <view class="hx" wx:if="{{hx}}"></view>
   </view>
   <view class="{{zhan2?'zhan2':'zhan'}}" catchtap="myFight2">
-    我的战绩
+   <form bindsubmit="pushFormSubmit" report-submit='true'>
+                <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:98rpx; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+    我的战绩</form>
     <view class="hx1" wx:if="{{hx1}}"></view>
   </view>
 </view>
@@ -50,31 +54,39 @@
   <view class="fightBox">
     <view class="title">
       <text class="wz">战力统计</text>
+      <image class="sanjiao" src="../image/sanjiao.jpg"></image>
+      <text class="chakan" bindtap="navhelp">查看说明 </text>
+      
     </view>
     <view class="dataBox">
-      <view class="dataSon">
+      <!-- <view class="dataSon">
         <view class="Num">{{dataBox.playNum?dataBox.playNum:0}}</view>
         <view class="dw">场次</view>
-      </view>
+      </view> -->
 
       <view class="dataSon">
         <view class="Num">{{dataBox.round?dataBox.round:0}}%</view>
         <view class="dw">胜率</view>
       </view>
 
-      <view class="dataSon">
-        <view class="Num">{{dataBox.countScore?dataBox.countScore:0}}</view>
-        <view class="dw">总得分</view>
+        <view class="dataSon">
+        <view class="Num">{{dataBox.mvpv?dataBox.mvpv:0}}%</view>
+        <view class="dw">MVP率</view>
       </view>
 
       <view class="dataSon">
-        <view class="Num">{{dataBox.countBackboard?dataBox.countBackboard:0}}</view>
-        <view class="dw">总篮板</view>
+        <view class="Num">{{dataBox.scorev?dataBox.scorev:0}}%</view>
+        <view class="dw">得分率</view>
       </view>
 
       <view class="dataSon">
-        <view class="Num">{{dataBox.countAssists?dataBox.countAssists:0}}</view>
-        <view class="dw">总助攻</view>
+        <view class="Num">{{dataBox.assistsv?dataBox.assistsv:0}}%</view>
+        <view class="dw">盖帽率</view>
+      </view>
+
+      <view class="dataSon">
+        <view class="Num">{{dataBox.scorev?dataBox.scorev:0}}%</view>
+        <view class="dw">篮板率</view>
       </view>
     </view>
   </view>

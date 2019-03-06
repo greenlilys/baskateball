@@ -1,5 +1,9 @@
 {
   "navigationBarTitleText": "BBALL",
   "enablePullDownRefresh": true,
-  "backgroundColor":"#f0f4f7"
+  "backgroundColor":"#f0f4f7",
+  "usingComponents": {
+    "back-index": "../components/backindex/backindex"
+  }
 }
+

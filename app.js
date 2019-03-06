@@ -15,8 +15,8 @@ App({
         loginFlag: ''
     },
     data: {
-        // local: 'https://xcx.sbtgo.com/starts/sp/' 
-        local: 'https://xcx.sbtgo.com/starts2/sp/'
+        local: 'https://xcx.sbtgo.com/starts/sp/' 
+        // local: 'https://xcx.sbtgo.com/starts2/sp/'
         // local: 'http://192.168.3.212:8089/starts/sp/'
     },
     onLaunch: function () {
@@ -61,13 +61,12 @@ App({
         wx.login({
             success: (res) => {
                 wx.request({
-                    url: this.data.local + 'stuser/getOpenid',
-                    header: {
-                        'content-type': 'application/json'
-                    },
-                    data: res.code,
                     method: 'POST',
+                    header: { 'content-type': 'application/json' },
+                    url: this.data.local + 'stuser/getOpenid',                    
+                    data: res.code,                    
                     success: (res) => {
+                        console.log(res.data.openid)
                         this.globalData.openid = res.data.openid;
                         //上报粉丝        
                         wx.xst.setOpenId(res.data.openid);
@@ -82,7 +81,7 @@ App({
             title: '加载中',
         })
         let method = options.method ? options.method.toUpperCase() : "POST";
-        console.log(options.url + '----->' + JSON.stringify(options.data || {}));
+        console.log(options.url + '======>>' + JSON.stringify(options.data || {}));
         wx.request({
             url: this.data.local + options.url,
             method: method,
@@ -90,18 +89,11 @@ App({
             data: options.data || {},
             success: (res) => { 
                 wx.hideLoading();
-                console.log(res); 
+                console.log(options.url + '======>>' + JSON.stringify(res));
+                // console.log(res); 
                 if (res.data.errcode == '200') {                                      
                     typeof options.success == 'function' && options.success(res.data.data);
-                } else{  
-                    setTimeout(function(){
-                        wx.showToast({
-                            title: (res.data.errcode + res.data.errMsg).toString(),
-                            // title: '系统错误',
-                            image: '/pages/image/warn.png',
-                            duration: 2000
-                        })
-                    },2000)                    
+                } else{                                      
                     typeof options.fail == 'function' && options.fail(res);
                 }
             },

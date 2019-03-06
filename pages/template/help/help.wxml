@@ -2,51 +2,51 @@
 <view class="content">
     <view class="box">
         <view class="title">BBall的比赛玩法是什么样的？</view>
-        <view class="body">
+        <text class="body">
             我们推荐的比赛玩法，每场比赛2小时，每节比赛6分钟，确保大家都有足够的上场时间，大家随机组队3V3，每节比赛之后，获胜的球队在场上守擂，另一队重新换3人上场。
-        </view>
+        </text>
     </view>
 
     <view class="box">
         <view class="title">什么情况下，比赛会自动取消？</view>
-        <view class="body">
+        <text class="body">
             为了保证比赛的顺利进行，每场比赛会设定报名人数的下限，当报名的人数不能满足报名下限时，比赛会在开始的前一天，自动取消，报名的星钻会退回个人账户。
-        </view>
+        </text>
     </view>
 
     <view class="box">
         <view class="title">参加比赛要注意什么？</view>
-        <view class="body">
+        <text class="body">
             到达现场后，要找到场馆的BBall二维码，通过个人中心的扫一扫，扫码进行签到哦，否则不会被分配到号码，无法上场！获得号码后，要牢记自己的号码，听现场工作人员的安排，组队进行比赛。
-        </view>
+        </text>
     </view>
 
     <view class="box">
         <view class="title">什么是星钻？</view>
-        <view class="body">
+        <text class="body">
             星钻是小程序里的代金币，用于报名比赛时使用。1元人民币可以兑换10枚星钻，兑换星钻后，不可再退还人民币。
-        </view>
+        </text>
     </view>
 
     <view class="box">
         <view class="title">如何提高战力值？</view>
-        <view class="body">
-            战力值的计算，是综合了胜率、每场比赛个人得分率、MVP获得率、助攻率、篮板率等。
-        </view>
+        <text class="body">
+            战力值的计算，是综合了胜率、MVP率、得分率、盖帽率和篮板率等因素计算而来。\n胜率是自己获胜的小节数除以自己上场的总小节数；MVP率是自己获得MVP的小节数除以自己上场的总小节数；得分率是自己的总得分数除以自己上场的全部小节中，所有队员（包含队友和对手）的总得分；盖帽率和篮板率与得分率计算方式相同。180天前的数据不再纳入计算。
+        </text>
     </view>
 
     <view class="box">
         <view class="title">如何提高经验值和积分？</view>
-        <view class="body">
-            完成比赛，获得场上得分等技术数据，获得 MVP，达成连胜，都可以增加经验值和积分。
-        </view>
+        <text class="body">
+            完成比赛，获得场上得分等技术数据，获得MVP，达成连胜，可以增加经验值。绑定手机号，完善个人资料，完成分享任务，可以增加积分。其中：\n参赛并签到：+100积分；\n每次分享积分：+10积分（每天最多加3次）；\n分享新增：+20积分（即通过分享，每为必爆带来一位新用户，获得20积分，不设上限）。
+        </text>
     </view>
 
     <view class="box">
         <view class="title">取消报名的影响？</view>
-        <view class="body">
+        <text class="body">
             在比赛前1天取消比赛，星钻会全额返还到账户中； 比赛当天取消比赛，扣减50积分，并扣减50%的报名星钻； 比赛结束前，如果没有取消比赛也没有签到，视为缺席比赛，扣减100积分，并扣减全部的报名星钻，同时还会扣除20%的押金！
-        </view>
+        </text>
     </view>
 </view>
 

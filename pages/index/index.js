@@ -141,7 +141,7 @@ Page({
             extraData: {//需要传递给目标小程序的数据，目标小程序可在 App.onLaunch，App.onShow 中获取到这份数据。
                 foo: 'bar'
             },
-            envVersion: 'develop',
+            envVersion: 'release',
             success(res) {
                 // console.log('dakai')
             }
@@ -274,7 +274,8 @@ Page({
         this.getMyData();
     },
     //允许登录
-    bindGetUserInfo: function (e) {        
+    bindGetUserInfo: function (e) {  
+        console.log(e)      
         var that = this;        
         wx.request({
             url: app.data.local + 'stuser/userlogin',
@@ -293,7 +294,7 @@ Page({
                     var data = {
                         userId: res.data.data.id
                     }
-                    // console.log(res.data.data.id)
+                    console.log(res.data.data.id)
                     wx.setStorageSync('data', data);                 
                     that.setData({
                         loginBox: false,
@@ -313,7 +314,7 @@ Page({
                     }
                 }
             }
-        })
+        })    
 
     },   
     // 切换附近比赛

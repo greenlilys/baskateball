@@ -68,7 +68,8 @@
         "request":5000
     },
     "navigateToMiniProgramAppIdList": [
-        "wxc5afbb0b1c7cc625"
+        "wxc5afbb0b1c7cc625",
+        "wx0bddabdc5a924359"
     ],
     "tabBar": {
         "color": "#000",

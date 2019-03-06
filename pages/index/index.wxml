@@ -149,6 +149,6 @@
 </view>
 
 <!-- 抽奖浮标 -->
-<view bindtap="navMiniProgram">
+<!-- <view bindtap="navMiniProgram">
 <image src="/pages/image/chou.png" class="chou"></image>  
-</view>
+</view> -->

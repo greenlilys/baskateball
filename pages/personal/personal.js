@@ -31,6 +31,20 @@ Page({
         return app.onShareAppMessage({});
 
     },
+    //跳转抽奖小程序
+    navBankProgram() {
+        wx.navigateToMiniProgram({
+            appId: 'wx0bddabdc5a924359',
+            path: 'pages/pageIn/pageIn',//打开的页面路径，如果为空则打开首页
+            extraData: {//需要传递给目标小程序的数据，目标小程序可在 App.onLaunch，App.onShow 中获取到这份数据。
+                foo: 'bar'
+            },
+            envVersion: 'release',
+            success(res) {
+                // console.log('dakai')
+            }
+        })
+    },
     //允许登录
     bindGetUserInfo: function (e) {
         var that = this;

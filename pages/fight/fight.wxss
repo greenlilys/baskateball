@@ -131,8 +131,9 @@
     border-left:6rpx solid #c71111;
     margin-top:40rpx;
     margin-left:40rpx;
+    overflow:hidden;
 }
-
+.chakan{font-size:26rpx;float:right;margin-right:10rpx;}
 .wz{
   margin-left:35rpx;
   font-weight:bold;
@@ -436,3 +437,5 @@ button::after{
   height: 66rpx;
   margin-left: 20rpx;
 }
+.sanjiao{float:right; width: 7px;
+  height: 10px;margin-right:40rpx;margin-top:8rpx;}
